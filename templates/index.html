@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+{% load leaflet_tags %}
+<head>
+       {% leaflet_js %}
+       {% leaflet_css %}	
+	   <title>Multiagent Irrigation System</title>
+
+	   <style type='text/css'>
+            #gis {width: 100%; height:700px;}
+
+           .legend {
+             	line-height: 18px;
+	            color: #333333;
+	            font-family: 'Open Sans', Helvetica, sans-serif;
+	            padding: 6px 8px;
+	            background: white;
+	            background: rgba(255,255,255,0.8);
+	            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	            border-radius: 5px;
+                }
+           .legend i {
+	            width: 18px;
+	            height: 18px;
+	            float: left;
+	            margin-right: 8px;
+	            opacity: 0.7;
+                }
+
+            .legend img {
+            	width: 18px;
+	            height: 18px;
+	            float: left;
+                }
+
+            .legend p {
+	            font-size: 12px;
+	            line-height: 18px;
+	            margin: 0;
+                }
+
+	   </style>
+	   <link rel="stylesheet" type="text/css" href="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css' %}" >
+	   <script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}"> </script>
+	   <script type="text/javascript" src="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js' %}"> </script>
+</head>
+<body>
+<div id="map">
+<h3> USOCHICAMOCHA Irrigation District </h3>
+<br>
+<script type="text/javascript">
+
+        // Set function for color ramp
+        function setColor(density){
+	         return density > 85 ? '#a50f15' :
+	                density > 15 ? '#de2d26' :
+	                density > 8 ? '#fb6a4a' :
+	                density > 4 ? '#fcae91' :
+	                               '#fee5d9';
+        };
+
+
+	   function out_layers(map, options){
+           //To define icons  **********************************************************
+            var greenIcon = L.icon({
+               	iconUrl: 'static/icons/Farmer1_1_green.png',
+	            shadowUrl: 'static/icons/icon-green50_sombra.png',
+            	iconSize:     [50, 50], // size of the icon
+	            shadowSize:   [1, 1], // size of the shadow
+	            iconAnchor:   [30, 30], // point of the icon which will correspond to marker's location
+	            //shadowAnchor: [4, 62],  // the same for the shadow
+	            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+            var LeafIcon = L.Icon.extend({
+	            options: {
+		        shadowUrl: 'static/icons/icon-green50_sombra.png',
+		        iconSize:     [50, 50],
+		        shadowSize:   [1, 1],
+		        iconAnchor:   [30, 30],
+		        //shadowAnchor: [4, 62],
+		        popupAnchor:  [-3, -76]
+	             }
+            });
+            var farm1_greenIcon = new LeafIcon({iconUrl: 'static/icons/Farmer1_1_green.png'}), farm1_blueIcon = new LeafIcon({iconUrl: 'static/icons/Farmer1_1_blue.png'}), farm1_redIcon = new LeafIcon({iconUrl: 'static/icons/Farmer1_1_red.png'}), farm2_greenIcon = new LeafIcon({iconUrl: 'static/icons/Farmer2_1_green.png'}), farm2_blueIcon = new LeafIcon({iconUrl: 'static/icons/Farmer2_1_blue.png'}), farm2_redIcon = new LeafIcon({iconUrl: 'static/icons/Farmer2_1_red.png'}),         farm3_greenIcon = new LeafIcon({iconUrl: 'static/icons/Farmer3_green.png'}), farm3_blueIcon = new LeafIcon({iconUrl: 'static/icons/Farmer3_blue.png'}), farm3_redIcon = new LeafIcon({iconUrl: 'static/icons/Farmer3_red.png'});
+             // ************************************************************************** 
+            var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            	maxZoom: 19,
+	            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            });
+            var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	             maxZoom: 17,
+	             attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+            });
+            ///////////////////////////////////////////////////////////////////
+            var datasets = new L.GeoJSON.AJAX("{% url 'country' %}",{
+            	style:function colors(feature){
+             	    switch(feature.properties.name){
+             		    case 'Colombia':
+             		       return{
+                             color: 'blue',
+                             fillOpacity:0.3
+             		       };
+                        break;    
+             		    case 'Venezuela':
+             		        return{
+                                color: 'red',
+                                fillOpacity:0.3
+                            };
+             		    break; 
+             	    }
+                },
+            	style:function style(feature){
+             	           return{
+                                 fillColor: setColor(feature.properties.region),
+                                 fillOpacity: 0.7,
+                                 weight: 2,
+                                 opacity: 1,
+                                 color: '#ffffff',
+                                 dashArray: '3'
+             		       };
+                },                
+                onEachFeature: function(feature,layer){
+                	layer.bindPopup("<strong>" + feature.properties.name.toString() +"</strong><br/>" + feature.properties.region.toString());
+                }
+	   	    });
+            ////////////////////////////////////////////////////////////
+	   	    
+	   	    var points = new L.GeoJSON.AJAX("{% url 'incidences' %}",{
+                onEachFeature: function(feature,layer){
+             	    layer.bindPopup(feature.properties.name.toString());
+                }, pointToLayer: function (feature, latlng) {
+                     if (feature.properties.name == "Andres"){
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                     } 
+                     else if (feature.properties.name == "Felipe") {
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     }
+                     else {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
+                     };
+                  return marker;
+              }
+            });
+            /////////////////////////////////////////////////////////////////////
+
+            var district = new L.GeoJSON.AJAX("{% url 'District' %}",{
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup("<strong>" + feature.properties.name.toString() +"</strong><br/>" + feature.properties.area.toString());
+                }
+            });
+            ////////////////////////////////////////////////////////////////////
+
+            var DuitamaPump = new L.GeoJSON.AJAX("{% url 'DuitamaPump' %}",{
+                style:function style(feature){
+                   return{
+                         fillColor: setColor(feature.properties.code),
+                         fillOpacity: 0.7,
+                         weight: 2,
+                         opacity: 1,
+                         color: '#e84a5f',
+                         dashArray: '1'
+                   };
+                },  
+
+            });
+            ////////////////////////////////////////////////////////////////////
+
+            var AyalasPump = new L.GeoJSON.AJAX("{% url 'AyalasPump' %}",{
+                style:function style(feature){
+                   return{
+                         fillColor: setColor(feature.properties.code),
+                         fillOpacity: 0.7,
+                         weight: 2,
+                         opacity: 1,
+                         color: '#fbd46d',
+                         dashArray: '1'
+                   };
+                },  
+
+            });
+
+            ////////////////////////////////////////////////////////////////////
+
+            var CuchePump = new L.GeoJSON.AJAX("{% url 'CuchePump' %}",{
+                style:function style(feature){
+                   return{
+                         fillColor: setColor(feature.properties.code),
+                         fillOpacity: 0.7,
+                         weight: 2,
+                         opacity: 1,
+                         color: '#a2de96',
+                         dashArray: '1'
+                   };
+                },  
+
+            });            
+            ////////////////////////////////////////////////////////////////////
+
+            var HolandaPump = new L.GeoJSON.AJAX("{% url 'HolandaPump' %}",{
+                style:function style(feature){
+                   return{
+                         fillColor: setColor(feature.properties.code),
+                         fillOpacity: 0.7,
+                         weight: 2,
+                         opacity: 1,
+                         color: '#f69e7b',
+                         dashArray: '1'
+                   };
+                },  
+
+            });            
+            ////////////////////////////////////////////////////////////////////
+            var lasvueltasPump = new L.GeoJSON.AJAX("{% url 'lasvueltasPump' %}",{
+                style:function style(feature){
+                   return{
+                         fillColor: setColor(feature.properties.code),
+                         fillOpacity: 0.7,
+                         weight: 2,
+                         opacity: 1,
+                         color: '#89c9b8',
+                         dashArray: '1'
+                   };
+                },  
+
+            });            
+            ////////////////////////////////////////////////////////////////////
+            var ministerioPump = new L.GeoJSON.AJAX("{% url 'ministerioPump' %}",{
+                style:function style(feature){
+                   return{
+                         fillColor: setColor(feature.properties.code),
+                         fillOpacity: 0.7,
+                         weight: 2,
+                         opacity: 1,
+                         color: '#184d47',
+                         dashArray: '1'
+                   };
+                },  
+
+            });            
+            ////////////////////////////////////////////////////////////////////
+            var moniquiraPump = new L.GeoJSON.AJAX("{% url 'moniquiraPump' %}",{
+                style:function style(feature){
+                   return{
+                         fillColor: setColor(feature.properties.code),
+                         fillOpacity: 0.7,
+                         weight: 2,
+                         opacity: 1,
+                         color: '#e36387',
+                         dashArray: '1'
+                   };
+                },  
+
+            });            
+            ////////////////////////////////////////////////////////////////////
+            var pantanovPump = new L.GeoJSON.AJAX("{% url 'pantanovPump' %}",{
+                style:function style(feature){
+                   return{
+                         fillColor: setColor(feature.properties.code),
+                         fillOpacity: 0.7,
+                         weight: 2,
+                         opacity: 1,
+                         color: '#99b898',
+                         dashArray: '3'
+                   };
+                },  
+
+            });            
+            ////////////////////////////////////////////////////////////////////
+            var sanrafaelpump = new L.GeoJSON.AJAX("{% url 'sanrafaelpump' %}",{
+                style:function style(feature){
+                   return{
+                         fillColor: setColor(feature.properties.code),
+                         fillOpacity: 0.7,
+                         weight: 2,
+                         opacity: 1,
+                         color: '#fa7d09',
+                         dashArray: '1'
+                   };
+                },  
+
+            });
+            ////////////////////////////////////////////////////////////////////
+            var surbapump = new L.GeoJSON.AJAX("{% url 'surbapump' %}",{
+                style:function style(feature){
+                   return{
+                         fillColor: setColor(feature.properties.code),
+                         fillOpacity: 0.7,
+                         weight: 2,
+                         opacity: 1,
+                         color: '#faf0af',
+                         dashArray: '1'
+                   };
+                },  
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+            var tibasosapump = new L.GeoJSON.AJAX("{% url 'tibasosapump' %}",{
+                style:function style(feature){
+                   return{
+                         fillColor: setColor(feature.properties.code),
+                         fillOpacity: 0.7,
+                         weight: 2,
+                         opacity: 1,
+                         color: '#e79cc2',
+                         dashArray: '1'
+                   };
+                },  
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+            var ayalascentroides = new L.GeoJSON.AJAX("{% url 'ayalascentroides' %}",{
+
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+                        ////////////////////////////////////////////////////////////////////
+            var cuchecentroides = new L.GeoJSON.AJAX("{% url 'cuchecentroides' %}",{
+
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+            var duitamacentroides = new L.GeoJSON.AJAX("{% url 'duitamacentroides' %}",{
+
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+            var holandacentroids = new L.GeoJSON.AJAX("{% url 'holandacentroids' %}",{
+
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+            var lasvueltascentroids = new L.GeoJSON.AJAX("{% url 'lasvueltascentroids' %}",{
+
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+            var ministeriocentroids = new L.GeoJSON.AJAX("{% url 'ministeriocentroids' %}",{
+
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+            var moniquiracentroids = new L.GeoJSON.AJAX("{% url 'moniquiracentroids' %}",{
+
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+            var pantanovcentroids = new L.GeoJSON.AJAX("{% url 'pantanovcentroids' %}",{
+
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+            var sanrafaelcentroids = new L.GeoJSON.AJAX("{% url 'sanrafaelcentroids' %}",{
+
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+            var tibasosacentroids = new L.GeoJSON.AJAX("{% url 'tibasosacentroids' %}",{
+
+
+            });              
+            ////////////////////////////////////////////////////////////////////
+            // Create Leaflet Control Object for Legend
+            var legend = L.control({position: 'bottomright'});
+                 // Function that runs when legend is added to map
+                 legend.onAdd = function (map) {
+	                // Create Div Element and Populate it with HTML
+         	var div = L.DomUtil.create('div', 'info legend');
+         	        div.innerHTML += 'Violation Density';
+	                div.innerHTML += 'by Neighborhood';
+	                div.innerHTML += 'Violations/Sq. Mi.';
+	                div.innerHTML += '85+';
+	                div.innerHTML += '15-85';
+	                div.innerHTML += '8-15';
+	                div.innerHTML += '4-8';
+	                div.innerHTML += '0-4';
+	                div.innerHTML += 'Individual Violations';
+	                //div.innerHTML += 'Andres';
+	                //div.innerHTML += 'Angel';
+	                //div.innerHTML += 'Felipe';
+                 	//Return the Legend div containing the HTML content
+                 	return div;
+            };
+
+            legend.addTo(map);
+            ministeriocentroids.addTo(map);
+            tibasosacentroids.addTo(map);
+            sanrafaelcentroids.addTo(map);
+            pantanovcentroids.addTo(map);
+            moniquiracentroids.addTo(map);
+            holandacentroids.addTo(map);
+            lasvueltascentroids.addTo(map);
+            cuchecentroides.addTo(map);
+            duitamacentroides.addTo(map);
+            ayalascentroides.addTo(map);
+            points.addTo(map);
+            DuitamaPump.addTo(map);
+            AyalasPump.addTo(map);
+            CuchePump.addTo(map);
+            HolandaPump.addTo(map);
+            lasvueltasPump.addTo(map);
+            ministerioPump.addTo(map);
+            moniquiraPump.addTo(map);
+            pantanovPump.addTo(map);
+            sanrafaelpump.addTo(map);
+            surbapump.addTo(map);
+            tibasosapump.addTo(map);
+            district.addTo(map);       
+            datasets.addTo(map);  
+
+
+            
+            L.marker([51.5, -0.1], {icon: greenIcon}).addTo(map);
+            L.marker([20, -10], {icon: farm1_greenIcon}).addTo(map);
+            L.marker([25, -15], {icon: farm1_blueIcon}).addTo(map);
+            L.marker([30, -20], {icon: farm1_redIcon}).addTo(map);
+            L.marker([35, -25], {icon: farm2_greenIcon}).addTo(map);
+            L.marker([40, -30], {icon: farm2_blueIcon}).addTo(map);
+            L.marker([45, -35], {icon: farm2_redIcon}).addTo(map);
+            L.marker([50, -40], {icon: farm3_greenIcon}).addTo(map);
+            L.marker([55, -45], {icon: farm3_blueIcon}).addTo(map);
+            L.marker([60, -50], {icon: farm3_redIcon}).addTo(map);
+
+            var baseLayers = {
+               "OSM": osm,
+               "OpenTopoMap": OpenTopoMap
+            }
+            
+            var groupedOverlays = {
+                "Centroids": {
+
+
+                "holandacentroids": holandacentroids,
+                "tibasosacentroids": tibasosacentroids,
+                "sanrafaelcentroids": sanrafaelcentroids,
+                "pantanovcentroids": pantanovcentroids,
+                "moniquiracentroids": moniquiracentroids,
+                "ministeriocentroids": ministeriocentroids,
+                "lasvueltascentroids": lasvueltascentroids,
+                "cuchecentroides": cuchecentroides,
+                "duitamacentroides": duitamacentroides,
+                "ayalascentroides": ayalascentroides,
+
+                },
+                "Layers": {
+                "tibasosapump": tibasosapump,
+                "DuitamaPump": DuitamaPump,
+                "AyalasPump": AyalasPump,    
+                "CuchePump": CuchePump,
+                "HolandaPump": HolandaPump,
+                "lasvueltasPump": lasvueltasPump,
+                "ministerioPump": ministerioPump,
+                "moniquiraPump": moniquiraPump,
+                "pantanovPump": pantanovPump,
+                "sanrafaelpump": sanrafaelpump,
+                "surbapump": surbapump,
+                "district": district,  
+               
+                
+
+            }
+         };
+         L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+
+
+	   } 
+</script>
+<br>
+{% leaflet_map "gis" callback="window.out_layers" %}
+</div>	
+</body>
+</html>
+
+
