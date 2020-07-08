@@ -152,15 +152,22 @@
             ////////////////////////////////////////////////////////////////////
 
             var DuitamaPump = new L.GeoJSON.AJAX("{% url 'DuitamaPump' %}",{
+
+
                 style:function style(feature){
                    return{
                          fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.7,
+                         fillOpacity: 1.2,
                          weight: 2,
                          opacity: 1,
                          color: '#e84a5f',
                          dashArray: '1'
                    };
+                },
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
                 },  
 
             });
