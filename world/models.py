@@ -453,3 +453,25 @@ class tibasosa_centroids(models.Model):
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code
+
+class chicamocha_river(models.Model):
+    id = gis_models.BigIntegerField(primary_key=True)
+    name = gis_models.CharField(max_length=30)
+    status = gis_models.BigIntegerField()
+    length = gis_models.FloatField()
+    flow = gis_models.FloatField(null=True)
+    geom = gis_models.MultiLineStringField(srid=4326)
+    def __unicode__(self):
+        return self.name
+
+class reservoirs(models.Model):
+    id = gis_models.BigIntegerField(primary_key=True)
+    name = gis_models.CharField(max_length=80)
+    status = gis_models.FloatField()
+    level = gis_models.FloatField(null=True)
+    area = gis_models.FloatField()
+    lat = gis_models.FloatField()
+    lon = gis_models.FloatField()
+    geom = gis_models.MultiPolygonField(srid=4326)
+    def __unicode__(self):
+        return self.name

@@ -1,6 +1,6 @@
 from django.contrib import admin
 #from django.contrib.gis.admin import OSMGeoAdmin
-from .models import Incidences, Countries, Duitama_Pump, DistrictP, Ayalas_Pump ,Cuche_Pump, Holanda_Pump, Lasvueltas_Pump, ministerio_Pump, moniquira_Pump, pantanov_pump, sanrafael_pump, surba_pump, tibasosa_pump, ayalas_centroides, cuche_centroides, duitama_centroides, holanda_centroids, lasvueltas_centroids, ministerio_centroids, moniquira_centroids, pantanov_centroids, sanrafael_centroids, surba_centroids, tibasosa_centroids
+from .models import Incidences, Countries, Duitama_Pump, DistrictP, Ayalas_Pump ,Cuche_Pump, Holanda_Pump, Lasvueltas_Pump, ministerio_Pump, moniquira_Pump, pantanov_pump, sanrafael_pump, surba_pump, tibasosa_pump, ayalas_centroides, cuche_centroides, duitama_centroides, holanda_centroids, lasvueltas_centroids, ministerio_centroids, moniquira_centroids, pantanov_centroids, sanrafael_centroids, surba_centroids, tibasosa_centroids, chicamocha_river, reservoirs
 from leaflet.admin import LeafletGeoAdmin
 # Register your models here.
 
@@ -90,6 +90,12 @@ class surba_centroidsAdmin(LeafletGeoAdmin):
 class tibasosa_centroidsAdmin(LeafletGeoAdmin):
 	list_display =('code','geom')
 
+class chicamocha_riverAdmin(LeafletGeoAdmin):
+	list_display =('name','geom')
+
+class reservoirsAdmin(LeafletGeoAdmin):
+	list_display =('name','geom')
+
 
 admin.site.register(Incidences, IncidencesAdmin)
 admin.site.register(Countries, CountriesAdmin)
@@ -115,3 +121,5 @@ admin.site.register(pantanov_centroids, pantanov_centroidsAdmin)
 admin.site.register(sanrafael_centroids, sanrafael_centroidsAdmin)
 admin.site.register(surba_centroids, surba_centroidsAdmin)
 admin.site.register(tibasosa_centroids, tibasosa_centroidsAdmin)
+admin.site.register(chicamocha_river, chicamocha_riverAdmin)
+admin.site.register(reservoirs, reservoirsAdmin)

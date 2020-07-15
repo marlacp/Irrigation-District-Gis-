@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.core.serializers import serialize
-from .models import Countries, Incidences, Duitama_Pump, DistrictP, Ayalas_Pump, Cuche_Pump, Holanda_Pump, Lasvueltas_Pump, ministerio_Pump, moniquira_Pump, pantanov_pump, sanrafael_pump, surba_pump, tibasosa_pump, ayalas_centroides, cuche_centroides, duitama_centroides, holanda_centroids, lasvueltas_centroids, ministerio_centroids, moniquira_centroids, pantanov_centroids, sanrafael_centroids, surba_centroids, tibasosa_centroids
+from .models import Countries, Incidences, Duitama_Pump, DistrictP, Ayalas_Pump, Cuche_Pump, Holanda_Pump, Lasvueltas_Pump, ministerio_Pump, moniquira_Pump, pantanov_pump, sanrafael_pump, surba_pump, tibasosa_pump, ayalas_centroides, cuche_centroides, duitama_centroides, holanda_centroids, lasvueltas_centroids, ministerio_centroids, moniquira_centroids, pantanov_centroids, sanrafael_centroids, surba_centroids, tibasosa_centroids, chicamocha_river, reservoirs
 
 ###
 #a) 
@@ -113,3 +113,11 @@ def surba_centroidsdatasets(request):
 def tibasosa_centroidsdatasets(request):
      tibasosacentroids= serialize('geojson', tibasosa_centroids.objects.all())
      return HttpResponse(tibasosacentroids,content_type='json') 
+
+def chicamocha_riverdatasets(request):
+     chicamochariver= serialize('geojson', chicamocha_river.objects.all())
+     return HttpResponse(chicamochariver,content_type='json') 
+
+def reservoirs_datasets(request):
+     reservoirsdata= serialize('geojson', reservoirs.objects.all())
+     return HttpResponse(reservoirsdata,content_type='json') 

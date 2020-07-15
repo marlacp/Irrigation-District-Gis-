@@ -52,12 +52,18 @@
 <script type="text/javascript">
 
         // Set function for color ramp
-        function setColor(density){
-	         return density > 85 ? '#a50f15' :
-	                density > 15 ? '#de2d26' :
-	                density > 8 ? '#fb6a4a' :
-	                density > 4 ? '#fcae91' :
-	                               '#fee5d9';
+        function clay(c){
+	         return c > 100 ?'#6a2c70' :
+	                c > 90 ? '#a374d5' :
+	                c > 80 ? '#be97dc' :
+	                c > 70 ? '#eec1ea' :
+                    c > 60 ? '#c1f6e7' :
+                    c > 50 ? '#7ad9f5' :
+                    c > 40 ? '#8bbabb' :
+                    c > 30 ? '#72af72' :
+                    c > 20 ? '#f6d743' :
+                    c > 10 ? '#f6f578' :
+	                         '#fff8a6';
         };
 
 
@@ -156,12 +162,12 @@
 
                 style:function style(feature){
                    return{
-                         fillColor: setColor(feature.properties.code),
-                         fillOpacity: 1.2,
-                         weight: 2,
-                         opacity: 1,
-                         color: '#e84a5f',
-                         dashArray: '1'
+                        fillColor: clay(feature.properties.clay),
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
                    };
                 },
 
@@ -177,13 +183,19 @@
                 style:function style(feature){
                    return{
                          fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.7,
+                         fillOpacity: 0.8,
                          weight: 2,
                          opacity: 1,
                          color: '#fbd46d',
                          dashArray: '1'
                    };
                 },  
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                }, 
+
 
             });
 
@@ -193,13 +205,18 @@
                 style:function style(feature){
                    return{
                          fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.7,
+                         fillOpacity: 0.8,
                          weight: 2,
                          opacity: 1,
                          color: '#a2de96',
                          dashArray: '1'
                    };
-                },  
+                },
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },   
 
             });            
             ////////////////////////////////////////////////////////////////////
@@ -208,7 +225,7 @@
                 style:function style(feature){
                    return{
                          fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.7,
+                         fillOpacity: 0.8,
                          weight: 2,
                          opacity: 1,
                          color: '#f69e7b',
@@ -216,13 +233,18 @@
                    };
                 },  
 
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                }, 
+
             });            
             ////////////////////////////////////////////////////////////////////
             var lasvueltasPump = new L.GeoJSON.AJAX("{% url 'lasvueltasPump' %}",{
                 style:function style(feature){
                    return{
                          fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.7,
+                         fillOpacity: 0.8,
                          weight: 2,
                          opacity: 1,
                          color: '#89c9b8',
@@ -230,13 +252,19 @@
                    };
                 },  
 
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                }, 
+
+
             });            
             ////////////////////////////////////////////////////////////////////
             var ministerioPump = new L.GeoJSON.AJAX("{% url 'ministerioPump' %}",{
                 style:function style(feature){
                    return{
                          fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.7,
+                         fillOpacity: 0.8,
                          weight: 2,
                          opacity: 1,
                          color: '#184d47',
@@ -244,19 +272,29 @@
                    };
                 },  
 
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                }, 
+
             });            
             ////////////////////////////////////////////////////////////////////
             var moniquiraPump = new L.GeoJSON.AJAX("{% url 'moniquiraPump' %}",{
                 style:function style(feature){
                    return{
                          fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.7,
+                         fillOpacity: 0.8,
                          weight: 2,
                          opacity: 1,
                          color: '#e36387',
                          dashArray: '1'
                    };
-                },  
+                },
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },   
 
             });            
             ////////////////////////////////////////////////////////////////////
@@ -264,7 +302,7 @@
                 style:function style(feature){
                    return{
                          fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.7,
+                         fillOpacity: 0.8,
                          weight: 2,
                          opacity: 1,
                          color: '#99b898',
@@ -272,13 +310,18 @@
                    };
                 },  
 
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                }, 
+
             });            
             ////////////////////////////////////////////////////////////////////
             var sanrafaelpump = new L.GeoJSON.AJAX("{% url 'sanrafaelpump' %}",{
                 style:function style(feature){
                    return{
                          fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.7,
+                         fillOpacity: 0.8,
                          weight: 2,
                          opacity: 1,
                          color: '#fa7d09',
@@ -286,18 +329,28 @@
                    };
                 },  
 
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                }, 
+
             });
             ////////////////////////////////////////////////////////////////////
             var surbapump = new L.GeoJSON.AJAX("{% url 'surbapump' %}",{
                 style:function style(feature){
                    return{
                          fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.7,
+                         fillOpacity: 0.8,
                          weight: 2,
                          opacity: 1,
                          color: '#faf0af',
                          dashArray: '1'
                    };
+                }, 
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
                 },  
 
             });              
@@ -312,11 +365,22 @@
                          color: '#e79cc2',
                          dashArray: '1'
                    };
-                },  
+                },
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },   
 
             });              
             ////////////////////////////////////////////////////////////////////
             var ayalascentroides = new L.GeoJSON.AJAX("{% url 'ayalascentroides' %}",{
+
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },  
 
 
             });              
@@ -325,9 +389,21 @@
             var cuchecentroides = new L.GeoJSON.AJAX("{% url 'cuchecentroides' %}",{
 
 
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },  
+
+
             });              
             ////////////////////////////////////////////////////////////////////
             var duitamacentroides = new L.GeoJSON.AJAX("{% url 'duitamacentroides' %}",{
+
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },  
 
 
             });              
@@ -335,9 +411,21 @@
             var holandacentroids = new L.GeoJSON.AJAX("{% url 'holandacentroids' %}",{
 
 
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },  
+
+
             });              
             ////////////////////////////////////////////////////////////////////
             var lasvueltascentroids = new L.GeoJSON.AJAX("{% url 'lasvueltascentroids' %}",{
+
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },  
 
 
             });              
@@ -345,9 +433,21 @@
             var ministeriocentroids = new L.GeoJSON.AJAX("{% url 'ministeriocentroids' %}",{
 
 
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },  
+
+
             });              
             ////////////////////////////////////////////////////////////////////
             var moniquiracentroids = new L.GeoJSON.AJAX("{% url 'moniquiracentroids' %}",{
+
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },  
 
 
             });              
@@ -355,17 +455,44 @@
             var pantanovcentroids = new L.GeoJSON.AJAX("{% url 'pantanovcentroids' %}",{
 
 
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },  
+
+
             });              
             ////////////////////////////////////////////////////////////////////
             var sanrafaelcentroids = new L.GeoJSON.AJAX("{% url 'sanrafaelcentroids' %}",{
+
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },  
 
 
             });              
             ////////////////////////////////////////////////////////////////////
             var tibasosacentroids = new L.GeoJSON.AJAX("{% url 'tibasosacentroids' %}",{
 
+                
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },  
+
 
             });              
+            ////////////////////////////////////////////////////////////////////
+
+            var chicamochariver = new L.GeoJSON.AJAX("{% url 'chicamochariver' %}",{
+
+             });              
+            ////////////////////////////////////////////////////////////////////
+            var reservoirs = new L.GeoJSON.AJAX("{% url 'reservoirs' %}",{
+
+             });              
             ////////////////////////////////////////////////////////////////////
             // Create Leaflet Control Object for Legend
             var legend = L.control({position: 'bottomright'});
@@ -390,6 +517,8 @@
             };
 
             legend.addTo(map);
+            chicamochariver.addTo(map);
+            reservoirs.addTo(map);
             ministeriocentroids.addTo(map);
             tibasosacentroids.addTo(map);
             sanrafaelcentroids.addTo(map);
@@ -434,6 +563,7 @@
             }
             
             var groupedOverlays = {
+
                 "Centroids": {
 
 
@@ -450,6 +580,9 @@
 
                 },
                 "Layers": {
+
+                "chicamochariver": chicamochariver,
+                "reservoirs": reservoirs,
                 "tibasosapump": tibasosapump,
                 "DuitamaPump": DuitamaPump,
                 "AyalasPump": AyalasPump,    

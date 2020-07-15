@@ -1,5 +1,5 @@
 from django.conf.urls import include, url
-from .views import HomePageView, country_datasets, incidence_points, DuitamaPump_datasets, DistrictPolygons_datasets, AyalasPump_datasets, Cuche_Pump_datasets, Holanda_Pump_datasets, Lasvueltas_Pump_datasets, ministerio_Pump_datasets, moniquira_Pump_datasets, pantanov_pump_datasets, sanrafael_pump_datasets, surba_pump_datasets, tibasosa_pumpdatasets, ayalas_centroidesdatasets, cuche_centroidesdatasets, duitama_centroidesdatasets, holanda_centroidsdatasets, lasvueltas_centroidsdatasets, ministerio_centroidsdatasets, moniquira_centroidsdatasets, pantanov_centroidsdatasets, sanrafael_centroidsdatasets, tibasosa_centroidsdatasets
+from .views import HomePageView, country_datasets, incidence_points, DuitamaPump_datasets, DistrictPolygons_datasets, AyalasPump_datasets, Cuche_Pump_datasets, Holanda_Pump_datasets, Lasvueltas_Pump_datasets, ministerio_Pump_datasets, moniquira_Pump_datasets, pantanov_pump_datasets, sanrafael_pump_datasets, surba_pump_datasets, tibasosa_pumpdatasets, ayalas_centroidesdatasets, cuche_centroidesdatasets, duitama_centroidesdatasets, holanda_centroidsdatasets, lasvueltas_centroidsdatasets, ministerio_centroidsdatasets, moniquira_centroidsdatasets, pantanov_centroidsdatasets, sanrafael_centroidsdatasets, tibasosa_centroidsdatasets, chicamocha_riverdatasets, reservoirs_datasets
 from django.urls import path
 from . import views
 
@@ -37,7 +37,9 @@ urlpatterns = [
     url(r'^moniquira_centroids/$', moniquira_centroidsdatasets, name='moniquiracentroids'),
     url(r'^pantanov_centroids/$', pantanov_centroidsdatasets, name='pantanovcentroids'),
     url(r'^sanrafael_centroids/$', sanrafael_centroidsdatasets, name='sanrafaelcentroids'),
-    url(r'^tibasosa_centroids/$', tibasosa_centroidsdatasets, name='tibasosacentroids')
+    url(r'^tibasosa_centroids/$', tibasosa_centroidsdatasets, name='tibasosacentroids'),
+    url(r'^chicamocha_river/$', chicamocha_riverdatasets, name='chicamochariver'),
+    url(r'^reservoirs/$', reservoirs_datasets, name='reservoirs')
 
 ]
 
