@@ -10,35 +10,17 @@
 	   <style type='text/css'>
             #gis {width: 100%; height:700px;}
 
-           .legend {
-             	line-height: 18px;
-	            color: #333333;
-	            font-family: 'Open Sans', Helvetica, sans-serif;
-	            padding: 6px 8px;
-	            background: white;
-	            background: rgba(255,255,255,0.8);
-	            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-	            border-radius: 5px;
-                }
-           .legend i {
-	            width: 18px;
-	            height: 18px;
-	            float: left;
-	            margin-right: 8px;
-	            opacity: 0.7;
-                }
-
-            .legend img {
-            	width: 18px;
-	            height: 18px;
-	            float: left;
-                }
-
-            .legend p {
-	            font-size: 12px;
-	            line-height: 18px;
-	            margin: 0;
-                }
+            .legend {
+                line-height: 18px;
+                color: #555;
+            }
+            .legend i {
+                width: 18px;
+                height: 18px;
+                float: left;
+                margin-right: 8px;
+                opacity: 0.7;
+            }
 
 	   </style>
 	   <link rel="stylesheet" type="text/css" href="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css' %}" >
@@ -182,12 +164,13 @@
             var AyalasPump = new L.GeoJSON.AJAX("{% url 'AyalasPump' %}",{
                 style:function style(feature){
                    return{
-                         fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.8,
-                         weight: 2,
-                         opacity: 1,
-                         color: '#fbd46d',
-                         dashArray: '1'
+
+                        fillColor: clay(feature.properties.clay),
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
                    };
                 },  
 
@@ -204,12 +187,13 @@
             var CuchePump = new L.GeoJSON.AJAX("{% url 'CuchePump' %}",{
                 style:function style(feature){
                    return{
-                         fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.8,
-                         weight: 2,
-                         opacity: 1,
-                         color: '#a2de96',
-                         dashArray: '1'
+
+                        fillColor: clay(feature.properties.clay),
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
                    };
                 },
 
@@ -224,12 +208,13 @@
             var HolandaPump = new L.GeoJSON.AJAX("{% url 'HolandaPump' %}",{
                 style:function style(feature){
                    return{
-                         fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.8,
-                         weight: 2,
-                         opacity: 1,
-                         color: '#f69e7b',
-                         dashArray: '1'
+
+                        fillColor: clay(feature.properties.clay),
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
                    };
                 },  
 
@@ -243,12 +228,13 @@
             var lasvueltasPump = new L.GeoJSON.AJAX("{% url 'lasvueltasPump' %}",{
                 style:function style(feature){
                    return{
-                         fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.8,
-                         weight: 2,
-                         opacity: 1,
-                         color: '#89c9b8',
-                         dashArray: '1'
+
+                        fillColor: clay(feature.properties.clay),
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
                    };
                 },  
 
@@ -263,12 +249,13 @@
             var ministerioPump = new L.GeoJSON.AJAX("{% url 'ministerioPump' %}",{
                 style:function style(feature){
                    return{
-                         fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.8,
-                         weight: 2,
-                         opacity: 1,
-                         color: '#184d47',
-                         dashArray: '1'
+
+                        fillColor: clay(feature.properties.clay),
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
                    };
                 },  
 
@@ -282,12 +269,13 @@
             var moniquiraPump = new L.GeoJSON.AJAX("{% url 'moniquiraPump' %}",{
                 style:function style(feature){
                    return{
-                         fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.8,
-                         weight: 2,
-                         opacity: 1,
-                         color: '#e36387',
-                         dashArray: '1'
+
+                        fillColor: clay(feature.properties.clay),
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
                    };
                 },
 
@@ -301,12 +289,12 @@
             var pantanovPump = new L.GeoJSON.AJAX("{% url 'pantanovPump' %}",{
                 style:function style(feature){
                    return{
-                         fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.8,
-                         weight: 2,
-                         opacity: 1,
-                         color: '#99b898',
-                         dashArray: '3'
+                        fillColor: clay(feature.properties.clay),
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
                    };
                 },  
 
@@ -320,12 +308,12 @@
             var sanrafaelpump = new L.GeoJSON.AJAX("{% url 'sanrafaelpump' %}",{
                 style:function style(feature){
                    return{
-                         fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.8,
-                         weight: 2,
-                         opacity: 1,
-                         color: '#fa7d09',
-                         dashArray: '1'
+                        fillColor: clay(feature.properties.clay),
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
                    };
                 },  
 
@@ -339,12 +327,12 @@
             var surbapump = new L.GeoJSON.AJAX("{% url 'surbapump' %}",{
                 style:function style(feature){
                    return{
-                         fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.8,
-                         weight: 2,
-                         opacity: 1,
-                         color: '#faf0af',
-                         dashArray: '1'
+                        fillColor: clay(feature.properties.clay),
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
                    };
                 }, 
 
@@ -358,12 +346,12 @@
             var tibasosapump = new L.GeoJSON.AJAX("{% url 'tibasosapump' %}",{
                 style:function style(feature){
                    return{
-                         fillColor: setColor(feature.properties.code),
-                         fillOpacity: 0.7,
-                         weight: 2,
-                         opacity: 1,
-                         color: '#e79cc2',
-                         dashArray: '1'
+                        fillColor: clay(feature.properties.clay),
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.7
                    };
                 },
 
@@ -496,27 +484,25 @@
             ////////////////////////////////////////////////////////////////////
             // Create Leaflet Control Object for Legend
             var legend = L.control({position: 'bottomright'});
-                 // Function that runs when legend is added to map
-                 legend.onAdd = function (map) {
-	                // Create Div Element and Populate it with HTML
-         	var div = L.DomUtil.create('div', 'info legend');
-         	        div.innerHTML += 'Violation Density';
-	                div.innerHTML += 'by Neighborhood';
-	                div.innerHTML += 'Violations/Sq. Mi.';
-	                div.innerHTML += '85+';
-	                div.innerHTML += '15-85';
-	                div.innerHTML += '8-15';
-	                div.innerHTML += '4-8';
-	                div.innerHTML += '0-4';
-	                div.innerHTML += 'Individual Violations';
-	                //div.innerHTML += 'Andres';
-	                //div.innerHTML += 'Angel';
-	                //div.innerHTML += 'Felipe';
-                 	//Return the Legend div containing the HTML content
-                 	return div;
+
+            legend.onAdd = function (map) {
+
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+                labels = [];
+
+            // loop through our density intervals and generate a label with a colored square for each interval
+            for (var i = 0; i < grades.length; i++) {
+                div.innerHTML +=
+                    '<i style="background:' + clay(grades[i] + 1) + '"></i> ' +
+                    grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+            }
+
+            return div;
             };
 
             legend.addTo(map);
+
             chicamochariver.addTo(map);
             reservoirs.addTo(map);
             ministeriocentroids.addTo(map);
