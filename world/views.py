@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.core.serializers import serialize
 from .models import Countries, Incidences, Duitama_Pump, DistrictP, Ayalas_Pump, Cuche_Pump, Holanda_Pump, Lasvueltas_Pump, ministerio_Pump, moniquira_Pump, pantanov_pump, sanrafael_pump, surba_pump, tibasosa_pump, ayalas_centroides, cuche_centroides, duitama_centroides, holanda_centroids, lasvueltas_centroids, ministerio_centroids, moniquira_centroids, pantanov_centroids, sanrafael_centroids, surba_centroids, tibasosa_centroids, chicamocha_river, reservoirs
@@ -12,6 +12,10 @@ from .models import Countries, Incidences, Duitama_Pump, DistrictP, Ayalas_Pump,
 
 class HomePageView(TemplateView):
      template_name='index.html'
+
+def clay(request):
+	 return render(request, 'world/clay.html')
+
 
 def country_datasets(request):
      countries= serialize('geojson', Countries.objects.all())
