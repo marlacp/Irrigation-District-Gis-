@@ -4,10 +4,10 @@
 {% load leaflet_tags %}
 <head>
        {% leaflet_js %}
-       {% leaflet_css %}	
-	   <title>Multiagent Irrigation System</title>
+       {% leaflet_css %}    
+       <title>Multiagent Irrigation System</title>
 
-	   <style type='text/css'>
+       <style type='text/css'>
             #gis {width: 100%; height:700px;}
 
             .legend {
@@ -22,10 +22,10 @@
                 opacity: 0.7;
             }
 
-	   </style>
-	   <link rel="stylesheet" type="text/css" href="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css' %}" >
-	   <script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}"> </script>
-	   <script type="text/javascript" src="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js' %}"> </script>
+       </style>
+       <link rel="stylesheet" type="text/css" href="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css' %}" >
+       <script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}"> </script>
+       <script type="text/javascript" src="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js' %}"> </script>
 </head>
 <body>
 <div id="map">
@@ -35,88 +35,88 @@
 
         // Set function for color ramp
         function clay(c){
-	         return c > 100 ?'#6a2c70' :
-	                c > 90 ? '#a374d5' :
-	                c > 80 ? '#be97dc' :
-	                c > 70 ? '#eec1ea' :
+             return c > 100 ?'#6a2c70' :
+                    c > 90 ? '#a374d5' :
+                    c > 80 ? '#be97dc' :
+                    c > 70 ? '#eec1ea' :
                     c > 60 ? '#c1f6e7' :
                     c > 50 ? '#7ad9f5' :
                     c > 40 ? '#8bbabb' :
                     c > 30 ? '#72af72' :
                     c > 20 ? '#f6d743' :
                     c > 10 ? '#f6f578' :
-	                         '#fff8a6';
+                             '#fff8a6';
         };
 
 
-	   function out_layers(map, options){
+       function out_layers(map, options){
            //To define icons  **********************************************************
             var greenIcon = L.icon({
-               	iconUrl: 'static/icons/Farmer1_1_green.png',
-	            shadowUrl: 'static/icons/icon-green50_sombra.png',
-            	iconSize:     [50, 50], // size of the icon
-	            shadowSize:   [1, 1], // size of the shadow
-	            iconAnchor:   [30, 30], // point of the icon which will correspond to marker's location
-	            //shadowAnchor: [4, 62],  // the same for the shadow
-	            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                iconUrl: 'static/icons/Farmer1_1_green.png',
+                shadowUrl: 'static/icons/icon-green50_sombra.png',
+                iconSize:     [50, 50], // size of the icon
+                shadowSize:   [1, 1], // size of the shadow
+                iconAnchor:   [30, 30], // point of the icon which will correspond to marker's location
+                //shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
             });
             var LeafIcon = L.Icon.extend({
-	            options: {
-		        shadowUrl: 'static/icons/icon-green50_sombra.png',
-		        iconSize:     [50, 50],
-		        shadowSize:   [1, 1],
-		        iconAnchor:   [30, 30],
-		        //shadowAnchor: [4, 62],
-		        popupAnchor:  [-3, -76]
-	             }
+                options: {
+                shadowUrl: "{% static 'icons/icon-green50_sombra.png'%}",
+                iconSize:     [50, 50],
+                shadowSize:   [1, 1],
+                iconAnchor:   [30, 30],
+                //shadowAnchor: [4, 62],
+                popupAnchor:  [-3, -76]
+                 }
             });
-            var farm1_greenIcon = new LeafIcon({iconUrl: 'static/icons/Farmer1_1_green.png'}), farm1_blueIcon = new LeafIcon({iconUrl: 'static/icons/Farmer1_1_blue.png'}), farm1_redIcon = new LeafIcon({iconUrl: 'static/icons/Farmer1_1_red.png'}), farm2_greenIcon = new LeafIcon({iconUrl: 'static/icons/Farmer2_1_green.png'}), farm2_blueIcon = new LeafIcon({iconUrl: 'static/icons/Farmer2_1_blue.png'}), farm2_redIcon = new LeafIcon({iconUrl: 'static/icons/Farmer2_1_red.png'}),         farm3_greenIcon = new LeafIcon({iconUrl: 'static/icons/Farmer3_green.png'}), farm3_blueIcon = new LeafIcon({iconUrl: 'static/icons/Farmer3_blue.png'}), farm3_redIcon = new LeafIcon({iconUrl: 'static/icons/Farmer3_red.png'});
+            var farm1_greenIcon = new LeafIcon({iconUrl: "{% static 'icons/Farmer1_1_green.png'%}"}), farm1_blueIcon = new LeafIcon({iconUrl: "{% static 'icons/Farmer1_1_blue.png'%}"}), farm1_redIcon = new LeafIcon({iconUrl: "{% static 'icons/Farmer1_1_red.png'%}"}), farm2_greenIcon = new LeafIcon({iconUrl: "{% static 'icons/Farmer2_1_green.png'%}"}), farm2_blueIcon = new LeafIcon({iconUrl: "{% static 'icons/Farmer2_1_blue.png'%}"}), farm2_redIcon = new LeafIcon({iconUrl: "{% static 'icons/Farmer2_1_red.png'%}"}),     farm3_greenIcon = new LeafIcon({iconUrl: "{% static 'icons/Farmer3_green.png'%}"}), farm3_blueIcon = new LeafIcon({iconUrl: "{% static 'icons/Farmer3_blue.png'%}"}), farm3_redIcon = new LeafIcon({iconUrl: "{% static 'icons/Farmer3_red.png'%}"});
              // ************************************************************************** 
             var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            	maxZoom: 19,
-	            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             });
             var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-	             maxZoom: 17,
-	             attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+                 maxZoom: 17,
+                 attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
             });
             ///////////////////////////////////////////////////////////////////
             var datasets = new L.GeoJSON.AJAX("{% url 'country' %}",{
-            	style:function colors(feature){
-             	    switch(feature.properties.name){
-             		    case 'Colombia':
-             		       return{
+                style:function colors(feature){
+                    switch(feature.properties.name){
+                        case 'Colombia':
+                           return{
                              color: 'blue',
                              fillOpacity:0.3
-             		       };
+                           };
                         break;    
-             		    case 'Venezuela':
-             		        return{
+                        case 'Venezuela':
+                            return{
                                 color: 'red',
                                 fillOpacity:0.3
                             };
-             		    break; 
-             	    }
+                        break; 
+                    }
                 },
-            	style:function style(feature){
-             	           return{
+                style:function style(feature){
+                           return{
                                  fillColor: setColor(feature.properties.region),
                                  fillOpacity: 0.7,
                                  weight: 2,
                                  opacity: 1,
                                  color: '#ffffff',
                                  dashArray: '3'
-             		       };
+                           };
                 },                
                 onEachFeature: function(feature,layer){
-                	layer.bindPopup("<strong>" + feature.properties.name.toString() +"</strong><br/>" + feature.properties.region.toString());
+                    layer.bindPopup("<strong>" + feature.properties.name.toString() +"</strong><br/>" + feature.properties.region.toString());
                 }
-	   	    });
+            });
             ////////////////////////////////////////////////////////////
-	   	    
-	   	    var points = new L.GeoJSON.AJAX("{% url 'incidences' %}",{
+            
+            var points = new L.GeoJSON.AJAX("{% url 'incidences' %}",{
                 onEachFeature: function(feature,layer){
-             	    layer.bindPopup(feature.properties.name.toString());
+                    layer.bindPopup(feature.properties.name.toString());
                 }, pointToLayer: function (feature, latlng) {
                      if (feature.properties.name == "Andres"){
                             var marker = L.marker(latlng,{icon: farm3_blueIcon});
@@ -596,11 +596,11 @@
          L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
 
 
-	   } 
+       } 
 </script>
 <br>
 {% leaflet_map "gis" callback="window.out_layers" %}
-</div>	
+</div>  
 </body>
 </html>
 
