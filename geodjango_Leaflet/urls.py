@@ -22,6 +22,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from world import views 
+
 ###
 
 #a) 
@@ -32,5 +33,6 @@ from world import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('world.urls'))
+    url(r'^optionMaps/', include('world.urls')),
+    url(r'^', include('home.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

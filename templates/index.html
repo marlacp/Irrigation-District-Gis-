@@ -57,85 +57,32 @@
  
 <body>
 
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+<nav class="navbar navbar-expand-lg">
+    <ul class="nav nav-pills mb-3" >
       <li class="nav-item">
-        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Options Maps</a>
+        <a class="nav-link" href="/optionMaps">Options Maps</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+        <a class="nav-link" href="/contact">Contact</a>
       </li>
     </ul>
+</nav>
 
     <div class="containerPage">
 
-    <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div >
+    <div >
 
-    <div id="content" name="content">
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <h1 class="mt-2">My Site</h1>
-                <hr class="mt-0 mb-4">
-                {% block content %}
-                {% endblock %}
-            </div>
-        </div>
-    </div>
 
 
       </div>
-      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-          
-          <div class="container-fluid">            
-              <div class="row">          
-                <div class="btn-group">
-                  <a href="/clay">
-                     <button class=" margins  buttonh" >Map of Clay</button>
-                  </a>
-                  <a href="">
-                     <button class=" margins  buttonh" >Map of Silt</button>
-                  </a>
-                  <a href="">
-                     <button class=" margins  buttonh" >Map of Sand</button>
-                  </a>
-                </div>
-              </div>
-              <div class="row">
-                <div class=" btn-group">
-
-                  <a href="">
-                     <button class=" margins  buttonh" >Map of Sp</button>
-                  </a>
-                  <a href="">
-                     <button class=" margins  buttonh" >Map of Fc</button>
-                  </a>
-                  <a href="">
-                     <button class=" margins  buttonh" >Map of Pwp</button>
-                  </a>
-
-                </div>
-              </div>
-              <div class="row">
-                <div class=" btn-group">
 
 
-                  <a href="">
-                     <button class=" margins  buttonh" >Map of Hc</button>
-                  </a>
-                  <a href="">
-                     <button class=" margins  buttonh" >Map of Density</button>
-                  </a>
-                  <a href="">
-                     <button class=" margins  buttonh" >Button 9</button>
-                  </a>
-                </div>
-              </div>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+        {% block container %}
+        {% endblock%}
     </div>
 
         

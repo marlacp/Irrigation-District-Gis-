@@ -11,11 +11,13 @@ from .models import Countries, Incidences, Duitama_Pump, DistrictP, Ayalas_Pump,
 
 
 class HomePageView(TemplateView):
-     template_name='index.html'
+     template_name='world/optionMaps.html'
 
 def clay(request):
 	 return render(request, 'world/clay.html')
 
+def optionMaps(request):
+      return render(request, 'optionMaps.html')
 
 def country_datasets(request):
      countries= serialize('geojson', Countries.objects.all())
