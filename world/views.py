@@ -16,6 +16,15 @@ class HomePageView(TemplateView):
 def clay(request):
 	 return render(request, 'world/clay.html')
 
+def slit(request):
+      return render(request, 'world/slit.html')
+
+def sand(request):
+      return render(request, 'world/sand.html')
+
+def sp(request):
+      return render(request, 'world/sp.html')
+
 def optionMaps(request):
       return render(request, 'optionMaps.html')
 
