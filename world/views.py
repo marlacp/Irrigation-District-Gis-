@@ -25,6 +25,18 @@ def sand(request):
 def sp(request):
       return render(request, 'world/sp.html')
 
+def fc(request):
+      return render(request, 'world/fc.html')
+
+def pwp(request):
+      return render(request, 'world/pwp.html')
+
+def hc(request):
+      return render(request, 'world/hc.html')
+
+def density(request):
+      return render(request, 'world/density.html')
+
 def optionMaps(request):
       return render(request, 'optionMaps.html')
 

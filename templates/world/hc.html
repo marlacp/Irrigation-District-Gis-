@@ -41,13 +41,14 @@
 
         // Set function for color ramp
 
-        function sp(s){
-             return s > 80 ? '#ff5f40' :
-                    s > 70 ? '#ffc7c7' :
-                    s > 60 ? '#6ebfb5' :
-                    s > 50 ? '#24a19c' :
-                    s > 40 ? '#b83b5e' :
-                             '#f08a5d';
+        function hc(s){
+             return s > 12 ? '#d92027' :
+                    s > 10 ? '#ff9234' :
+                    s > 8 ? '#ffcd3c' :
+                    s > 6 ? '#50d890' :
+                    s > 4 ? '#8cba51' :
+                    s > 2 ? '#4f98ca' :
+                             '#9fdfcd';
 
         };
 
@@ -147,7 +148,7 @@
 
                 style:function style(feature){
                    return{
-                        fillColor: sp(feature.properties.sp),
+                        fillColor: hc(feature.properties.hc),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -168,7 +169,7 @@
                 style:function style(feature){
                    return{
 
-                        fillColor: sp(feature.properties.sp),
+                        fillColor: hc(feature.properties.hc),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -191,7 +192,7 @@
                 style:function style(feature){
                    return{
 
-                        fillColor: sp(feature.properties.sp),
+                        fillColor: hc(feature.properties.hc),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -212,7 +213,7 @@
                 style:function style(feature){
                    return{
 
-                        fillColor: sp(feature.properties.sp),
+                        fillColor: hc(feature.properties.hc),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -232,7 +233,7 @@
                 style:function style(feature){
                    return{
 
-                        fillColor: sp(feature.properties.sp),
+                        fillColor: hc(feature.properties.hc),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -253,7 +254,7 @@
                 style:function style(feature){
                    return{
 
-                        fillColor: sp(feature.properties.sp),
+                        fillColor: hc(feature.properties.hc),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -273,7 +274,7 @@
                 style:function style(feature){
                    return{
 
-                        fillColor: sp(feature.properties.sp),
+                        fillColor: hc(feature.properties.hc),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -292,7 +293,7 @@
             var pantanovPump = new L.GeoJSON.AJAX("{% url 'pantanovPump' %}",{
                 style:function style(feature){
                    return{
-                        fillColor: sp(feature.properties.sp),
+                        fillColor: hc(feature.properties.hc),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -311,7 +312,7 @@
             var sanrafaelpump = new L.GeoJSON.AJAX("{% url 'sanrafaelpump' %}",{
                 style:function style(feature){
                    return{
-                        fillColor: sp(feature.properties.sp),
+                        fillColor: hc(feature.properties.hc),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -330,7 +331,7 @@
             var surbapump = new L.GeoJSON.AJAX("{% url 'surbapump' %}",{
                 style:function style(feature){
                    return{
-                        fillColor: sp(feature.properties.sp),
+                        fillColor: hc(feature.properties.hc),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -349,7 +350,7 @@
             var tibasosapump = new L.GeoJSON.AJAX("{% url 'tibasosapump' %}",{
                 style:function style(feature){
                    return{
-                        fillColor: sp(feature.properties.sp),
+                        fillColor: hc(feature.properties.hc),
                         weight: 2,
                         opacity: 1,
                         color: 'white',
@@ -498,13 +499,13 @@
             legend.onAdd = function (map) {
 
             var div = L.DomUtil.create('div', 'info legend'),
-                grades = [40, 50, 60, 70, 80],
+                grades = [0, 2, 4, 6, 8, 10, 12],
                 labels = [];
 
             // loop through our density intervals and generate a label with a colored square for each interval
             for (var i = 0; i < grades.length; i++) {
                 div.innerHTML +=
-                    '<i style="background:' + sp(grades[i] + 1) + '"></i> ' +
+                    '<i style="background:' + hc(grades[i] + 1) + '"></i> ' +
                     grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
             }
 
