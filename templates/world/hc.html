@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% load static %}
 {% load leaflet_tags %}
-{% block title %}Sand Map{% endblock %}
+{% block title %}hc Map{% endblock %}
 {% block link %}
 
 
@@ -21,7 +21,7 @@
                 height: 18px;
                 float: left;
                 margin-right: 8px;
-                opacity: 0.7;
+                opacity: 1;
             }
 
        </style>
@@ -42,13 +42,13 @@
         // Set function for color ramp
 
         function hc(s){
-             return s > 12 ? '#d92027' :
-                    s > 10 ? '#ff9234' :
-                    s > 8 ? '#ffcd3c' :
-                    s > 6 ? '#50d890' :
-                    s > 4 ? '#8cba51' :
-                    s > 2 ? '#4f98ca' :
-                             '#9fdfcd';
+             return s > 12 ? '#fa1616' :
+                    s > 10 ? '#f45905' :
+                    s > 8 ? '#f1fa3c' :
+                    s > 6 ? '#79d70f' :
+                    s > 4 ? '#b6eb7a' :
+                    s > 2 ? '#0fabbc' : 
+                             '#abf0e9';
 
         };
 
@@ -137,6 +137,18 @@
             /////////////////////////////////////////////////////////////////////
 
             var district = new L.GeoJSON.AJAX("{% url 'District' %}",{
+
+                style:function style(feature){
+                   return{
+                        fillColor: '#faf4ff',
+                        weight: 2,
+                        opacity: 1,
+                        color: 'white',
+                        dashArray: '3',
+                        fillOpacity: 0.4
+                   };
+                },
+
                 onEachFeature: function(feature,layer){
                    layer.bindPopup("<strong>" + feature.properties.name.toString() +"</strong><br/>" + feature.properties.area.toString());
                 }
@@ -153,7 +165,7 @@
                         opacity: 1,
                         color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.7
+                        fillOpacity: 1
                    };
                 },
 
@@ -174,7 +186,7 @@
                         opacity: 1,
                         color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.7
+                        fillOpacity: 1
                    };
                 },  
 
@@ -197,7 +209,7 @@
                         opacity: 1,
                         color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.7
+                        fillOpacity: 1
                    };
                 },
 
@@ -218,7 +230,7 @@
                         opacity: 1,
                         color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.7
+                        fillOpacity: 1
                    };
                 },  
 
@@ -238,7 +250,7 @@
                         opacity: 1,
                         color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.7
+                        fillOpacity: 1
                    };
                 },  
 
@@ -259,7 +271,7 @@
                         opacity: 1,
                         color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.7
+                        fillOpacity: 1
                    };
                 },  
 
@@ -279,7 +291,7 @@
                         opacity: 1,
                         color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.7
+                        fillOpacity: 1
                    };
                 },
 
@@ -298,7 +310,7 @@
                         opacity: 1,
                         color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.7
+                        fillOpacity: 1
                    };
                 },  
 
@@ -336,7 +348,7 @@
                         opacity: 1,
                         color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.7
+                        fillOpacity: 1
                    };
                 }, 
 
@@ -355,7 +367,7 @@
                         opacity: 1,
                         color: 'white',
                         dashArray: '3',
-                        fillOpacity: 0.7
+                        fillOpacity: 1
                    };
                 },
 
@@ -364,7 +376,30 @@
                        "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
                 },   
 
+            });   
+
+            ////////////////////////////////////////////////////////////////////
+            var surbacentroides = new L.GeoJSON.AJAX("{% url 'surbacentroids' %}",{
+
+
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                },   
+
+                pointToLayer: function (feature, latlng) {
+                     if (feature.properties.hc < 1.0 ){
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                     } 
+                     else if (feature.properties.hc >= 1.0 ) {
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     };
+                  return marker;
+              }
+
+
             });              
+            ////////////////////////////////////////////////////////////////////          
             ////////////////////////////////////////////////////////////////////
             var ayalascentroides = new L.GeoJSON.AJAX("{% url 'ayalascentroides' %}",{
 
@@ -372,7 +407,17 @@
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
                        "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },  
+                },   
+
+                pointToLayer: function (feature, latlng) {
+                     if (feature.properties.hc < 1.0 ){
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                     } 
+                     else if (feature.properties.hc >= 1.0 ) {
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     };
+                  return marker;
+              }  
 
 
             });              
@@ -384,7 +429,17 @@
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
                        "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },  
+                },   
+
+                pointToLayer: function (feature, latlng) {
+                     if (feature.properties.hc < 1.0 ){
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                     } 
+                     else if (feature.properties.hc >= 1.0 ) {
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     };
+                  return marker;
+              }  
 
 
             });              
@@ -395,7 +450,17 @@
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
                        "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },  
+                },   
+
+                pointToLayer: function (feature, latlng) {
+                     if (feature.properties.hc < 1.0 ){
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                     } 
+                     else if (feature.properties.hc >= 1.0 ) {
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     };
+                  return marker;
+              }  
 
 
             });              
@@ -406,7 +471,17 @@
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
                        "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },  
+                },   
+
+                pointToLayer: function (feature, latlng) {
+                     if (feature.properties.hc < 1.0 ){
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                     } 
+                     else if (feature.properties.hc >= 1.0 ) {
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     };
+                  return marker;
+              }  
 
 
             });              
@@ -417,7 +492,17 @@
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
                        "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },  
+                },   
+
+                pointToLayer: function (feature, latlng) {
+                     if (feature.properties.hc < 1.0 ){
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                     } 
+                     else if (feature.properties.hc >= 1.0 ) {
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     };
+                  return marker;
+              }  
 
 
             });              
@@ -428,7 +513,17 @@
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
                        "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },  
+                },   
+
+                pointToLayer: function (feature, latlng) {
+                     if (feature.properties.hc < 1.0 ){
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                     } 
+                     else if (feature.properties.hc >= 1.0 ) {
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     };
+                  return marker;
+              }  
 
 
             });              
@@ -439,7 +534,17 @@
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
                        "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },  
+                },   
+
+                pointToLayer: function (feature, latlng) {
+                     if (feature.properties.hc < 1.0 ){
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                     } 
+                     else if (feature.properties.hc >= 1.0 ) {
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     };
+                  return marker;
+              }  
 
 
             });              
@@ -450,7 +555,17 @@
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
                        "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },  
+                },   
+
+                pointToLayer: function (feature, latlng) {
+                     if (feature.properties.hc < 1.0 ){
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                     } 
+                     else if (feature.properties.hc >= 1.0 ) {
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     };
+                  return marker;
+              }  
 
 
             });              
@@ -461,7 +576,17 @@
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
                        "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },  
+                },   
+
+                pointToLayer: function (feature, latlng) {
+                     if (feature.properties.hc < 1.0 ){
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                     } 
+                     else if (feature.properties.hc >= 1.0 ) {
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     };
+                  return marker;
+              }  
 
 
             });              
@@ -516,6 +641,7 @@
 
             chicamochariver.addTo(map);
             reservoirs.addTo(map);
+            surbacentroides.addTo(map);
             ministeriocentroids.addTo(map);
             tibasosacentroids.addTo(map);
             sanrafaelcentroids.addTo(map);
@@ -563,7 +689,7 @@
 
                 "Centroids": {
 
-
+                "surbacentroides": surbacentroides,
                 "holandacentroids": holandacentroids,
                 "tibasosacentroids": tibasosacentroids,
                 "sanrafaelcentroids": sanrafaelcentroids,
