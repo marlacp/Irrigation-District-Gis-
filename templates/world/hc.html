@@ -641,17 +641,17 @@
 
             chicamochariver.addTo(map);
             reservoirs.addTo(map);
-            surbacentroides.addTo(map);
-            ministeriocentroids.addTo(map);
-            tibasosacentroids.addTo(map);
-            sanrafaelcentroids.addTo(map);
-            pantanovcentroids.addTo(map);
-            moniquiracentroids.addTo(map);
-            holandacentroids.addTo(map);
-            lasvueltascentroids.addTo(map);
-            cuchecentroides.addTo(map);
-            duitamacentroides.addTo(map);
-            ayalascentroides.addTo(map);
+            //surbacentroides.addTo(map);
+            //ministeriocentroids.addTo(map);
+            //tibasosacentroids.addTo(map);
+            //sanrafaelcentroids.addTo(map);
+            //pantanovcentroids.addTo(map);
+            //moniquiracentroids.addTo(map);
+            //holandacentroids.addTo(map);
+            //lasvueltascentroids.addTo(map);
+            //cuchecentroides.addTo(map);
+            //duitamacentroides.addTo(map);
+            //ayalascentroides.addTo(map);
             points.addTo(map);
             DuitamaPump.addTo(map);
             AyalasPump.addTo(map);
@@ -663,10 +663,9 @@
             pantanovPump.addTo(map);
             sanrafaelpump.addTo(map);
             surbapump.addTo(map);
-            tibasosapump.addTo(map);
-            district.addTo(map);       
+            tibasosapump.addTo(map);       
             datasets.addTo(map);  
-
+            district.addTo(map);
 
             
             L.marker([51.5, -0.1], {icon: greenIcon}).addTo(map);
@@ -723,7 +722,12 @@
 
             }
          };
-         L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+
+         var Group = {
+            groupCheckboxes: true
+         };
+
+         L.control.groupedLayers(baseLayers, groupedOverlays, Group).addTo(map);
 
 
        } 

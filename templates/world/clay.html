@@ -665,8 +665,8 @@
             sanrafaelpump.addTo(map);
             surbapump.addTo(map);
             tibasosapump.addTo(map);
-            district.addTo(map);       
             datasets.addTo(map);  
+            district.addTo(map);       
 
 
             
@@ -725,11 +725,11 @@
             }
          };
 
-         var excluseGroup = {
+         var Group = {
             groupCheckboxes: true
          };
 
-         L.control.groupedLayers(baseLayers, groupedOverlays, excluseGroup).addTo(map);
+         L.control.groupedLayers(baseLayers, groupedOverlays, Group).addTo(map);
 
 
        } 
