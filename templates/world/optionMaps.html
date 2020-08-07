@@ -2,50 +2,50 @@
 {% block container %}   
       <div>
           
-          <div class="container-fluid">            
+          <div class="container">  
+
+          <div class="choose"> 
+             <h3>
+               Please choose a map
+             </h3> 
+          </div>          
               <div class="row">          
-                <div class="btn-group">
-                  <a href="/optionMaps/clay">
+                <div class="btn-group col-sm-12">
+                  <a href="/optionMaps/clay" class="col-xs-12 col-sm-3">
                      <button class=" margins  buttonh" >Clay map</button>
                   </a>
-                  <a href="/optionMaps/slit">
+                  <a href="/optionMaps/slit" class="col-xs-12 col-sm-3">
                      <button class=" margins  buttonh" >Silt map</button>
                   </a>
-                  <a href="/optionMaps/sand">
+                  <a href="/optionMaps/sand" class="col-xs-12 col-sm-3">
                      <button class=" margins  buttonh" >Sand map</button>
+                  </a>
+
+                  <a href="/optionMaps/sp" class="col-xs-12 col-sm-3">
+                     <button class=" margins  buttonh" >Sp map</button>
                   </a>
                 </div>
               </div>
               <div class="row">
-                <div class=" btn-group">
+                <div class=" btn-group col-sm-12"">
 
-                  <a href="/optionMaps/sp">
-                     <button class=" margins  buttonh" >Sp map</button>
-                  </a>
-                  <a href="/optionMaps/fc">
+                  <a href="/optionMaps/fc" class="col-xs-12 col-sm-3">
                      <button class=" margins  buttonh" >Fc map</button>
                   </a>
-                  <a href="/optionMaps/pwp">
+                  <a href="/optionMaps/pwp" class="col-xs-12 col-sm-3">
                      <button class=" margins  buttonh" >Pwp map</button>
                   </a>
 
-                </div>
-              </div>
-              <div class="row">
-                <div class=" btn-group">
-
-
-                  <a href="/optionMaps/hc">
+                  <a href="/optionMaps/hc" class="col-xs-12 col-sm-3">
                      <button class=" margins  buttonh" >Hc map</button>
                   </a>
-                  <a href="/optionMaps/density">
+                  <a href="/optionMaps/density" class="col-xs-12 col-sm-3">
                      <button class=" margins  buttonh" >Density map</button>
                   </a>
-                  <a href="">
-                     <button class=" margins  buttonh" >Button 9</button>
-                  </a>
+
                 </div>
               </div>
+
         </div>
       </div>
 {% endblock %}

@@ -7,10 +7,8 @@
         .containerPage {
             width: 1000px;
             margin: 0 auto;
-            /* display: inherit; */
-            align-items: inherit;
-            height: inherit;
-            flex-wrap: inherit;
+            padding: 0;
+
         }
 
         .btn {
@@ -31,11 +29,24 @@
             width: 90px !important;
         }
 
+        .navbar{
+            background-color: #84a9ac;
+        }
+
+        .nav li a{
+            color: #f4f6ff;
+            text-decoration: none;
+        }
+
+        .nav li a:hover{
+          color: #204051;
+        }
+
           .buttonh {
             background-color: #006a71; 
             color: whitesmoke; 
             /* border: 2px solid #4CAF50; */
-            width: 125px;
+            width: 100%;
             height: 50px;
             border-radius: 98px 98px 98px 98px;
             -moz-border-radius: 98px 98px 98px 98px;
@@ -45,12 +56,24 @@
             box-shadow: 0 7px #cbeaed;
             /* padding: 20px 15px; */
           }
+
+          .choose {
+            font-family: Geneva,Arial,Helvetica,sans-serif;
+            padding-top: 50px;
+            padding-bottom: 40px;
+            text-align: left;
+            color: #204051;
+            
+        }
+
+
     </style>
  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles/footer.css' %}" >
     {% block link %}
     {% endblock%}
     <title>{% block title %}District Station Maps{% endblock %}</title>
@@ -78,9 +101,130 @@
         {% endblock%}
         
     </div>
- 
 
- 
+    <!---
+    <footer className='footer'>
+      <div className='container'>
+       
+        <img className='Navbar__brand-logo' src="{% static 'Images/unal.png' %}" alt='unal' />
+        <img className='Navbar__brand-logo' src="{% static 'Images/unillanos.png' %}" alt='unillanos' />
+        <img className='Navbar__brand-logo' src="{% static 'Images/colciencias.png' %}" alt='colciencias' />
+        <img className='Navbar__brand-logo' src="{% static 'Images/goboyaca.png' %}" alt='goboyaca' />
+         
+      </div>
+    </footer>
+    -->
+
+    <!-- Footer -->
+    <footer class="page-footer font-small mdb-color lighten-3 pt-4">
+
+      <!-- Footer Elements -->
+      <div class="container">
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-lg-2 col-md-12 mb-4">
+
+            <!--Image-->
+            <div class="view overlay z-depth-1-half">
+              <img src="{% static 'Images/unal.png' %}" alt='unal'  class="img-fluid">
+              <a href="">
+                <div class="mask rgba-white-light"></div>
+              </a>
+            </div>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-2 col-md-6 mb-4">
+
+            <!--Image-->
+            <div class="view overlay z-depth-1-half">
+              <img src="{% static 'Images/unillanos.png' %}" alt='unillanos' class="img-fluid">
+              <a href="">
+                <div class="mask rgba-white-light"></div>
+              </a>
+            </div>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-2 col-md-6 mb-4">
+
+            <!--Image-->
+            <div class="view overlay z-depth-1-half">
+              <img src="{% static 'Images/colciencias.png' %}" alt='colciencias' class="img-fluid">
+              <a href="">
+                <div class="mask rgba-white-light"></div>
+              </a>
+            </div>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-2 col-md-12 mb-4">
+
+            <!--Image-->
+            <div class="view overlay z-depth-1-half">
+              <img src="{% static 'Images/goboyaca.png' %}" alt='goboyaca' class="img-fluid"
+              >
+              <a href="">
+                <div class="mask rgba-white-light"></div>
+              </a>
+            </div>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-2 col-md-6 mb-4">
+
+            <!--Image-->
+            <div class="view overlay z-depth-1-half">
+              <img src="{% static 'Images/Auburn.png' %}" alt='Auburn' class="img-fluid"
+                >
+              <a href="">
+                <div class="mask rgba-white-light"></div>
+              </a>
+            </div>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column
+          <div class="col-lg-2 col-md-6 mb-4">
+            <div class="view overlay z-depth-1-half">
+              <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(84).jpg" class="img-fluid"
+                alt="">
+              <a href="">
+               <div class="mask rgba-white-light"></div>
+              </a>
+            </div>
+
+          </div>
+-->
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </div>
+      <!-- Footer Elements -->
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2020 Copyright: <h8>precaginternational@gmail.com</h8>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
