@@ -4,8 +4,8 @@
 {% load static %}
 <head>
     <style type="text/css">
-        .containerPage {
-            width: 1000px;
+        .containerButtonsOpt {
+            width: 600px;
             margin: 0 auto;
             padding: 0;
 
@@ -18,12 +18,6 @@
         .margins {
             margin: 10px;
         }
-        .containerButtons {
-            display: grid;
-            grid-template-columns: repeat(3,125px);
-            grid-template-rows: repeat(3,50px);
-            grid-gap: 10px 20px;
-        }   
 
         .custom {
             width: 90px !important;
@@ -95,7 +89,7 @@
     </ul>
 </nav>
 
-    <div class="containerPage">
+    <div class="container">
 
         {% block container %}
         {% endblock%}
@@ -122,10 +116,9 @@
       <div class="container">
 
         <!--Grid row-->
-        <div class="row">
-
-          <!--Grid column-->
-          <div class="col-lg-2 col-md-12 mb-4">
+        <div class="main row">
+                           <!--Grid column-->
+          <div class="col-lg-2 col-md-4">
 
             <!--Image-->
             <div class="view overlay z-depth-1-half">
@@ -139,7 +132,7 @@
           <!--Grid column-->
 
           <!--Grid column-->
-          <div class="col-lg-2 col-md-6 mb-4">
+          <div class="col-lg-2 col-md-2">
 
             <!--Image-->
             <div class="view overlay z-depth-1-half">
@@ -153,7 +146,7 @@
           <!--Grid column-->
 
           <!--Grid column-->
-          <div class="col-lg-2 col-md-6 mb-4">
+          <div class="col-lg-2 col-md-2">
 
             <!--Image-->
             <div class="view overlay z-depth-1-half">
@@ -167,7 +160,7 @@
           <!--Grid column-->
 
           <!--Grid column-->
-          <div class="col-lg-2 col-md-12 mb-4">
+          <div class="col-lg-2 col-md-2">
 
             <!--Image-->
             <div class="view overlay z-depth-1-half">
@@ -182,7 +175,7 @@
           <!--Grid column-->
 
           <!--Grid column-->
-          <div class="col-lg-2 col-md-6 mb-4">
+          <div class="col-lg-2 col-md-2">
 
             <!--Image-->
             <div class="view overlay z-depth-1-half">
