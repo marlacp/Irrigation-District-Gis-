@@ -3,7 +3,31 @@
 <html>
 {% load static %}
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+  <title>System</title>
     <style type="text/css">
+
+/********Container Map*******/
+
+      .containerMap{
+
+        width: 1000px;
+        margin: 0 auto;
+        align-items: inherit;
+        height: inherit;
+        flex-wrap: inherit;
+        padding: 10px 15px;
+      
+      }
+/********Container Map*******/
+
+/******** seccion option map********/
+
         .containerButtonsOpt {
             width: 600px;
             margin: 0 auto;
@@ -23,18 +47,7 @@
             width: 90px !important;
         }
 
-        .navbar{
-            background-color: #84a9ac;
-        }
 
-        .nav li a{
-            color: #f4f6ff;
-            text-decoration: none;
-        }
-
-        .nav li a:hover{
-          color: #204051;
-        }
 
           .buttonh {
             background-color: #006a71; 
@@ -60,14 +73,69 @@
             
         }
 
+/******** seccion option map********/
+/************** footer *******************/
+        .containerImage {
+          display: grid;
+          grid-template-columns: 100px 100px 100px 100px 100px;
+          grid-template-areas: "unal unillanos colciencias goboyaca Auburn";
+          grid-gap: 10px 120px;
+          margin-bottom: 10px;
+        }
+
+        .unal {
+          grid-area: unal;
+        }
+
+        .unal img {
+          max-width: 100%;
+          /* width: 100%; */
+        }
+
+        .unillanos {
+          grid-area: unillanos;
+        }
+
+        .unillanos img {
+          max-width: 100%;
+
+          
+          /* width: 100%; */
+        }
+
+        .colciencias {
+          grid-area: colciencias;
+        }
+
+        .colciencias img {
+          max-width: 100%;
+          /* width: 100%; */
+        }
+
+        .goboyaca {
+          grid-area: goboyaca;
+        }
+
+        .goboyaca img {
+          max-width: 100%;
+          /* width: 100%; */
+        }
+
+        .Auburn {
+          grid-area: Auburn;
+        }
+
+        .Auburn img {
+          max-width: 100%;
+          /* width: 100%; */
+        }
+/************** footer *******************/
 
     </style>
  
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- 
+   <!--
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'styles/footer.css' %}" >
+    -->
     {% block link %}
     {% endblock%}
     <title>{% block title %}District Station Maps{% endblock %}</title>
@@ -75,142 +143,72 @@
  
 <body>
 
-<nav class="navbar navbar-expand-lg">
-    <ul class="nav nav-pills mb-3" >
-      <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/optionMaps">Maps Options</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/contact">Contact</a>
-      </li>
-    </ul>
-</nav>
+<!------------------------navbar ------------------->
+  <nav>
+    <div class="brand_image">
+      <h3>Agent irrigation district </h3>
+    </div>
+    <div class="nav_options">
+      <!-- el formato lista nos permite que sea horizontal en el css -->
+        <ul >
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li >
+            <a  href="/optionMaps">Maps Options</a>
+          </li>
+          <li >
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
 
-    <div class="container">
+  <!------------------------navbar ------------------->
+
+    <div class="containerMap">
 
         {% block container %}
         {% endblock%}
         
     </div>
 
-    <!---
-    <footer className='footer'>
-      <div className='container'>
-       
-        <img className='Navbar__brand-logo' src="{% static 'Images/unal.png' %}" alt='unal' />
-        <img className='Navbar__brand-logo' src="{% static 'Images/unillanos.png' %}" alt='unillanos' />
-        <img className='Navbar__brand-logo' src="{% static 'Images/colciencias.png' %}" alt='colciencias' />
-        <img className='Navbar__brand-logo' src="{% static 'Images/goboyaca.png' %}" alt='goboyaca' />
-         
-      </div>
-    </footer>
-    -->
+
 
     <!-- Footer -->
-    <footer class="page-footer font-small mdb-color lighten-3 pt-4">
-
+   <footer >
       <!-- Footer Elements -->
-      <div class="container">
-
-        <!--Grid row-->
-        <div class="main row">
-                           <!--Grid column-->
-          <div class="col-lg-2 col-md-4">
-
-            <!--Image-->
-            <div class="view overlay z-depth-1-half">
-              <img src="{% static 'Images/unal.png' %}" alt='unal'  class="img-fluid">
-              <a href="">
-                <div class="mask rgba-white-light"></div>
-              </a>
-            </div>
-
+      <div class="containerMap">
+        <div class="containerImage">        
+          <div class="unal">
+            <img src="{% static 'Images/unal.png' %}" alt='unal'>
           </div>
-          <!--Grid column-->
 
-          <!--Grid column-->
-          <div class="col-lg-2 col-md-2">
-
-            <!--Image-->
-            <div class="view overlay z-depth-1-half">
-              <img src="{% static 'Images/unillanos.png' %}" alt='unillanos' class="img-fluid">
-              <a href="">
-                <div class="mask rgba-white-light"></div>
-              </a>
-            </div>
-
+          <div class="unillanos">
+            <img src="{% static 'Images/unillanos.png' %}" alt='unillanos'>
           </div>
-          <!--Grid column-->
 
-          <!--Grid column-->
-          <div class="col-lg-2 col-md-2">
-
-            <!--Image-->
-            <div class="view overlay z-depth-1-half">
-              <img src="{% static 'Images/colciencias.png' %}" alt='colciencias' class="img-fluid">
-              <a href="">
-                <div class="mask rgba-white-light"></div>
-              </a>
-            </div>
-
+          <div class="colciencias">
+            <img src="{% static 'Images/colciencias.png' %}" alt='colciencias'>
           </div>
-          <!--Grid column-->
 
-          <!--Grid column-->
-          <div class="col-lg-2 col-md-2">
-
-            <!--Image-->
-            <div class="view overlay z-depth-1-half">
-              <img src="{% static 'Images/goboyaca.png' %}" alt='goboyaca' class="img-fluid"
-              >
-              <a href="">
-                <div class="mask rgba-white-light"></div>
-              </a>
-            </div>
-
+          <div class="goboyaca">
+            <img src="{% static 'Images/goboyaca.png' %}" alt='goboyaca'>
           </div>
-          <!--Grid column-->
 
-          <!--Grid column-->
-          <div class="col-lg-2 col-md-2">
-
-            <!--Image-->
-            <div class="view overlay z-depth-1-half">
-              <img src="{% static 'Images/Auburn.png' %}" alt='Auburn' class="img-fluid"
-                >
-              <a href="">
-                <div class="mask rgba-white-light"></div>
-              </a>
-            </div>
-
+          <div class="Auburn">
+            <img src="{% static 'Images/Auburn.png' %}" alt='Auburn'>
           </div>
-          <!--Grid column-->
 
-          <!--Grid column
-          <div class="col-lg-2 col-md-6 mb-4">
-            <div class="view overlay z-depth-1-half">
-              <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(84).jpg" class="img-fluid"
-                alt="">
-              <a href="">
-               <div class="mask rgba-white-light"></div>
-              </a>
-            </div>
-
-          </div>
--->
-          <!--Grid column-->
 
         </div>
-        <!--Grid row-->
 
+        
       </div>
-      <!-- Footer Elements -->
 
       <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2020 Copyright: <h8>precaginternational@gmail.com</h8>
+      <div>© 2020 Copyright: <h8>precaginternational@gmail.com</h8>
+
       </div>
       <!-- Copyright -->
 
