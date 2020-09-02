@@ -1,49 +1,89 @@
 {% extends "index.html" %}
 {% block container %}   
-      <div class="containerOptionMaps">
-          <div class="choose container"> 
-             <h3>
-               Please choose a map:
-             </h3> 
-          </div>  
-          <div class="containerButtonsOpt">          
-              <div class="row">          
-                <div class="btn-group col-sm-12">
-                  <a href="/optionMaps/clay" class="col-xs-12 col-sm-3">
-                     <button class=" margins  buttonh" >Clay map</button>
-                  </a>
-                  <a href="/optionMaps/slit" class="col-xs-12 col-sm-3">
-                     <button class=" margins  buttonh" >Silt map</button>
-                  </a>
-                  <a href="/optionMaps/sand" class="col-xs-12 col-sm-3">
-                     <button class=" margins  buttonh" >Sand map</button>
-                  </a>
+  <div class="containerOptionMaps">
+    <div class="choose container"> 
+       <h3>
+         Please choose a map:
+       </h3> 
+    </div>  
+    
+      <div class="containerButtonsOpt">
 
-                  <a href="/optionMaps/sp" class="col-xs-12 col-sm-3">
-                     <button class=" margins  buttonh" >Sp map</button>
-                  </a>
-                </div>
-              </div>
-              <div class="row">
-                <div class=" btn-group col-sm-12"">
+        <div class="ContButtOptgrid">
 
-                  <a href="/optionMaps/fc" class="col-xs-12 col-sm-3">
-                     <button class=" margins  buttonh" >Fc map</button>
-                  </a>
-                  <a href="/optionMaps/pwp" class="col-xs-12 col-sm-3">
-                     <button class=" margins  buttonh" >Pwp map</button>
-                  </a>
+            <div>
+              <a href="/optionMaps/clay">
+                <button class=" margins  buttonh">
+                  Clay map
+                </button>
+              </a>
+            </div>  
 
-                  <a href="/optionMaps/hc" class="col-xs-12 col-sm-3">
-                     <button class=" margins  buttonh" >Hc map</button>
-                  </a>
-                  <a href="/optionMaps/density" class="col-xs-12 col-sm-3">
-                     <button class=" margins  buttonh" >Density map</button>
-                  </a>
+           <div>
+             <a href="/optionMaps/slit">
+                <button class=" margins  buttonh" >
+                  Silt map
+                </button>
+             </a>
+           </div> 
 
-                </div>
-              </div>
+           <div>
+             <a href="/optionMaps/sand">
+                <button class=" margins  buttonh" >
+                  Sand map
+                </button>
+              </a>
+           </div>
 
-      </div>
+           <div>
+              <a href="/optionMaps/sp">
+                <button class=" margins  buttonh" >
+                  Sp map
+                </button>
+              </a>
+           </div>
+
+           <div>
+             <a href="/optionMaps/fc">
+                <button class=" margins  buttonh" >
+                  Fc map
+                </button>
+             </a>
+           </div>
+
+           <div>
+             <a href="/optionMaps/pwp">
+                <button class=" margins  buttonh" >
+                  Pwp map
+                </button>
+             </a>
+           </div>
+
+           <div>
+             <a href="/optionMaps/hc">
+                <button class=" margins  buttonh" >
+                  Hc map
+                </button>
+             </a>
+           </div>
+
+
+           <div>
+             <a href="/optionMaps/density">
+                <button class=" margins  buttonh" >
+                  Density map
+                </button>
+             </a>
+           </div>
+
+          
+        </div>
+
+
+
+      </div>        
+
+
+  </div>
 
 {% endblock %}
