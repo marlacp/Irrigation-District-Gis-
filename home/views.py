@@ -9,6 +9,6 @@ from django.core.serializers import serialize
 class HomePageView(TemplateView):
      template_name='home/home.html'
 
-class ContactPageView(TemplateView):
-     template_name='home/contact.html'
+class aboutusPageView(TemplateView):
+     template_name='home/aboutus.html'
 

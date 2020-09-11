@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from .views import HomePageView, ContactPageView
+from .views import HomePageView, aboutusPageView
 from django.urls import path
 ###
 
@@ -12,5 +12,5 @@ from django.urls import path
 urlpatterns = [
    # url(r'^', include('home.urls'))
    url(r'^$', HomePageView.as_view(), name='home'),
-   url(r'^contact/$', ContactPageView.as_view(), name='contact'),
+   url(r'^aboutus/$', aboutusPageView.as_view(), name='aboutus'),
 ] 
