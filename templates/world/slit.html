@@ -32,8 +32,17 @@
 {% endblock %}
 
 {% block container %}
+
+<div class="back">
+    <a class="a_back" href="/optionMaps">
+        <button class="button_back">
+            Back
+        </button>     
+    </a>
+    <h3 class="TitleMap"> Map Slit Irrigation District </h3>
+</div>
+
 <div id="map">
-<h3 class="TitleMap"> Map Slit Irrigation District </h3>
 <br>
 
 
@@ -669,7 +678,7 @@
             };
 
             legend.addTo(map);
-
+            district.addTo(map);
             chicamochariver.addTo(map);
             reservoirs.addTo(map);
             points.addTo(map);
@@ -685,7 +694,7 @@
             surbapump.addTo(map);
             tibasosapump.addTo(map);       
             datasets.addTo(map);  
-            district.addTo(map);
+            
 
 
             
@@ -723,7 +732,7 @@
 
                 },
                 "Layers": {
-
+                "district": district,  
                 "chicamochariver": chicamochariver,
                 "reservoirs": reservoirs,
                 "tibasosapump": tibasosapump,
@@ -737,7 +746,7 @@
                 "pantanovPump": pantanovPump,
                 "sanrafaelpump": sanrafaelpump,
                 "surbapump": surbapump,
-                "district": district,  
+                
                
                 
 
