@@ -194,10 +194,11 @@
   }
         .containerImage {
           display: grid;
-          grid-template-columns: 100px 100px 100px 100px 100px;
-          grid-template-areas: "unal unillanos colciencias goboyaca Auburn";
-          grid-gap: 10px 120px;
+          grid-template-columns: 100px 100px 100px 100px;
+          grid-template-areas: "unal unillanos colciencias goboyaca";
+          grid-gap: 100px 140px;
           margin-bottom: 10px;
+          margin-left: 80px;
         }
 
         .unal {
@@ -234,15 +235,6 @@
         }
 
         .goboyaca img {
-          max-width: 100%;
-          /* width: 100%; */
-        }
-
-        .Auburn {
-          grid-area: Auburn;
-        }
-
-        .Auburn img {
           max-width: 100%;
           /* width: 100%; */
         }
@@ -519,6 +511,9 @@ figure {
     images[1] =  '../static/Images/campo1.jpg' 
     images[2] = '../static/Images/campo2.jpg'
     images[3] = '../static/Images/siembra.jpg'
+    images[4] = '../static/Images/banner.png'
+    images[5] = '../static/Images/drip_irrigation.jpg'
+    images[6] = '../static/Images/Sprinklers.jpg'
 
     var i =0;
 
@@ -526,7 +521,7 @@ figure {
 
       document.slider.src = images[i];
 
-      if( i < 3){
+      if( i < 6){
 
         i++
 
@@ -535,7 +530,7 @@ figure {
       }
     }
 
-    this.setInterval(Changeimages, 2000)
+    this.setInterval(Changeimages, 3000)
 
 
   });
@@ -592,11 +587,6 @@ figure {
           <div class="goboyaca">
             <img src="{% static 'Images/goboyaca.png' %}" alt='goboyaca'>
           </div>
-
-          <div class="Auburn">
-            <img src="{% static 'Images/Auburn.png' %}" alt='Auburn'>
-          </div>
-
 
         </div>
 
