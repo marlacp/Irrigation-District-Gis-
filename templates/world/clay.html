@@ -51,7 +51,7 @@
 
         // Set function for color ramp
         function clay(c){
-             return c > 80 ? '#d92027' :
+             return c >= 80 ? '#d92027' :
                     c > 70 ? '#ff9234' :
                     c > 60 ? '#ffcd3c' :
                     c > 50 ? '#fcf876' :
@@ -192,7 +192,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
                 },  
 
             });
@@ -213,7 +213,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
                 }, 
 
 
@@ -236,7 +236,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>" ); 
                 },   
 
             });            
@@ -257,7 +257,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>" ); 
                 }, 
 
             });            
@@ -277,7 +277,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+  "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>" ); 
                 }, 
 
 
@@ -298,7 +298,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
                 }, 
 
             });            
@@ -318,7 +318,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>" + "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
                 },   
 
             });            
@@ -337,7 +337,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+  "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>" ); 
                 }, 
 
             });            
@@ -356,7 +356,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>" ); 
                 }, 
 
             });
@@ -375,7 +375,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>" ); 
                 },  
 
             });              
@@ -394,17 +394,17 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>" ); 
                 },   
 
             });              
-            ////////////////////////////////////////////////////////////////////
+            //////////////////////////////////CRENTROIDES //////////////////////////////////
             var ayalascentroides = new L.GeoJSON.AJAX("{% url 'ayalascentroides' %}",{
 
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
+                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
                 },  
 
                 pointToLayer: function (feature, latlng) {
@@ -425,13 +425,13 @@
 
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },   
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
+                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
+                },  
 
                 pointToLayer: function (feature, latlng) {
                      if (feature.properties.hc < 1.0 ){
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm1_greenIcon});
                      } 
                      else if (feature.properties.hc >= 1.0 ) {
                             var marker = L.marker(latlng,{icon: farm2_blueIcon});
@@ -447,9 +447,9 @@
 
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },   
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
+                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
+                },    
 
                 pointToLayer: function (feature, latlng) {
                      if (feature.properties.hc < 1.0 ){
@@ -468,8 +468,8 @@
 
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
+                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
                 },   
 
                 pointToLayer: function (feature, latlng) {
@@ -487,10 +487,9 @@
             ////////////////////////////////////////////////////////////////////
             var holandacentroids = new L.GeoJSON.AJAX("{% url 'holandacentroids' %}",{
 
-
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
+                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
                 },   
 
                 pointToLayer: function (feature, latlng) {
@@ -510,8 +509,8 @@
 
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
+                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
                 },   
 
                 pointToLayer: function (feature, latlng) {
@@ -531,9 +530,9 @@
 
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },   
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
+                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
+                },    
 
                 pointToLayer: function (feature, latlng) {
                      if (feature.properties.hc < 1.0 ){
@@ -552,9 +551,9 @@
 
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },   
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
+                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
+                },    
 
                 pointToLayer: function (feature, latlng) {
                      if (feature.properties.hc < 1.0 ){
@@ -573,9 +572,9 @@
 
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },   
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
+                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
+                },  
 
                 pointToLayer: function (feature, latlng) {
                      if (feature.properties.hc < 1.0 ){
@@ -594,9 +593,9 @@
 
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                },   
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
+                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
+                },    
 
                 pointToLayer: function (feature, latlng) {
                      if (feature.properties.hc < 1.0 ){
@@ -614,9 +613,9 @@
             var tibasosacentroids = new L.GeoJSON.AJAX("{% url 'tibasosacentroids' %}",{
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>" + "<h3> clay: "+ feature.properties.clay.toString() + "<h3/>" + "<h3> silt:"+ feature.properties.silt.toString() + "<h3/>" +
-                       "<h3> sand: "+ feature.properties.sand.toString() + "<h3/>"+ "<h3> sp: "+feature.properties.sp.toString() + "<h3/>"+ "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"+ "<h3> hc:"+feature.properties.hc.toString() + "<h3/>" + "<h3> density: "+ feature.properties.density.toString() + "<h3/> " ); 
-                }, 
+                   layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
+                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
+                },  
 
                 pointToLayer: function (feature, latlng) {
                      if (feature.properties.hc < 1.0 ){
@@ -681,7 +680,7 @@
             return div;
             };
 
-            //legend.addTo(map);
+            legend.addTo(map);
             district.addTo(map);  
             chicamochariver.addTo(map);
             reservoirs.addTo(map);

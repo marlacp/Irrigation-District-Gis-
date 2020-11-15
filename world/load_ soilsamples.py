@@ -19,6 +19,7 @@ soilsamples_mapping = {
     'pwp': 'PWP',
     'hc': 'HC',
     'geom': 'MULTIPOINT',
+    
 }
 
 

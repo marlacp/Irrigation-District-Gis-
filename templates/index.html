@@ -486,6 +486,42 @@ figure {
 
 }
 
+/*************Responsive*************/
+@media screen and (max-device-width: 900px){
+
+  .container{
+
+    width: 333px;
+    margin: 0 auto;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
+    padding: 10px 0px;
+  
+  }
+
+  .description {
+    padding: 144px 0px;
+    display: grid;
+    height: 200px;
+
+  }
+
+  .descrip_container{
+    display: grid;
+    grid-template-columns: 205px ;
+    grid-template-rows: 164px 164px 106px;
+    grid-template-areas: "descrip1"
+                         "descrip2"
+                         "descrip3";
+    grid-gap: 10px 100px;
+    /*para que este encima de la imagen*/
+    position: absolute;
+    margin-top: -160px;
+    margin-left: 85px;
+
+}
+}
 
 /**************************/
 
@@ -581,7 +617,7 @@ figure {
           </div>
 
           <div class="colciencias">
-            <img src="{% static 'Images/colciencias.png' %}" alt='colciencias'>
+            <img src="{% static 'Images/miniciencias.png' %}" alt='colciencias'>
           </div>
 
           <div class="goboyaca">
