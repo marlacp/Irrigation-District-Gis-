@@ -1,9 +1,10 @@
 from django.contrib import admin
 #from django.contrib.gis.admin import OSMGeoAdmin
-from .models import Incidences, Countries, Duitama_Pump, DistrictP, Ayalas_Pump ,Cuche_Pump, Holanda_Pump, Lasvueltas_Pump, ministerio_Pump, moniquira_Pump, pantanov_pump, sanrafael_pump, surba_pump, tibasosa_pump, ayalas_centroides, cuche_centroides, duitama_centroides, holanda_centroids, lasvueltas_centroids, ministerio_centroids, moniquira_centroids, pantanov_centroids, sanrafael_centroids, surba_centroids, tibasosa_centroids, chicamocha_river, reservoirs
+from .models import Incidences, Countries, DistrictP, Duitama_Pump, Ayalas_Pump, Cuche_Pump, Holanda_Pump, Lasvueltas_Pump, ministerio_Pump, moniquira_Pump, pantanov_pump, sanrafael_pump, surba_pump, tibasosa_pump, ayalas_centroides, cuche_centroides, duitama_centroides, holanda_centroids, lasvueltas_centroids, ministerio_centroids, moniquira_centroids, pantanov_centroids, sanrafael_centroids, surba_centroids, tibasosa_centroids, chicamocha_river, reservoirs
 from leaflet.admin import LeafletGeoAdmin
 # Register your models here.
 
+#  
 #@admin.register(Incidences)
 class IncidencesAdmin(LeafletGeoAdmin):
 	list_display =('name','location')

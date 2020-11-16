@@ -46,99 +46,101 @@ class DistrictP(models.Model):
     def __unicode__(self):
         return self.name
 
-
-
 class Duitama_Pump(models.Model):
     id = gis_models.BigIntegerField(primary_key=True)
-    code = gis_models.CharField(max_length=20)
-    lat = gis_models.FloatField()
+    code = gis_models.CharField(max_length=50)
     lon = gis_models.FloatField()
+    lat = gis_models.FloatField()
     area = gis_models.FloatField()
     clay = gis_models.FloatField()
     silt = gis_models.FloatField()
     sand = gis_models.FloatField()
-    sp = gis_models.FloatField()
     fc = gis_models.FloatField()
     pwp = gis_models.FloatField()
-    hc = gis_models.FloatField()
-    density = gis_models.FloatField()
+    ks = gis_models.FloatField()
+    prescriptio = gis_models.FloatField()
+    crop_n = gis_models.CharField(max_length=50)
+    crop_c = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
 
 class Ayalas_Pump(models.Model):
     id = gis_models.BigIntegerField(primary_key=True)
-    code = gis_models.CharField(max_length=9)
-    lat = gis_models.FloatField()
+    code = gis_models.CharField(max_length=50)
     lon = gis_models.FloatField()
+    lat = gis_models.FloatField()
     area = gis_models.FloatField()
     clay = gis_models.FloatField()
     silt = gis_models.FloatField()
     sand = gis_models.FloatField()
-    sp = gis_models.FloatField()
     fc = gis_models.FloatField()
     pwp = gis_models.FloatField()
-    hc = gis_models.FloatField()
-    density = gis_models.FloatField()
+    ks = gis_models.FloatField()
+    prescriptio = gis_models.FloatField()
+    crop_n = gis_models.CharField(max_length=50)
+    crop_c = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
-
 
 class Cuche_Pump(models.Model):
     id = gis_models.BigIntegerField(primary_key=True)
-    code = gis_models.CharField(max_length=9)
-    lat = gis_models.FloatField()
+    code = gis_models.CharField(max_length=50)
     lon = gis_models.FloatField()
+    lat = gis_models.FloatField()
     area = gis_models.FloatField()
     clay = gis_models.FloatField()
     silt = gis_models.FloatField()
     sand = gis_models.FloatField()
-    sp = gis_models.FloatField()
     fc = gis_models.FloatField()
     pwp = gis_models.FloatField()
-    hc = gis_models.FloatField()
-    density = gis_models.FloatField()
+    ks = gis_models.FloatField()
+    prescriptio = gis_models.FloatField()
+    crop_n = gis_models.CharField(max_length=50)
+    crop_c = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
 
-
 class Holanda_Pump(models.Model):
     id = gis_models.BigIntegerField(primary_key=True)
-    code = gis_models.CharField(max_length=11)
-    lat = gis_models.FloatField()
+    code = gis_models.CharField(max_length=50)
     lon = gis_models.FloatField()
+    lat = gis_models.FloatField()
     area = gis_models.FloatField()
     clay = gis_models.FloatField()
     silt = gis_models.FloatField()
     sand = gis_models.FloatField()
-    sp = gis_models.FloatField()
     fc = gis_models.FloatField()
     pwp = gis_models.FloatField()
-    hc = gis_models.FloatField()
-    density = gis_models.FloatField()
+    ks = gis_models.FloatField()
+    prescriptio = gis_models.FloatField()
+    crop_n = gis_models.CharField(max_length=50)
+    crop_c = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
 
 class Lasvueltas_Pump(models.Model):
     id = gis_models.BigIntegerField(primary_key=True)
-    code = gis_models.CharField(max_length=20)
-    lat = gis_models.FloatField()
+    code = gis_models.CharField(max_length=50)
     lon = gis_models.FloatField()
+    lat = gis_models.FloatField()
     area = gis_models.FloatField()
     clay = gis_models.FloatField()
     silt = gis_models.FloatField()
     sand = gis_models.FloatField()
-    sp = gis_models.FloatField()
     fc = gis_models.FloatField()
     pwp = gis_models.FloatField()
-    hc = gis_models.FloatField()
-    density = gis_models.FloatField()
+    ks = gis_models.FloatField()
+    prescriptio = gis_models.FloatField()
+    crop_n = gis_models.CharField(max_length=50)
+    crop_c = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
+
 
 class ministerio_Pump(models.Model):
     id = gis_models.BigIntegerField(primary_key=True)
