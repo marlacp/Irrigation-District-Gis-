@@ -4,26 +4,25 @@ from .models import surba_pump
 
 # Auto-generated `LayerMapping` dictionary for surba_pump model
 surba_pump_mapping = {
-    'id': 'Id',
+    'id': 'ID',
     'code': 'CODE',
-    'lat': 'LAT',
     'lon': 'LON',
+    'lat': 'LAT',
     'area': 'AREA',
     'clay': 'CLAY',
     'silt': 'SILT',
     'sand': 'SAND',
-    'sp': 'SP',
     'fc': 'FC',
     'pwp': 'PWP',
-    'hc': 'HC',
-    'density': 'DENSITY',
+    'ks': 'KS',
+    'prescriptio': 'PRESCRIPTIO',
+    'crop_n': 'CROP_N',
+    'crop_c': 'CROP_C',
     'geom': 'MULTIPOLYGON',
 }
 
 
-
-
-surba_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Polygon_layers_WGS84-20200625T231731Z-001/Polygon_layers_WGS84/Surba_PumpStation/Surba_PumpStation.shp'))
+surba_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/Surba_PumpStation/Surba_PumpStation_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(surba_pump, surba_pump_shp, surba_pump_mapping, transform=False, encoding='iso-8859-1') #transform=False,
