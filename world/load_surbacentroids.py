@@ -4,27 +4,25 @@ from .models import surba_centroids
 
 # Auto-generated `LayerMapping` dictionary for surba_centroids model
 surba_centroids_mapping = {
-    'id': 'Id',
+    'id': 'ID',
     'code': 'CODE',
-    'lat': 'LAT',
     'lon': 'LON',
+    'lat': 'LAT',
     'area': 'AREA',
-    'clay': 'CLAY',
-    'silt': 'SILT',
-    'sand': 'SAND',
-    'sp': 'SP',
     'fc': 'FC',
     'pwp': 'PWP',
-    'hc': 'HC',
-    'density': 'DENSITY',
+    'sat_lv_c': 'SAT_LV_C',
+    'sat_lv_n': 'SAT_LV_N',
+    'col_c': 'COL_C',
+    'col_n': 'COL_N',
+    'prescriptio': 'PRESCRIPTIO',
+    'agent_c': 'AGENT_C',
+    'agent_n': 'AGENT_N',
+    'model': 'MODEL',
     'geom': 'MULTIPOINT',
 }
 
-
-
-
-
-surba_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Polygon_layers_WGS84-20200625T231731Z-001/Polygon_layers_WGS84/Surba_PumpStation/Surba_Centroids.shp'))
+surba_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/Surba_PumpStation/Surba_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(surba_centroids, surba_centroids_shp, surba_centroids_mapping, transform=False, encoding='iso-8859-1') #transform=False,

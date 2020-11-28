@@ -1,11 +1,11 @@
 from django.conf.urls import include, url
-from .views import HomePageView, surba_pump_datasets, tibasosa_pumpdatasets, pantanov_pump_datasets, sanrafael_pump_datasets, moniquira_Pump_datasets, ministerio_Pump_datasets, country_datasets, incidence_points, DistrictPolygons_datasets, DuitamaPump_datasets, AyalasPump_datasets, Cuche_Pump_datasets, Holanda_Pump_datasets, Lasvueltas_Pump_datasets, ayalas_centroidesdatasets, cuche_centroidesdatasets, duitama_centroidesdatasets, holanda_centroidsdatasets, lasvueltas_centroidsdatasets, ministerio_centroidsdatasets, moniquira_centroidsdatasets, pantanov_centroidsdatasets, sanrafael_centroidsdatasets, tibasosa_centroidsdatasets, chicamocha_riverdatasets, reservoirs_datasets, surba_centroidsdatasets
+from .views import HomePageView, ministerio_centroidsdatasets, tibasosa_centroidsdatasets, surba_centroidsdatasets, sanrafael_centroidsdatasets, pantanov_centroidsdatasets, moniquira_centroidsdatasets, surba_pump_datasets, lasvueltas_centroidsdatasets, holanda_centroidsdatasets, duitama_centroidesdatasets, cuche_centroidesdatasets, ayalas_centroidesdatasets, tibasosa_pumpdatasets, pantanov_pump_datasets, sanrafael_pump_datasets, moniquira_Pump_datasets, ministerio_Pump_datasets, country_datasets, incidence_points, DistrictPolygons_datasets, DuitamaPump_datasets, AyalasPump_datasets, Cuche_Pump_datasets, Holanda_Pump_datasets, Lasvueltas_Pump_datasets, chicamocha_riverdatasets, reservoirs_datasets
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 #  
-### 
+###  
 
 #a) 
 
@@ -44,10 +44,13 @@ urlpatterns = [
     url(r'^chicamocha_river/$', chicamocha_riverdatasets, name='chicamochariver'),
     url(r'^reservoirs/$', reservoirs_datasets, name='reservoirs'),
     path('clay/', views.clay, name='clay'),
-    path('slit/', views.slit, name='slit'),
+    path('silt/', views.slit, name='slit'),
     path('sand/', views.sand, name='sand'),
     path('fc/', views.fc, name='fc'),
     path('pwp/', views.pwp, name='pwp'),
+    path('ks/', views.ks, name='ks'),
+    path('crop/', views.crop, name='crop'),
+    path('prescription/', views.prescription, name='prescription'),
     path('optionMaps/', views.optionMaps, name='optionMaps')
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

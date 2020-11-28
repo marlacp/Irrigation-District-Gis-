@@ -4,27 +4,26 @@ from .models import cuche_centroides
 
 # Auto-generated `LayerMapping` dictionary for cuche_centroides model
 cuche_centroides_mapping = {
-    'id': 'Id',
+    'id': 'ID',
     'code': 'CODE',
-    'lat': 'LAT',
     'lon': 'LON',
+    'lat': 'LAT',
     'area': 'AREA',
-    'clay': 'CLAY',
-    'silt': 'SILT',
-    'sand': 'SAND',
-    'sp': 'SP',
     'fc': 'FC',
     'pwp': 'PWP',
-    'hc': 'HC',
-    'density': 'DENSITY',
+    'sat_lv_c': 'SAT_LV_C',
+    'sat_lv_n': 'SAT_LV_N',
+    'col_c': 'COL_C',
+    'col_n': 'COL_N',
+    'prescriptio': 'PRESCRIPTIO',
+    'agent_c': 'AGENT_C',
+    'agent_n': 'AGENT_N',
+    'model': 'MODEL',
     'geom': 'MULTIPOINT',
 }
 
 
-
-
-
-cuche_centroides_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Polygon_layers_WGS84-20200625T231731Z-001/Polygon_layers_WGS84/Cuche_PumpStation/Cuche_Centroids.shp'))
+cuche_centroides_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/Cuche_PumpStation/Cuche_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(cuche_centroides, cuche_centroides_shp, cuche_centroides_mapping, transform=False, encoding='iso-8859-1') #transform=False,
