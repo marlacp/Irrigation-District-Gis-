@@ -404,7 +404,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
-                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
+                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_n.toString() + "<h3/>" +  "<h3> satisfaction Level Code: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
                 },  
 
                 pointToLayer: function (feature, latlng) {
@@ -430,8 +430,28 @@
                      else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH'){
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
-                     else if (feature.properties.col_n == 'NO COLLABORATIVE' ) {
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+
+                     }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm1_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM') {
                             var marker = L.marker(latlng,{icon: farm1_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
 
                      };
                   return marker;
@@ -446,18 +466,58 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
-                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
+                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_n.toString() + "<h3/>" +  "<h3> satisfaction Level Code: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
                 },  
 
                 pointToLayer: function (feature, latlng) {
-                     if (feature.properties.pwp < 30 ){
-                            var marker = L.marker(latlng,{icon: farm2_blueFill});
-                     } 
-                     else if (feature.properties.pwp >= 30 ) {
+                    //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
+                     if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                           // debugger;                         
                             var marker = L.marker(latlng,{icon: farm2_redFill});
+                        
+                     } 
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm2_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm2_blueFill});
+                     }
+                     //Agentes que colaboran - Reales - Icono Mujer con Fondo
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW'){
+                            var marker = L.marker(latlng,{icon: farm1_redFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm1_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm1_blueFill});
+                     }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+
+                     }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm1_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm1_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
+
                      };
                   return marker;
-              }
+              } 
 
 
             });              
@@ -468,18 +528,59 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
-                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
-                },    
+                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_n.toString() + "<h3/>" +  "<h3> satisfaction Level Code: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
+                },  
 
                 pointToLayer: function (feature, latlng) {
-                     if (feature.properties.hc < 1.0 ){
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                    //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
+                     if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                           // debugger;                         
+                            var marker = L.marker(latlng,{icon: farm2_redFill});
+                        
                      } 
-                     else if (feature.properties.hc >= 1.0 ) {
-                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm2_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm2_blueFill});
+                     }
+                     //Agentes que colaboran - Reales - Icono Mujer con Fondo
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW'){
+                            var marker = L.marker(latlng,{icon: farm1_redFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm1_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm1_blueFill});
+                     }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+
+                     }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm1_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm1_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
+
                      };
                   return marker;
-              }
+              } 
+
 
 
             });              
@@ -489,18 +590,58 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
-                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
-                },   
+                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_n.toString() + "<h3/>" +  "<h3> satisfaction Level Code: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
+                },  
 
                 pointToLayer: function (feature, latlng) {
-                     if (feature.properties.hc < 1.0 ){
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                    //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
+                     if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                           // debugger;                         
+                            var marker = L.marker(latlng,{icon: farm2_redFill});
+                        
                      } 
-                     else if (feature.properties.hc >= 1.0 ) {
-                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm2_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm2_blueFill});
+                     }
+                     //Agentes que colaboran - Reales - Icono Mujer con Fondo
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW'){
+                            var marker = L.marker(latlng,{icon: farm1_redFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm1_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm1_blueFill});
+                     }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+
+                     }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm1_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm1_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
+
                      };
                   return marker;
-              }
+              } 
 
 
             });              
@@ -509,18 +650,59 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
-                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
-                },   
+                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_n.toString() + "<h3/>" +  "<h3> satisfaction Level Code: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
+                },  
 
                 pointToLayer: function (feature, latlng) {
-                     if (feature.properties.hc < 1.0 ){
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                    //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
+                     if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                           // debugger;                         
+                            var marker = L.marker(latlng,{icon: farm2_redFill});
+                        
                      } 
-                     else if (feature.properties.hc >= 1.0 ) {
-                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm2_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm2_blueFill});
+                     }
+                     //Agentes que colaboran - Reales - Icono Mujer con Fondo
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW'){
+                            var marker = L.marker(latlng,{icon: farm1_redFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm1_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm1_blueFill});
+                     }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+
+                     }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm1_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm1_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
+
                      };
                   return marker;
-              }
+              } 
+
 
 
             });              
@@ -530,18 +712,58 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
-                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
-                },   
+                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_n.toString() + "<h3/>" +  "<h3> satisfaction Level Code: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
+                },  
 
                 pointToLayer: function (feature, latlng) {
-                     if (feature.properties.hc < 1.0 ){
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                    //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
+                     if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                           // debugger;                         
+                            var marker = L.marker(latlng,{icon: farm2_redFill});
+                        
                      } 
-                     else if (feature.properties.hc >= 1.0 ) {
-                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm2_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm2_blueFill});
+                     }
+                     //Agentes que colaboran - Reales - Icono Mujer con Fondo
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW'){
+                            var marker = L.marker(latlng,{icon: farm1_redFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm1_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm1_blueFill});
+                     }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+
+                     }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm1_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm1_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
+
                      };
                   return marker;
-              }
+              } 
 
 
             });              
@@ -551,18 +773,59 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
-                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
-                },    
+                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_n.toString() + "<h3/>" +  "<h3> satisfaction Level Code: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
+                },  
 
                 pointToLayer: function (feature, latlng) {
-                     if (feature.properties.hc < 1.0 ){
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                    //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
+                     if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                           // debugger;                         
+                            var marker = L.marker(latlng,{icon: farm2_redFill});
+                        
                      } 
-                     else if (feature.properties.hc >= 1.0 ) {
-                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm2_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm2_blueFill});
+                     }
+                     //Agentes que colaboran - Reales - Icono Mujer con Fondo
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW'){
+                            var marker = L.marker(latlng,{icon: farm1_redFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm1_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm1_blueFill});
+                     }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+
+                     }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm1_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm1_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
+
                      };
                   return marker;
-              }
+              } 
+
 
 
             });              
@@ -572,18 +835,59 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
-                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
-                },    
+                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_n.toString() + "<h3/>" +  "<h3> satisfaction Level Code: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
+                },  
 
                 pointToLayer: function (feature, latlng) {
-                     if (feature.properties.hc < 1.0 ){
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                    //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
+                     if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                           // debugger;                         
+                            var marker = L.marker(latlng,{icon: farm2_redFill});
+                        
                      } 
-                     else if (feature.properties.hc >= 1.0 ) {
-                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm2_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm2_blueFill});
+                     }
+                     //Agentes que colaboran - Reales - Icono Mujer con Fondo
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW'){
+                            var marker = L.marker(latlng,{icon: farm1_redFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm1_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm1_blueFill});
+                     }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+
+                     }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm1_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm1_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
+
                      };
                   return marker;
-              }
+              } 
+
 
 
             });              
@@ -593,18 +897,58 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
-                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
+                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_n.toString() + "<h3/>" +  "<h3> satisfaction Level Code: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
                 },  
 
                 pointToLayer: function (feature, latlng) {
-                     if (feature.properties.hc < 1.0 ){
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                    //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
+                     if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                           // debugger;                         
+                            var marker = L.marker(latlng,{icon: farm2_redFill});
+                        
                      } 
-                     else if (feature.properties.hc >= 1.0 ) {
-                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm2_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm2_blueFill});
+                     }
+                     //Agentes que colaboran - Reales - Icono Mujer con Fondo
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW'){
+                            var marker = L.marker(latlng,{icon: farm1_redFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm1_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm1_blueFill});
+                     }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+
+                     }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm1_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm1_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
+
                      };
                   return marker;
-              }
+              } 
 
 
             });              
@@ -614,18 +958,58 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
-                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
-                },    
+                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_n.toString() + "<h3/>" +  "<h3> satisfaction Level Code: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
+                },  
 
                 pointToLayer: function (feature, latlng) {
-                     if (feature.properties.hc < 1.0 ){
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                    //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
+                     if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                           // debugger;                         
+                            var marker = L.marker(latlng,{icon: farm2_redFill});
+                        
                      } 
-                     else if (feature.properties.hc >= 1.0 ) {
-                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm2_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm2_blueFill});
+                     }
+                     //Agentes que colaboran - Reales - Icono Mujer con Fondo
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW'){
+                            var marker = L.marker(latlng,{icon: farm1_redFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm1_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm1_blueFill});
+                     }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+
+                     }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm1_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm1_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
+
                      };
                   return marker;
-              }
+              } 
 
 
             });              
@@ -634,18 +1018,58 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup( " <strong> <h3> Code: " + feature.properties.code.toString() +"<h3/> </strong>" + "<h3> Area: " + feature.properties.area.toString() + "<h3/>"  +
-                         "<h3> fc: " + feature.properties.fc.toString() + "<h3/>" + "<h3> pwp: " + feature.properties.pwp.toString() + "<h3/>"); 
+                         "<h3> type: " + feature.properties.col_n.toString() + "<h3/>" + "<h3> Agent: " + feature.properties.agent_n.toString() + "<h3/>"+ "<h3> satisfaction Level: " + feature.properties.sat_lv_n.toString() + "<h3/>" +  "<h3> satisfaction Level Code: " + feature.properties.sat_lv_c.toString() + "<h3/>"); 
                 },  
 
                 pointToLayer: function (feature, latlng) {
-                     if (feature.properties.hc < 1.0 ){
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                    //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
+                     if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                           // debugger;                         
+                            var marker = L.marker(latlng,{icon: farm2_redFill});
+                        
                      } 
-                     else if (feature.properties.hc >= 1.0 ) {
-                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm2_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm2_blueFill});
+                     }
+                     //Agentes que colaboran - Reales - Icono Mujer con Fondo
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW'){
+                            var marker = L.marker(latlng,{icon: farm1_redFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM'){
+                            var marker = L.marker(latlng,{icon: farm1_greenFill});
+                     }
+                     else if (feature.properties.col_n == 'COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH'){
+                            var marker = L.marker(latlng,{icon: farm1_blueFill});
+                     }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+
+                     }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
+                            var marker = L.marker(latlng,{icon: farm1_redIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'MEDIUM') {
+                            var marker = L.marker(latlng,{icon: farm1_greenIcon});
+
+                     }
+                     else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'HIGH') {
+                            var marker = L.marker(latlng,{icon: farm1_blueIcon});
+
                      };
                   return marker;
-              }
+              } 
 
 
             });              
