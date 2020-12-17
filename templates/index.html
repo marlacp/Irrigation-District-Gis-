@@ -105,11 +105,14 @@
         padding: 10px 15px;
       
       }
+      .layeric{
+        margin-top: 445px;
+      }
 /********Container*******/
 
         .ContainerMapsGrid{
           display: grid;
-          grid-template-columns: 80px 1050px 80px;
+          grid-template-columns: 110px 1050px 95px;
           grid-gap: 2px 2px;
         }
 
@@ -117,7 +120,9 @@
         .ContainerLayer{
           display: grid;
           width: 100%;
-          grid-template: repeat(5,50px)/ repeat(3,40px);
+          padding: 0px;
+          margin: 0px;
+          grid-template: 15px 25px 15px 30px 40px 12px 35px 30px 15px 32px 35px 12px/ repeat(3,32px);
           grid-gap: 2px 2px;       
           grid-template-areas: "agents agents agents"
                                "vc  vc  vc"
@@ -125,8 +130,15 @@
                                "SL1 SM1 SH1"
                                "vnc vnc vnc"
                                "F21R F21G F21B"
-                               "SL2 SM2 SH2";
-          font-size: x-small;
+                               "SL2 SM2 SH2"
+                               "rc rc rc"
+                               "F1R F1G F1B"
+                               "SL3 SM3 SH3"
+                               "rnc rnc rnc"
+                               "F11R F11G F11B"
+                               "SL4 SM4 SH4";
+          font-size: xx-small;
+          text-align: left;
 
 
         }
@@ -180,11 +192,67 @@
           grid-area: SH2;
         }
 
+        .rc{
+          grid-area: rc;
+        }
+
+        .F1R{
+          grid-area: F1R;
+
+        }
+
+        .F1G{
+          grid-area: F1G;
+        }
+
+        .F1B{
+          grid-area: F1B;
+        }
+
+        .SL3{
+          grid-area: SL3;
+        }
+
+        .SM3{
+
+          grid-area: SM3;
+        }
+
+        .SH3{
+          grid-area: SH3;
+        }
+
+        .rnc{
+          grid-area: rnc;
+        }
+
+        .F11R{
+          grid-area: F11R;
+        }
+
+        .F11G{
+          grid-area: F11G;
+        }
+
+        .F11B{
+          grid-area: F11B;
+        }
+
+        .SL4{
+          grid-area: SL4;
+        }
+        .SM4{
+          grid-area: SM4;
+        }
+        .SH4{
+          grid-area: SH4;
+        }
+
         .iconos{
-          width: 100%
+          width: 25px; height: 25px;
         }
         .iconos2{
-          width: 85%
+          width: 23px; height: 23px;
         }
 /******** seccion option map********/
         .containerOptionMaps{
@@ -442,7 +510,7 @@
   letter-spacing: 0px;
   color: #1e5f74;
   margin-top: 5px;
-  margin-left: 220px;
+  margin-left: 280px;
   opacity: 1;
 
 
