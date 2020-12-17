@@ -32,8 +32,11 @@
 {% endblock %}
 
 {% block container %}
+<div class="ContainerMapsGrid">
 
-<div class="back">
+<div class="leftm"></div>
+<div class="maps">
+       <div class="back">
     <a class="a_back" href="/optionMaps">
         <button class="button_back">
             Back
@@ -446,15 +449,15 @@
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
-                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+                            var marker = L.marker(latlng,{icon: farm2_redIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
-                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+                            var marker = L.marker(latlng,{icon: farm2_greenIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
 
                      }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
@@ -506,15 +509,15 @@
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
-                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+                            var marker = L.marker(latlng,{icon: farm2_redIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
-                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+                            var marker = L.marker(latlng,{icon: farm2_greenIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
 
                      }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
@@ -530,7 +533,7 @@
 
                      };
                   return marker;
-              } 
+              }  
 
 
             });              
@@ -566,15 +569,15 @@
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
-                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+                            var marker = L.marker(latlng,{icon: farm2_redIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
-                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+                            var marker = L.marker(latlng,{icon: farm2_greenIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
 
                      }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
@@ -590,7 +593,7 @@
 
                      };
                   return marker;
-              } 
+              }  
 
 
 
@@ -627,15 +630,15 @@
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
-                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+                            var marker = L.marker(latlng,{icon: farm2_redIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
-                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+                            var marker = L.marker(latlng,{icon: farm2_greenIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
 
                      }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
@@ -651,7 +654,7 @@
 
                      };
                   return marker;
-              } 
+              }  
 
 
             });              
@@ -686,15 +689,15 @@
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
-                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+                            var marker = L.marker(latlng,{icon: farm2_redIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
-                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+                            var marker = L.marker(latlng,{icon: farm2_greenIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
 
                      }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
@@ -710,7 +713,7 @@
 
                      };
                   return marker;
-              } 
+              }  
 
 
 
@@ -747,15 +750,15 @@
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
-                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+                            var marker = L.marker(latlng,{icon: farm2_redIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
-                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+                            var marker = L.marker(latlng,{icon: farm2_greenIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
 
                      }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
@@ -771,7 +774,7 @@
 
                      };
                   return marker;
-              } 
+              }  
 
 
             });              
@@ -807,15 +810,15 @@
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
-                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+                            var marker = L.marker(latlng,{icon: farm2_redIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
-                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+                            var marker = L.marker(latlng,{icon: farm2_greenIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
 
                      }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
@@ -831,7 +834,7 @@
 
                      };
                   return marker;
-              } 
+              }  
 
 
 
@@ -868,15 +871,15 @@
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
-                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+                            var marker = L.marker(latlng,{icon: farm2_redIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
-                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+                            var marker = L.marker(latlng,{icon: farm2_greenIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
 
                      }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
@@ -892,7 +895,7 @@
 
                      };
                   return marker;
-              } 
+              }  
 
 
 
@@ -929,15 +932,15 @@
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
-                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+                            var marker = L.marker(latlng,{icon: farm2_redIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
-                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+                            var marker = L.marker(latlng,{icon: farm2_greenIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
 
                      }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
@@ -953,7 +956,7 @@
 
                      };
                   return marker;
-              } 
+              }  
 
 
             });              
@@ -989,15 +992,15 @@
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
-                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+                            var marker = L.marker(latlng,{icon: farm2_redIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
-                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+                            var marker = L.marker(latlng,{icon: farm2_greenIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
 
                      }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
@@ -1013,7 +1016,7 @@
 
                      };
                   return marker;
-              } 
+              }  
 
 
             });              
@@ -1048,15 +1051,15 @@
                             var marker = L.marker(latlng,{icon: farm1_blueFill});
                      }//Agentes que NO colaboran - Virtuales - Icono Hombre sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'LOW') {
-                            var marker = L.marker(latlng,{icon: farm3_redIcon});
+                            var marker = L.marker(latlng,{icon: farm2_redIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'MEDIUM') {
-                            var marker = L.marker(latlng,{icon: farm3_greenIcon});
+                            var marker = L.marker(latlng,{icon: farm2_greenIcon});
 
                      }
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 0 && feature.properties.sat_lv_n == 'HIGH') {
-                            var marker = L.marker(latlng,{icon: farm3_blueIcon});
+                            var marker = L.marker(latlng,{icon: farm2_blueIcon});
 
                      }//Agentes que NO colaboran - Reales - Icono Mujer sin Fondo
                      else if (feature.properties.col_n == 'NO COLLABORATIVE' && feature.properties.agent_c == 1 && feature.properties.sat_lv_n == 'LOW') {
@@ -1072,7 +1075,7 @@
 
                      };
                   return marker;
-              } 
+              }  
 
 
             });              
@@ -1218,6 +1221,89 @@
 <br>
 {% leaflet_map "gis" callback="window.out_layers" %}
 </div>  
+</div>
+ 
+    <div class="layeric "> 
+        <div class="ContainerLayer">
+            <div class="agents"> <p>Agents</p></div> 
+
+            <div class="vc"> 
+                <p>Virtual and Collaboritve</p> 
+            </div>
+
+            <div class="F2R"> 
+                <img class="iconos" src="{% static 'icons/Farmer2_red.png' %}" alt='farm2'> 
+            </div>
+
+            <div class="F2G"> 
+                <img class="iconos" src="{% static 'icons/Farmer2_green.png' %}" alt='farm2'>
+            </div>
+
+            <div class="F2B"> 
+                <img class="iconos" src="{% static 'icons/Farmer2_blue.png' %}" alt='farm2'>
+            </div>
+
+            <div class="SL1"> 
+                <p>Sat-Low</p>  
+            </div>
+
+            <div class="SM1"> 
+                <p>Sat-Medium </p>
+            </div>
+
+            <div class="SH1"> 
+                <p>Sat-High </p> 
+            </div>
+
+            <div class="vnc"> 
+                <p>Virtual and No Collaboritve</p>
+            </div>
+
+            <div class="F21R"> 
+                <img class="iconos2" src="{% static 'icons/Farmer2_1_red.png' %}" alt='farm21'>
+            </div>
+
+            <div class="F21G"> 
+                <img class="iconos2" src="{% static 'icons/Farmer2_1_green.png' %}" alt='farm21'>
+            </div>
+
+            <div class="F21B"> 
+                <img class="iconos2" src="{% static 'icons/Farmer2_1_blue.png' %}" alt='farm21'>
+            </div>
+
+            <div class="SL2"> 
+                <p>Sat-Low</p> 
+            </div>
+
+            <div class="SM2"> 
+                <p>Sat-Medium</p> 
+            </div>
+
+            <div class="SH2"> 
+                <p>Sat-High</p> 
+            </div>
+
+            <div class="rc"> Real and Collaboritve</div>
+            <div class="F1R"> Farmer1red </div>
+            <div class="F1G"> Farmer1green </div>
+            <div class="F1B"> Farmer1blue </div>
+            <div class="SL3"> Sat-Low </div>
+            <div class="SM3"> Sat-Medium </div>
+            <div class="SH3"> Sat-High </div>
+            <div class="rnc"> Real and No Collaboritve</div>
+            <div class="F11R" > Farmer11red </div>
+            <div class="F11G"> Farmer11green </div>
+            <div class="F11B"> Farmer11blue </div>
+            <div class="SL4"> Sat-Low </div>
+            <div class="SM4"> Sat-Medium </div>
+            <div class="SH4"> Sat-High </div>
+        </div>    
+
+    </div>
+
+</div>
+
+
 
      
 {% endblock%}
