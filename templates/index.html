@@ -107,6 +107,7 @@
       }
       .layeric{
         margin-top: 445px;
+        margin-left: 5px;
       }
 /********Container*******/
 
@@ -116,14 +117,32 @@
           grid-gap: 2px 2px;
         }
 
+        .titleangets{
+          font-size: xx-small;
+          color: #222831;
+        }
+
+        .low{
+          color: #d32626;
+          font-weight: bold;
+        }
+
+        .medium{
+          color: #06623b;
+          font-weight: bold;
+        }
+
+        .high{
+          color: #21209c;
+          font-weight: bold;
+        }
 
         .ContainerLayer{
           display: grid;
           width: 100%;
           padding: 0px;
           margin: 0px;
-          grid-template: 15px 25px 15px 30px 40px 12px 35px 30px 15px 32px 35px 12px/ repeat(3,32px);
-          grid-gap: 2px 2px;       
+          grid-template: 18px 35px 12px 30px 40px 12px 28px 35px 15px 32px 35px 12px/ repeat(3,30px);      
           grid-template-areas: "agents agents agents"
                                "vc  vc  vc"
                                "F2R F2G F2B"
@@ -139,11 +158,14 @@
                                "SL4 SM4 SH4";
           font-size: xx-small;
           text-align: left;
+          grid-gap: 2px; 
 
 
         }
         .agents{
           grid-area: agents;
+          padding: 0px;
+          margin: 0px;
         }
         .vc{
           grid-area: vc;
@@ -159,12 +181,19 @@
         }
         .SL1{
           grid-area: SL1;
+          padding: 0px;
+          margin: 0px;
+
         }
         .SM1{
           grid-area: SM1;
+          padding: 0px;
+          margin: 0px;
         }
         .SH1{
           grid-area: SH1;
+          padding: 0px;
+          margin: 0px;
         }
        .vnc{
           grid-area: vnc;
@@ -249,10 +278,10 @@
         }
 
         .iconos{
-          width: 25px; height: 25px;
+          width: 96%; height: 169%;
         }
         .iconos2{
-          width: 23px; height: 23px;
+          width: 88%; height: 183%;
         }
 /******** seccion option map********/
         .containerOptionMaps{
