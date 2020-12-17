@@ -32,15 +32,18 @@
 {% endblock %}
 
 {% block container %}
+<div class="ContainerMapsGrid">
 
-<div class="back">
-    <a class="a_back" href="/optionMaps">
-        <button class="button_back">
-            Back
-        </button>     
-    </a>
-    <h3 class="TitleMap">  Stress Coefficient Map - Irrigation District </h3>
-</div>
+<div class="leftm"></div>
+<div class="maps">
+    <div class="back">
+        <a class="a_back" href="/optionMaps">
+            <button class="button_back">
+                Back
+            </button>     
+        </a>
+        <h3 class="TitleMap">  Stress Coefficient Map - Irrigation District </h3>
+    </div>
 
 <div id="map">
     
@@ -1195,6 +1198,133 @@
 <br>
 {% leaflet_map "gis" callback="window.out_layers" %}
 </div>  
+
+</div>
+ 
+    <div class="layeric "> 
+        <div class="ContainerLayer">
+            <div class="agents"> 
+                <strong><p class="titleangets">AGENTS</p></strong>
+            </div> 
+
+            <div class="vc"> 
+                <strong><p class="titleangets">Virtual and Collaboritve: </p></strong>  
+            </div>
+
+            <div class="F2R"> 
+                <img class="iconos" src="{% static 'icons/Farmer2_red.png' %}" alt='farm2'> 
+            </div>
+
+            <div class="F2G"> 
+                <img class="iconos" src="{% static 'icons/Farmer2_green.png' %}" alt='farm2'>
+            </div>
+
+            <div class="F2B"> 
+                <img class="iconos" src="{% static 'icons/Farmer2_blue.png' %}" alt='farm2'>
+            </div>
+
+            <div class="SL1"> 
+                <p class="low">Sat-Low</p>  
+            </div>
+
+            <div class="SM1"> 
+                <p class="medium">Sat-MED </p>
+            </div>
+
+            <div class="SH1"> 
+                <p class="high">Sat-High </p> 
+            </div>
+
+            <div class="vnc"> 
+                <strong><p class="titleangets">Virtual and No Collaboritve: </p></strong> 
+            </div>
+
+            <div class="F21R"> 
+                <img class="iconos2" src="{% static 'icons/Farmer2_1_red.png' %}" alt='farm21'>
+            </div>
+
+            <div class="F21G"> 
+                <img class="iconos2" src="{% static 'icons/Farmer2_1_green.png' %}" alt='farm21'>
+            </div>
+
+            <div class="F21B"> 
+                <img class="iconos2" src="{% static 'icons/Farmer2_1_blue.png' %}" alt='farm21'>
+            </div>
+
+            <div class="SL2"> 
+                <p class="low">Sat-Low</p> 
+            </div>
+
+            <div class="SM2"> 
+                <p class="medium">Sat-MED</p> 
+            </div>
+
+            <div class="SH2"> 
+                <p class="high">Sat-High</p> 
+            </div>
+
+            <div class="rc"> 
+               <strong><p class="titleangets">Real and Collaboritve: </p> </strong>  
+            </div>
+
+            <div class="F1R"> 
+                <img class="iconos" src="{% static 'icons/Farmer1_red.png' %}" alt='farm1'>
+            </div>
+
+            <div class="F1G"> 
+                 <img class="iconos" src="{% static 'icons/Farmer1_green.png' %}" alt='farm1'>
+            </div>
+
+            <div class="F1B"> 
+                <img class="iconos" src="{% static 'icons/Farmer1_blue.png' %}" alt='farm1'>
+            </div>
+
+            <div class="SL3"> 
+                <p class="low"> Sat-Low </p>
+            </div>
+
+            <div class="SM3"> 
+                <p class="medium">Sat-MED</p>  
+            </div>
+
+            <div class="SH3"> 
+                <p class="high">Sat-High</p> 
+            </div>
+
+            <div class="rnc"> 
+               <strong><p class="titleangets">Real and No Collaboritve: </p>  </strong> 
+            </div>
+
+            <div class="F11R" > 
+                <img class="iconos2" src="{% static 'icons/Farmer1_1_red.png' %}" alt='farm11'>
+            </div>
+
+            <div class="F11G"> 
+                <img class="iconos2" src="{% static 'icons/Farmer1_1_green.png' %}" alt='farm11'>
+            </div>
+
+            <div class="F11B"> 
+                <img class="iconos2" src="{% static 'icons/Farmer1_1_blue.png' %}" alt='farm11'>
+            </div>
+
+            <div class="SL4"> 
+                <p class="low">Sat-Low</p> 
+            </div>
+
+            <div class="SM4"> 
+                <p class="medium">Sat-MED </p> 
+            </div>
+
+            <div class="SH4"> 
+                <p class="high">Sat-High</p> 
+            </div>
+        </div>    
+
+    </div>
+
+</div>
+
+
 
      
 {% endblock%}
