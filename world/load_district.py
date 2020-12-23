@@ -5,17 +5,18 @@ from .models import DistrictP
 
 # Auto-generated `LayerMapping` dictionary for DistrictP model
 districtp_mapping = {
-    'id': 'Id',
+    'id': 'ID',
     'name': 'NAME',
-    'lat': 'LAT',
     'lon': 'LON',
-    'area': 'Area',
+    'lat': 'LAT',
+    'area': 'AREA',
+    'date': 'DATE',
     'geom': 'MULTIPOLYGON',
 }
 
 
 
-districtp_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'./DistrictPolygons/District_Polygons.shp'))
+districtp_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/DistrictPolygons/District_Polygons_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(DistrictP, districtp_shp, districtp_mapping, transform=False, encoding='iso-8859-1') #transform=False,

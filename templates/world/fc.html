@@ -44,7 +44,10 @@
                 Back
             </button>     
         </a>
-        <h3 class="TitleMap"> Field Capacity Map - Irrigation District </h3>
+        <h3 class="TitleMap2"> Field Capacity Map - Irrigation District </h3>
+            <p class="espace2"> Fecha Actualización: 
+                <h3 class="espace2" id='date'> </h3>
+           </p>
     </div>
 
 
@@ -189,6 +192,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup("<strong>" + feature.properties.name.toString() +"</strong><br/>" + feature.properties.area.toString());
+                   $("#date").text(feature.properties.date.toString());
                 }
             });
             ////////////////////////////////////////////////////////////////////

@@ -42,7 +42,10 @@
                 Back
             </button>     
         </a>
-        <h3 class="TitleMap">  Stress Coefficient Map - Irrigation District </h3>
+        <h3 class="TitleMap3">  Stress Coefficient Map - Irrigation District </h3>
+            <p class="espace3"> Fecha Actualización: 
+                <h3 class="espace3" id='date'> </h3>
+           </p>
     </div>
 
 <div id="map">
@@ -181,6 +184,7 @@
 
                 onEachFeature: function(feature,layer){
                    layer.bindPopup("<strong>" + feature.properties.name.toString() +"</strong><br/>" + feature.properties.area.toString());
+                   $("#date").text(feature.properties.date.toString());
                 }
             });
             ////////////////////////////////////////////////////////////////////
