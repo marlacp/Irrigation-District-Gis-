@@ -44,7 +44,7 @@
             </button>     
         </a>
         <h3 class="TitleMap3">  Permanent Wilting Point Map - Irrigation District</h3>
-            <p class="space3"> Fecha Actualización: 
+            <p class="space3"> Last Updated Date: 
                 <h3 class="space3" id='date'> </h3>
            </p>
     </div>
@@ -70,13 +70,13 @@
 
         };
 
-        function status(s){
-             return s >= 5 ? 'red' :
-                    s > 4 ? '#fb7813' :
+        function status(s){ 
+             return s >= 5 ? '#3282b8' :
+                    s > 4 ? '#1f3c88' :
                     s > 3 ? '#086972' :
-                    s > 2 ? '#3282b8' :
-                    s > 1 ? '#01a9b4' :
-                            '#87dfd6';
+                    s > 2 ? '#153e90' :
+                    s > 1 ? '#fb7813' :
+                            'red';
         };
 
 
@@ -1219,19 +1219,19 @@
             </div> 
 
             <div class="vc"> 
-                <strong><p class="titleangets">Virtual and Collaboritve: </p></strong>  
+                <strong><p class="titleangets">Virtual and Collaborative: </p></strong>  
             </div>
 
             <div class="F2R"> 
-                <img class="iconos" src="{% static 'icons/Farmer2_red.png' %}" alt='farm2'> 
+                <img class="iconosH" src="{% static 'icons/Farmer2_red.png' %}" alt='farm2'> 
             </div>
 
             <div class="F2G"> 
-                <img class="iconos" src="{% static 'icons/Farmer2_green.png' %}" alt='farm2'>
+                <img class="iconosH" src="{% static 'icons/Farmer2_green.png' %}" alt='farm2'>
             </div>
 
             <div class="F2B"> 
-                <img class="iconos" src="{% static 'icons/Farmer2_blue.png' %}" alt='farm2'>
+                <img class="iconosH" src="{% static 'icons/Farmer2_blue.png' %}" alt='farm2'>
             </div>
 
             <div class="SL1"> 
@@ -1239,7 +1239,7 @@
             </div>
 
             <div class="SM1"> 
-                <p class="medium">Sat-MED </p>
+                <p class="medium">Sat-Med </p>
             </div>
 
             <div class="SH1"> 
@@ -1247,7 +1247,7 @@
             </div>
 
             <div class="vnc"> 
-                <strong><p class="titleangets">Virtual and No Collaboritve: </p></strong> 
+                <strong><p class="titleangets">Virtual and No Collaborative: </p></strong> 
             </div>
 
             <div class="F21R"> 
@@ -1267,7 +1267,7 @@
             </div>
 
             <div class="SM2"> 
-                <p class="medium">Sat-MED</p> 
+                <p class="medium">Sat-Med</p> 
             </div>
 
             <div class="SH2"> 
@@ -1275,7 +1275,7 @@
             </div>
 
             <div class="rc"> 
-               <strong><p class="titleangets">Real and Collaboritve: </p> </strong>  
+               <strong><p class="titleangets">Real and Collaborative: </p> </strong>  
             </div>
 
             <div class="F1R"> 
@@ -1295,7 +1295,7 @@
             </div>
 
             <div class="SM3"> 
-                <p class="medium">Sat-MED</p>  
+                <p class="medium">Sat-Med</p>  
             </div>
 
             <div class="SH3"> 
@@ -1303,7 +1303,7 @@
             </div>
 
             <div class="rnc"> 
-               <strong><p class="titleangets">Real and No Collaboritve: </p>  </strong> 
+               <strong><p class="titleangets">Real and No Collaborative: </p>  </strong> 
             </div>
 
             <div class="F11R" > 
@@ -1323,7 +1323,7 @@
             </div>
 
             <div class="SM4"> 
-                <p class="medium">Sat-MED </p> 
+                <p class="medium">Sat-Med </p> 
             </div>
 
             <div class="SH4"> 
