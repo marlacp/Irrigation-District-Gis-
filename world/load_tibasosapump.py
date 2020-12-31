@@ -22,7 +22,7 @@ tibasosa_pump_mapping = {
 }
 
 
-tibasosa_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/Tibasosa_PumpStation/Tibasosa_PumpStation_Polygon.shp'))
+tibasosa_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Tibasosa_PumpStation/Tibasosa_PumpStation_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(tibasosa_pump, tibasosa_pump_shp, tibasosa_pump_mapping, transform=False, encoding='iso-8859-1') #transform=False,

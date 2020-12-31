@@ -24,7 +24,7 @@ lasvueltas_centroids_mapping = {
 }
 
 
-lasvueltas_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/LasVueltas_PumpStation/LasVueltas_PumpStation_Centroids.shp'))
+lasvueltas_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/LasVueltas_PumpStation/LasVueltas_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(lasvueltas_centroids, lasvueltas_centroids_shp, lasvueltas_centroids_mapping, transform=False, encoding='iso-8859-1') #transform=False,

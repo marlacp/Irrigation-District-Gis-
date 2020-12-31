@@ -22,7 +22,7 @@ surba_pump_mapping = {
 }
 
 
-surba_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/Surba_PumpStation/Surba_PumpStation_Polygon.shp'))
+surba_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Surba_PumpStation/Surba_PumpStation_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(surba_pump, surba_pump_shp, surba_pump_mapping, transform=False, encoding='iso-8859-1') #transform=False,

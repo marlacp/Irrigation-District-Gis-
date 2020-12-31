@@ -145,7 +145,7 @@ MEDIA_URL = '/media/'
 
 # aqui como quiero visualizar el leaflet
 LEAFLET_CONFIG = {
-     'DEFAULT_CENTER':(5.7845,-73.03408), 
+     'DEFAULT_CENTER':(5.7845,-73.02100), 
      'DEFAULT_ZOOM':13, 
      'MAX_ZOOM':20,
      'MIN_ZOOM':3,

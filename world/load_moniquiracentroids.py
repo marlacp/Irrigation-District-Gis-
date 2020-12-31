@@ -23,7 +23,7 @@ moniquira_centroids_mapping = {
 }
 
 
-moniquira_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/Monquira_PumpStation/Monquira_PumpStation_Centroids.shp'))
+moniquira_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Monquira_PumpStation/Monquira_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(moniquira_centroids, moniquira_centroids_shp, moniquira_centroids_mapping, transform=False, encoding='iso-8859-1') #transform=False,

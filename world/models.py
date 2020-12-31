@@ -36,9 +36,10 @@ class Countries(models.Model):
     class Meta:
         verbose_name_plural="Countries"  
 
+
 class DistrictP(models.Model):
     id = gis_models.BigIntegerField(primary_key=True)
-    name = gis_models.CharField(max_length=50)
+    code = gis_models.CharField(max_length=50)
     lon = gis_models.FloatField()
     lat = gis_models.FloatField()
     area = gis_models.FloatField()

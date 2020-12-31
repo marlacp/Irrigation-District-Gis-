@@ -191,8 +191,8 @@
                 },
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup("<strong>" + feature.properties.name.toString() +"</strong><br/>" + feature.properties.area.toString());
-                   $("#date").text(feature.properties.date.toString());
+                   layer.bindPopup("<strong>" + feature.properties.code.toString() +"</strong><br/>" + feature.properties.area.toString());
+                    $("#date").text(feature.properties.date.toString());
                 }
 
             });
@@ -1179,36 +1179,36 @@
             
             var groupedOverlays = {
 
-                "Agents": {
+                "Centroids por Agents": {
 
-                "surbacentroides": surbacentroides,
-                "holandacentroids": holandacentroids,
-                "tibasosacentroids": tibasosacentroids,
-                "sanrafaelcentroids": sanrafaelcentroids,
-                "pantanovcentroids": pantanovcentroids,
-                "moniquiracentroids": moniquiracentroids,
-                "ministeriocentroids": ministeriocentroids,
-                "lasvueltascentroids": lasvueltascentroids,
-                "cuchecentroides": cuchecentroides,
-                "duitamacentroides": duitamacentroides,
-                "ayalascentroides": ayalascentroides,
+                "Surba-Agents": surbacentroides,
+                "Holanda-Agent": holandacentroids,
+                "Tibasosa-Agent": tibasosacentroids,
+                "Sanrafael-Agent": sanrafaelcentroids,
+                "Pantanov-Agent": pantanovcentroids,
+                "Monquira-Agent": moniquiracentroids,
+                "Ministerio-Agent": ministeriocentroids,
+                "Lasvueltas-Agent": lasvueltascentroids,
+                "Cuche-Agent": cuchecentroides,
+                "Duitama-Agent": duitamacentroides,
+                "Ayalas-Agent": ayalascentroides,
 
                 },
                 "Irrigation Units": {
-                "district": district, 
-                "chicamochariver": chicamochariver,
-                "reservoirs": reservoirs,
-                "tibasosapump": tibasosapump,
-                "DuitamaPump": DuitamaPump,
-                "AyalasPump": AyalasPump,    
-                "CuchePump": CuchePump,
-                "HolandaPump": HolandaPump,
-                "lasvueltasPump": lasvueltasPump,
-                "ministerioPump": ministerioPump,
-                "moniquiraPump": moniquiraPump,
-                "pantanovPump": pantanovPump,
-                "sanrafaelpump": sanrafaelpump,
-                "surbapump": surbapump,
+                "District-Pump": district, 
+                "Chicamocha-River": chicamochariver,
+                "Reservoirs": reservoirs,
+                "Tibasosa-Pump": tibasosapump,
+                "Duitama-Pump": DuitamaPump,
+                "Ayalas-Pump": AyalasPump,    
+                "Cuche-Pump": CuchePump,
+                "Holanda-Pump": HolandaPump,
+                "Lasvueltas-Pump": lasvueltasPump,
+                "Ministerio-Pump": ministerioPump,
+                "Moniquira-Pump": moniquiraPump,
+                "Pantanov-Pump": pantanovPump,
+                "Sanrafael-Pump": sanrafaelpump,
+                "Surba-Pump": surbapump,
                  
                
                 

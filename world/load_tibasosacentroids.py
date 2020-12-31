@@ -22,7 +22,7 @@ tibasosa_centroids_mapping = {
     'geom': 'MULTIPOINT',
 }
 
-tibasosa_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/Tibasosa_PumpStation/Tibasosa_PumpStation_Centroids.shp'))
+tibasosa_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Tibasosa_PumpStation/Tibasosa_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(tibasosa_centroids, tibasosa_centroids_shp, tibasosa_centroids_mapping, transform=False, encoding='iso-8859-1') #transform=False,

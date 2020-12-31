@@ -24,7 +24,7 @@ moniquira_pump_mapping = {
 
 
 
-moniquira_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/Monquira_PumpStation/Monquira_PumpStation_Polygon.shp'))
+moniquira_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Monquira_PumpStation/Monquira_PumpStation_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(moniquira_Pump, moniquira_pump_shp, moniquira_pump_mapping, transform=False, encoding='iso-8859-1') #transform=False,

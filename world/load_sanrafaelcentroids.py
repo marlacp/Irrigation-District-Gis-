@@ -22,7 +22,7 @@ sanrafael_centroids_mapping = {
     'geom': 'MULTIPOINT',
 }
 
-sanrafael_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/SanRafael_PumpStation/SanRafael_PumpStation_Centroids.shp'))
+sanrafael_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/SanRafael_PumpStation/SanRafael_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(sanrafael_centroids, sanrafael_centroids_shp, sanrafael_centroids_mapping, transform=False, encoding='iso-8859-1') #transform=False,
