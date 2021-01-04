@@ -57,7 +57,8 @@
 
         // Set function for color ramp
         function crop_c(c){
-             return c >= 7 ? '#cad315' :
+             return c >= 8 ? '#000000' :
+                    c >= 7 ? '#cad315' :
                     c >= 6 ? '#e4e978' :
                     c >= 5 ? '#fa7d09' :
                     c >= 4 ? '#f3ecc2' :
@@ -1098,8 +1099,8 @@
             legend.onAdd = function (map) {
 
             var div = L.DomUtil.create('div', 'info legend '),
-                grades = [1,2, 3, 4, 5, 6, 7],
-                grades2 = ['Corn', 'Potato', 'Tomato', 'Barley', 'Wheat', 'Quinoa', 'Onion'],
+                grades = [1,2, 3, 4, 5, 6, 7, 8],
+                grades2 = ['Corn', 'Potato', 'Tomato', 'Barley', 'Wheat', 'Quinoa', 'Onion', 'NONE'],
                 labels = [];
 
             // loop through our density intervals and generate a label with a colored square for each interval
