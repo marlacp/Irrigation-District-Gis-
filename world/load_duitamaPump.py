@@ -22,7 +22,7 @@ duitama_pump_mapping = {
     'crop_c': 'CROP_C',
     'geom': 'MULTIPOLYGON',
 }
-duitama_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/Duitama_PumpStation/Duitama_PumpStation_Polygon.shp'))
+duitama_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Duitama_PumpStation/Duitama_PumpStation_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(Duitama_Pump, duitama_pump_shp, duitama_pump_mapping, transform=False, encoding='iso-8859-1') #transform=False,

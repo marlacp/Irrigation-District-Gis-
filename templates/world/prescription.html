@@ -58,13 +58,17 @@
 
         // Set function for color ramp
         function prescriptio(c){
-             return c > 6000 ? '#28abb9' :
-                    c > 5000 ? '#52de97' :
-                    c > 4000 ? '#c0ffb3' :
-                    c > 3000 ? '#fcf876' :
-                    c > 2000 ? '#ffcd3c' :
-                    c > 1000 ? '#ff9234' :
-                               '#d92027'; 
+             return c > 1000 ? '#00587a' :
+                    c > 900 ? '#008891' :
+                    c > 800 ? '#207561' :
+                    c > 700 ? '#589167' :
+                    c > 600 ? '#61b15a' :
+                    c > 500 ? '#adce74' :
+                    c > 400 ? '#fcf876' :
+                    c > 300 ? '#ffcd3c' :
+                    c > 200 ? '#ff9234' :
+                    c > 100 ? '#d92027' :
+                              '#931a25'; 
 
 
 
@@ -1097,6 +1101,11 @@
                    };
                 },  
 
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( "<strong> <p> Name: " + feature.properties.name.toString() +"<p/> </strong>" +" <strong> <p> Status: " + feature.properties.status.toString()+"<p/> </strong>" +  "<strong> <p> Available water: "+ feature.properties.level.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> </strong>" ); 
+                },  
+
+
              });   
            
             ////////////////////////////////////////////////////////////////////
@@ -1106,14 +1115,14 @@
             legend.onAdd = function (map) {
 
             var div = L.DomUtil.create('div', 'info legend'),
-                grades = [0, 1000, 2000, 3000, 4000, 5000, 6000],
+                grades = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
                 labels = [];
 
             // loop through our density intervals and generate a label with a colored square for each interval
             div.innerHTML += '<h3> Prescription <a href="https://www.codecogs.com/eqnedit.php?latex=m^{3}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?m^{3}" title="m^{3}" /></a> </h3>'
             for (var i = 0; i < grades.length; i++) {
                 div.innerHTML +=
-                    '<i style="background:' + prescriptio(grades[i] + 1000) + '"></i> ' +
+                    '<i style="background:' + prescriptio(grades[i] + 100) + '"></i> ' +
                     grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
             }
 
@@ -1177,7 +1186,7 @@
 
                 },
                 "Irrigation Units": {
-                "District-Pump": district, 
+                "District": district, 
                 "Chicamocha-River": chicamochariver,
                 "Reservoirs": reservoirs,
                 "Tibasosa-Pump": tibasosapump,

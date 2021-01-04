@@ -1089,6 +1089,11 @@
                    };
                 },  
 
+                onEachFeature: function(feature,layer){
+                   layer.bindPopup( "<strong> <p> Name: " + feature.properties.name.toString() +"<p/> </strong>" +" <strong> <p> Status: " + feature.properties.status.toString()+"<p/> </strong>" +  "<strong> <p> Available water: "+ feature.properties.level.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> </strong>" ); 
+                },  
+
+
              });   
            
             ////////////////////////////////////////////////////////////////////
@@ -1169,7 +1174,7 @@
 
                 },
                 "Irrigation Units": {
-                "District-Pump": district, 
+                "District": district, 
                 "Chicamocha-River": chicamochariver,
                 "Reservoirs": reservoirs,
                 "Tibasosa-Pump": tibasosapump,
