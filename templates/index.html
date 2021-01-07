@@ -45,6 +45,9 @@
 
       }
 
+
+@media screen and (min-width: 600px) and (max-width: 1400px){
+
       /********navbar*******/
 
       nav{
@@ -60,6 +63,8 @@
         justify-content: space-between;
         align-items: center;
         font-weight: bold;
+        width: 1366px;
+        
 
       }
 
@@ -90,7 +95,6 @@
         font-weight: bold;
 
       }
-@media screen and (min-width: 768px) and (max-width: 1366px){
 
 /********navbar*******/
 /********Container*******/
@@ -106,14 +110,14 @@
       
       }
       .layeric{
-        margin-top: 445px;
+        margin-top: 185px;
         margin-left: 5px;
       }
 /********Container*******/
 
         .ContainerMapsGrid{
           display: grid;
-          grid-template-columns: 110px 1050px 95px;
+          grid-template-columns: 100px 1166px 100px;
           grid-gap: 2px 2px;
         }
 
@@ -614,13 +618,18 @@
     opacity: 1;
 }
 /***maps****/
+.maps{
+  margin: 0px;
+}
+
 
 /********back************/
 .back{
   background-color: #f6f5f5;
   opacity: 1;
-  padding: 10px;
+  padding: 2px;
   display: flex;
+  margin-top: 2px;
 }
 
 .a_back{
@@ -734,18 +743,14 @@ figure {
 
 
 /***********cuadro leyenda***************/
-.cuadro{
-  width: 15%;
-  height: 15%;
-  border: 3px;
-  position: absolute;
-  background-color: #f9f9f9;
-  opacity: .9;
-  padding: 15px;
-  box-shadow: 0px 0 2px 1px #9e85ea;
-  border-radius: 10px;
-}}
-
+.containerFooter {
+    width: 1000px;
+    margin: 0 auto;
+    align-items: inherit;
+    height: inherit;
+    flex-wrap: inherit;
+    padding: 2px 15px;
+}
 /**************************/
 
     </style>
@@ -829,7 +834,7 @@ figure {
     <!-- Footer -->
    <footer >
       <!-- Footer Elements -->
-      <div class="container">
+      <div class="containerFooter">
         <div class="containerImage">        
           <div class="unal">
             <img src="{% static 'Images/unal.png' %}" alt='unal'>
@@ -852,11 +857,6 @@ figure {
         
       </div>
 
-      <!-- Copyright -->
-      <div class="Copyright">© 2020 Copyright: <h8>precaginternational@gmail.com</h8>
-
-      </div>
-      <!-- Copyright -->
 
     </footer>
     <!-- Footer -->
