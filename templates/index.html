@@ -439,11 +439,12 @@
   .slideshow-container{
     position: relative;;
     margin: auto;
+    margin-left: 200px;
 
   }
 
   .sizeimg{
-    width: 105%;
+    width: 700px;
     height: 400px;
   }
 
@@ -451,7 +452,7 @@
     font-size: x-large;
     position: absolute;
     top: 50%;
-    left: 47%;
+    left: 35%;
     transform: translate(-40%, -50%);
     color: white;
     font-weight: bold;
@@ -478,7 +479,7 @@
     /*para que este encima de la imagen*/
     position: absolute;
     margin-top: -95px;
-    margin-left: 15px;
+    margin-left: 40px;
 
 }
 
@@ -519,7 +520,7 @@
   background-color: #f9f9f9;
   /*opacity: .9;*/
   padding: 0px;
-  box-shadow: 0px 0 2px 1px #9e85ea;
+  box-shadow: 0px 0 3px 4px #9e85ea;
   border-radius: 10px;
   margin: auto;
 
@@ -529,7 +530,7 @@
 .descrip_container .descrip2{
   background-color: #f9f9f9;
   padding: 0px;
-  box-shadow: 0px 0 2px 1px #9e85ea;
+  box-shadow: 0px 0 3px 4px #9e85ea;
   border-radius: 10px;
   margin: 4px;
 
@@ -538,7 +539,7 @@
 .descrip_container .descrip3{
   background-color: #f9f9f9;
   padding: 1px;
-  box-shadow: 0px 0 2px 1px #9e85ea;
+  box-shadow: 0px 0 3px 4px #9e85ea;
   border-radius: 10px;
   margin: 4px;
 
@@ -667,13 +668,14 @@
 .containerAboutUs {
     display: grid;
  
-    grid-template: 270px 1fr / 400px 1fr;
+    grid-template: 260px 1fr / 440px 1fr;
  
  
     grid-gap: 10px;
-    height: 160vh;
+    height: auto;
     grid-template-areas: "intro intro"
-                         "Developer1 Developer2"
+                         "Developer1 Developer2";
+    margin-left: 70px;
  
 }
  
@@ -686,6 +688,15 @@
     grid-area: Developer1;
 }
  
+.item{
+  margin: 0px;
+}
+.DescripAbout{
+  text-align: justify;
+  font-size: small;
+
+}
+
 .Developer2{
     grid-area: Developer2;
 }
@@ -699,33 +710,42 @@ figure {
     margin-top: 55px;
     background-color: white;
     position: relative;
-    padding: 20px;
-    text-align: center;
+    padding: 15px;
+
+    
   }
  
   .event-description {
     text-align: left;
+
   }
  
-  .event-imageContainer img {
-    width: 300px;
-    height: 200px;
-    margin-left: 90px;
-    object-fit: cover;
-  }
   
   .section-dev{
-    margin: 90px;
+    margin: 0px;
     width: 480px;
     flex-shrink: 0;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    background: #f6f5f5;
+    background: #f9fcfb;
+    height: 330px;
+    margin-top: -35;
   }
  
 .div, p {
     color: #235952;
     text-align: center;
+}
+
+
+
+.color-with-marker {
+  text-align: justify;
+  color: #235952;
+  font-size: small;
+}
+.color-with-marker ::marker {
+  color: #235952;
 }
 
 .Title{
@@ -736,20 +756,20 @@ figure {
   margin-top: 5px;
   opacity: 1;
   text-align: center;
-
+  margin:0px;
 
 }
 
 
 
-/***********cuadro leyenda***************/
+/***********conteiner footer***************/
 .containerFooter {
     width: 1000px;
     margin: 0 auto;
     align-items: inherit;
     height: inherit;
     flex-wrap: inherit;
-    padding: 2px 15px;
+    padding: 2px 180px;
 }
 /**************************/
 
