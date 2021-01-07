@@ -30,7 +30,7 @@
         /* Tipografia */
         --normal: 12px;
         /* Espaciado */
-        --space: 10px;
+        --space: 2px;
         /* Box shadow */
         --box:0px 0 2px 1px #e6e5e9;
 
@@ -68,7 +68,7 @@
       }
 
       nav li{
-        padding-left: 20px;
+        padding-left: 16px;
         /* quitar la bolita */
         list-style: none;
 
@@ -83,14 +83,14 @@
       nav li a:hover{
         /*color: var(--white-color);*/
         background-color: #ebecf1;
-        padding: 16px;
+        padding: 12px;
         color: black;
         opacity: 0.8;
         border-radius: 5px;
         font-weight: bold;
 
       }
-
+@media screen and (min-width: 768px) and (max-width: 1366px){
 
 /********navbar*******/
 /********Container*******/
@@ -438,16 +438,17 @@
 
   }
 
-  .contenedor img{
-    width: 100%;
+  .sizeimg{
+    width: 105%;
+    height: 400px;
   }
 
   .centrado {
     font-size: x-large;
     position: absolute;
     top: 50%;
-    left: 49%;
-    transform: translate(-50%, -50%);
+    left: 47%;
+    transform: translate(-40%, -50%);
     color: white;
     font-weight: bold;
 
@@ -458,21 +459,22 @@
 /************ description ******************/
 
 .description{
-  padding: 100px 10px;
+  padding: 113px 10px;
   display: grid;
   grid-template-columns: minmax(auto, 1024);
+  margin-bottom: -96px;
 
 }
 
 .descrip_container{
     display: grid;
-    grid-template-columns: 205px 205px 205px;
+    grid-template-columns: 300px 300px 300px;
     grid-template-areas: "descrip1 descrip2 descrip3";
-    grid-gap: 10px 100px;
+    grid-gap: 1px 50px;
     /*para que este encima de la imagen*/
     position: absolute;
     margin-top: -95px;
-    margin-left: 85px;
+    margin-left: 15px;
 
 }
 
@@ -512,24 +514,30 @@
 .descrip_container .descrip1{
   background-color: #f9f9f9;
   /*opacity: .9;*/
-  padding: 15px;
+  padding: 0px;
   box-shadow: 0px 0 2px 1px #9e85ea;
   border-radius: 10px;
+  margin: auto;
+
 }
 
 
 .descrip_container .descrip2{
   background-color: #f9f9f9;
-  padding: 15px;
+  padding: 0px;
   box-shadow: 0px 0 2px 1px #9e85ea;
   border-radius: 10px;
+  margin: 4px;
+
 }
 
 .descrip_container .descrip3{
   background-color: #f9f9f9;
-  padding: 15px;
+  padding: 1px;
   box-shadow: 0px 0 2px 1px #9e85ea;
   border-radius: 10px;
+  margin: 4px;
+
 }
 
 
@@ -723,42 +731,7 @@ figure {
 
 }
 
-/*************Responsive*************/
-@media screen and (max-device-width: 900px){
 
-  .container{
-
-    width: 333px;
-    margin: 0 auto;
-    align-items: inherit;
-    height: inherit;
-    flex-wrap: inherit;
-    padding: 10px 0px;
-  
-  }
-
-  .description {
-    padding: 144px 0px;
-    display: grid;
-    height: 200px;
-
-  }
-
-  .descrip_container{
-    display: grid;
-    grid-template-columns: 205px ;
-    grid-template-rows: 164px 164px 106px;
-    grid-template-areas: "descrip1"
-                         "descrip2"
-                         "descrip3";
-    grid-gap: 10px 100px;
-    /*para que este encima de la imagen*/
-    position: absolute;
-    margin-top: -160px;
-    margin-left: 85px;
-
-}
-}
 
 /***********cuadro leyenda***************/
 .cuadro{
@@ -771,7 +744,7 @@ figure {
   padding: 15px;
   box-shadow: 0px 0 2px 1px #9e85ea;
   border-radius: 10px;
-}
+}}
 
 /**************************/
 
