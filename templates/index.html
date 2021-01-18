@@ -44,10 +44,6 @@
         font-family: 'Open Sans', sans-serif;
 
       }
-
-
-@media screen and (min-width: 600px) and (max-width: 1400px){
-      /********navbar*******/
       nav{
         /* flex me ayuda a pasar los elementos de vertica a horizontal */
         display: flex;
@@ -86,206 +82,8 @@
         font-weight: bold;
 
       }
-/********navbar*******/
-/********Container*******/
-
-      .container{
-
-        width: 1000px;
-        margin: 0 auto;
-        align-items: inherit;
-        height: inherit;
-        flex-wrap: inherit;
-        padding: 1px 15px;
-      
-      }
-      .layeric{
-        margin-top: 160px;
-        margin-left: 5px;
-      }
-/********Container para cada mapa*******/
-      .ContainerMapsGrid{
-        display: grid;
-        grid-template-columns: 75px 1166px 97px;
-        grid-gap: 2px 2px;
-      }
-      .titleangets{
-        font-size: xx-small;
-        color: #222831;
-      }
-      .low{
-        color: #d32626;
-        font-weight: bold;
-      }
-      .medium{
-        color: #06623b;
-        font-weight: bold;
-      }
-      .high{
-        color: #21209c;
-        font-weight: bold;
-      }
-      /**container grid agentes*/
-      .ContainerLayer{
-        display: grid;
-        width: 100%;
-        padding: 0px;
-        margin: 0px;
-        grid-template: 18px 35px 12px 30px 40px 12px 28px 35px 15px 32px 35px 12px/ repeat(3,30px);      
-        grid-template-areas: "agents agents agents"
-                             "vc  vc  vc"
-                             "F2R F2G F2B"
-                             "SL1 SM1 SH1"
-                             "vnc vnc vnc"
-                             "F21R F21G F21B"
-                             "SL2 SM2 SH2"
-                             "rc rc rc"
-                             "F1R F1G F1B"
-                             "SL3 SM3 SH3"
-                             "rnc rnc rnc"
-                             "F11R F11G F11B"
-                             "SL4 SM4 SH4";
-        font-size: xx-small;
-        text-align: left;
-        grid-gap: 2px; 
-
-      }
-      .agents{
-        grid-area: agents;
-        padding: 0px;
-        margin: 0px;
-      }
-      .vc{
-        grid-area: vc;
-      }
-      .F2R{
-        grid-area: F2R;
-      }
-      .F2G{
-        grid-area: F2G;
-      }
-      .F2B{
-        grid-area: F2B;
-      }
-      .SL1{
-        grid-area: SL1;
-        padding: 0px;
-        margin: 0px;
-      }
-      .SM1{
-        grid-area: SM1;
-        padding: 0px;
-        margin: 0px;
-      }
-      .SH1{
-        grid-area: SH1;
-        padding: 0px;
-        margin: 0px;
-      }
-     .vnc{
-        grid-area: vnc;
-      }
-      .F21R{
-        grid-area: F21R;
-      }
-      .F21G{
-        grid-area: F21G;
-      }
-      .F21B{
-        grid-area: F21B;
-      }
-     .SL2{
-        grid-area: SL2;
-      }
-      .SM2{
-        grid-area: SM2;
-      }
-      .SH2{
-        grid-area: SH2;
-      }
-
-      .rc{
-        grid-area: rc;
-      }
-      .F1R{
-        grid-area: F1R;
-
-      }
-
-      .F1G{
-        grid-area: F1G;
-      }
-      .F1B{
-        grid-area: F1B;
-      }
-
-      .SL3{
-        grid-area: SL3;
-      }
-
-      .SM3{
-
-        grid-area: SM3;
-      }
-      .SH3{
-        grid-area: SH3;
-      }
-
-      .rnc{
-        grid-area: rnc;
-      }
-
-      .F11R{
-        grid-area: F11R;
-      }
-      .F11G{
-        grid-area: F11G;
-      }
-
-      .F11B{
-        grid-area: F11B;
-      }
-
-      .SL4{
-        grid-area: SL4;
-      }
-      .SM4{
-        grid-area: SM4;
-      }
-      .SH4{
-        grid-area: SH4;
-      }
-
-      .iconos{
-        width: 90%; height: 169%;
-      }
-      .iconosH{
-        width: 90%; height: 200%;
-      }
-      .iconos2{
-        width: 88%; height: 183%;
-      }
-
 /******** seccion option map Botones para escoger mapa********/
-      .containerOptionMaps{
 
-        background-image: url(../static/Images/mapa1.jpg);
-        background-size: cover;
-        background-position: center top;
-        padding: 10px 15px;
-      }
-      .containerButtonsOpt {
-          width: 360px;
-          margin: 0 auto;
-          padding: 0;
-
-      }
-      .ContButtOptgrid{
-        display: grid;
-        grid-template-columns: repeat(2, 168px);
-        grid-template-rows: repeat(4, 86px);
-        grid-gap: 10px 20px;
-      }
 
       .btn {
           margin: 10px;
@@ -325,17 +123,7 @@
         color: white;
       }
 
-    .choose {
-      font: normal normal bold 19px/23px Open Sans;
-      letter-spacing: 0px;
-      color: #fafaf4;
-      opacity: 1;
-      padding-top: 23px;
-      padding-bottom: 10px;
-      text-align: left;
-      padding-left: 100px;
 
-      }
 
 /******** seccion option map********/
 /************** footer *******************/
@@ -394,45 +182,13 @@
         margin-left: 200px;
 
       }
-      .sizeimg{
-        width: 700px;
-        height: 400px;
-      }
 
-      .centrado {
-        font-size: x-large;
-        position: absolute;
-        top: 50%;
-        left: 35%;
-        transform: translate(-40%, -50%);
-        color: white;
-        font-weight: bold;
-
-      }
 
 /************ slide ******************/
 
 /************ cajas descrip Home ******************/
 
-      .description{
-        padding: 111px 10px;
-        display: grid;
-        grid-template-columns: minmax(auto, 1024);
-        margin-bottom: -96px;
 
-      }
-
-      .descrip_container{
-          display: grid;
-          grid-template-columns: 300px 300px 300px;
-          grid-template-areas: "descrip1 descrip2 descrip3";
-          grid-gap: 1px 50px;
-          /*para que este encima de la imagen*/
-          position: absolute;
-          margin-top: -110px;
-          margin-left: 40px;
-
-      }
       .descrip1{
         grid-area: descrip1;
       }
@@ -467,7 +223,8 @@
         padding: 0px;
         box-shadow: 0px 0 3px 4px #9e85ea;
         border-radius: 10px;
-        margin: 4px;
+         margin: 4px;
+
 
       }
       .descrip_container .descrip2{
@@ -490,7 +247,6 @@
 /************ description ******************/
 
 /**************css de los mapas***********************/
-
       .TitleMap{
 
         font: normal normal bold 20px/23px Open Sans;
@@ -500,6 +256,7 @@
         margin-left: 260px;
         opacity: 1;
       }
+
       .espace {
           padding: 0px;
           margin-right: -150px;
@@ -510,6 +267,7 @@
           margin-left: 160px;
           opacity: 1;
       }
+
       .TitleMap2{
 
         font: normal normal bold 20px/23px Open Sans;
@@ -553,14 +311,7 @@
         margin: 0px;
       }
       /********back boton de devolverse a cada mapa************/
-      .back{
-        background-color: #f6f5f5;
-        opacity: 1;
-        padding: 2px;
-        display: flex;
-        margin-top: 2px;
-        height: 32px;
-      }
+
 
       .a_back{
         text-decoration: none;
@@ -592,19 +343,7 @@
       }
       /********************/
 /************About us**************/
-      .containerAboutUs {
-          display: grid;
-       
-          grid-template: 260px 1fr / 440px 1fr;
-       
-       
-          grid-gap: 10px;
-          height: auto;
-          grid-template-areas: "intro intro"
-                               "Developer1 Developer2";
-          margin-left: 70px;
-       
-      }
+
       .intro{
           grid-area: intro;
       }
@@ -616,11 +355,7 @@
       .item{
         margin: 0px;
       }
-      .DescripAbout{
-        text-align: justify;
-        font-size: small;
 
-      }
       .Developer2{
           grid-area: Developer2;
       }
@@ -628,38 +363,17 @@
       figure {
           margin: 0;
       }
-       
-      .event-detail {
-          margin: 20px 40px;
-          margin-top: 30px;
-          background-color: white;
-          position: relative;
-          padding: 15px;       
-      }
+
       .event-description {
         text-align: left;
       }
  
-      .section-dev{
-        margin: 0px;
-        width: 480px;
-        flex-shrink: 0;
-        border-radius: 15px;
-        overflow: hidden;
-        background: #f9fcfb;
-        height: 310px;
-        margin-top: -38px;
-      }
  
       .div, p {
           color: #235952;
           text-align: center;
       }
-      .color-with-marker {
-        text-align: justify;
-        color: #235952;
-        font-size: small;
-      }
+
       .color-with-marker ::marker {
         color: #235952;
       }
@@ -675,62 +389,12 @@
         margin:0px;
 
       }
-/***********conteiner footer***************/
-      .containerFooter {
-          width: 1000px;
-          margin: 0 auto;
-          align-items: inherit;
-          height: inherit;
-          flex-wrap: inherit;
-          padding: 2px 180px;
-      }
 
-/**************************/
 
-}
 /******* css Pantalla grande ******************/
 
 @media screen and (min-width: 1400px) and (max-width: 2000px){
-      /********navbar*******/
-      nav{
-        /* flex me ayuda a pasar los elementos de vertica a horizontal */
-        display: flex;
-        background-color: #1f4068;
-        padding: var(--space);
-        color: var(--white-color);
-        /* nos separa la marca y la lista en cada esquina el grupo
-         brand imgage y nav options por eso en el html se separa en clases
-         y no nos separa los links
-        */
-        justify-content: space-between;
-        align-items: center;
-        font-weight: bold;
-        width: 100%;
-        }
-      nav ul{
-        display: flex;
-      }
-      nav li{
-        padding-left: 16px;
-        /* quitar la bolita */
-        list-style: none;
-      }
-      nav li a{
-        color: #ebecf1;
-        text-decoration: none;
-      }
-/* la propiedad hover son las acciones de un boton */
-      nav li a:hover{
-        /*color: var(--white-color);*/
-        background-color: #ebecf1;
-        padding: 12px;
-        color: black;
-        opacity: 0.8;
-        border-radius: 5px;
-        font-weight: bold;
 
-      }
-/********navbar*******/
 /********Container*******/
 
       .container{
@@ -933,43 +597,7 @@
         grid-gap: 10px 20px;
       }
 
-      .btn {
-          margin: 10px;
-      }
 
-      .margins {
-          margin: 10px;
-      }
-
-      .custom {
-          width: 90px !important;
-      }
-      .buttonh {
-        background-color: #145374;
-        color: whitesmoke;
-        width: 100%;
-        height: 45px;
-        -webkit-border-radius: 20px 20px 20px 20px;
-        border: 3px solid #145374;
-        cursor: pointer;
-        box-shadow: 0 5px #f6f5f5;
-        opacity: 0.9;
-
-      }
-
-      .buttonh:hover {
-        background-color: #fafaf4;
-        color: #145374;
-        border: 3px solid #fafaf4;
-
-      }
-      .buttonh:active{
-        background-color: #145374;
-        box-shadow: 0 5px #f6f5f5;
-        border: 3px solid #145374;
-        transform: translateY(4px);
-        color: white;
-      }
 
     .choose {
       font: normal normal bold 35px/23px Open Sans;
@@ -984,62 +612,10 @@
       }
 
 /******** seccion option map********/
-/************** footer *******************/
-      footer{
-        background-color: #f9f9f9;
-      }
-      .containerImage {
-        display: grid;
-        grid-template-columns: 100px 100px 100px 100px;
-        grid-template-areas: "unal unillanos colciencias goboyaca";
-        grid-gap: 100px 140px;
-        margin-bottom: 10px;
-        margin-left: 80px;
-      }
-      .unal {
-        grid-area: unal;
-      }
 
-      .unal img {
-        max-width: 95%;
-        /* width: 100%; */
-      }
-
-      .unillanos {
-        grid-area: unillanos;
-      }
-
-      .unillanos img {
-        max-width: 120%;
-
-      }
-      .colciencias {
-        grid-area: colciencias;
-      }
-
-      .colciencias img {
-        max-width: 215%;
-        /* width: 100%; */
-      }
-
-      .goboyaca {
-        grid-area: goboyaca;
-      }
-
-      .goboyaca img {
-        max-width: 100%;
-        /* width: 100%; */
-      }
-
-/************** footer *******************/
 /************ slide ******************/
 
-      .slideshow-container{
-        position: relative;;
-        margin: auto;
-        margin-left: 200px;
 
-      }
       .sizeimg{
         width: 100%;
         height: 700px;
@@ -1080,126 +656,14 @@
           height: 14px;
 
       }
-      .descrip1{
-        grid-area: descrip1;
-      }
-
-      .descrip2{
-        grid-area: descrip2;
-      }
-
-      .tituloDescrip{
-        margin: 0;
-        text-align: center;
-        font: normal normal bold 17px/23px Open Sans;
-        letter-spacing: 0px;
-        color: #313337;
-        opacity: 1;
-      }
-      .descrip3{
-        grid-area: descrip3;
-      }
-
-      .descripp{
-        padding: 0.5em;
-        text-align: center;
-        font: normal normal bold 12px/17px Open Sans;
-        letter-spacing: 0px;
-        color: #313337;
-      }
-
-      .descrip_container .descrip1{
-        background-color: #f9f9f9;
-        /*opacity: .9;*/
-        padding: 0px;
-        box-shadow: 0px 0 3px 4px #9e85ea;
-        border-radius: 10px;
-         margin: 4px;
 
 
-      }
-      .descrip_container .descrip2{
-        background-color: #f9f9f9;
-        padding: 0px;
-        box-shadow: 0px 0 3px 4px #9e85ea;
-        border-radius: 10px;
-        margin: 4px;
 
-      }
-
-      .descrip_container .descrip3{
-        background-color: #f9f9f9;
-        padding: 1px;
-        box-shadow: 0px 0 3px 4px #9e85ea;
-        border-radius: 10px;
-        margin: 4px;
-
-      }
 /************ description ******************/
 
 /**************css de los mapas***********************/
 
-      .TitleMap{
 
-        font: normal normal bold 20px/23px Open Sans;
-        letter-spacing: 0px;
-        color: #1e5f74;
-        margin-top: 5px;
-        margin-left: 260px;
-        opacity: 1;
-      }
-      .espace {
-          padding: 0px;
-          margin-right: -150px;
-          font: normal normal bold 16px/23px Open Sans;
-          letter-spacing: 0px;
-          color: #1e5f74;
-          margin-top: 5px;
-          margin-left: 160px;
-          opacity: 1;
-      }
-      .TitleMap2{
-
-        font: normal normal bold 20px/23px Open Sans;
-        letter-spacing: 0px;
-        color: #1e5f74;
-        margin-top: 5px;
-        margin-left: 180px;
-        opacity: 1;
-      }
-      .espace2 {
-          padding: 0px;
-          margin-right: -150px;
-          font: normal normal bold 16px/23px Open Sans;
-          letter-spacing: 0px;
-          color: #1e5f74;
-          margin-top: 5px;
-          margin-left: 160px;
-          opacity: 1;
-      }
-      .TitleMap3{
-
-        font: normal normal bold 20px/23px Open Sans;
-        letter-spacing: 0px;
-        color: #1e5f74;
-        margin-top: 5px;
-        margin-left: 76px;
-        opacity: 1;
-      }
-      .space3 {
-          padding: 0px;
-          margin-right: -150px;
-          font: normal normal bold 16px/23px Open Sans;
-          letter-spacing: 0px;
-          color: #1e5f74;
-          margin-top: 5px;
-          margin-left: 159px;
-          opacity: 1;
-      }
-
-      .maps{
-        margin: 0px;
-      }
       /********back boton de devolverse a cada mapa************/
       .back{
         background-color: #f6f5f5;
@@ -1210,34 +674,8 @@
         height: 30px;
       }
 
-      .a_back{
-        text-decoration: none;
-      }
-      .button_back{
-        background-color: #145374;
-        color: whitesmoke;
-        width: 79px;
-        height: 29px;
-        -webkit-border-radius: 10px 10px 10px 10px;
-        border: 3px solid #145374;
-        cursor: pointer;
-        box-shadow: 0 5px #f6f5f5;
-        opacity: 0.9;
-      }
 
-      .button_back:hover {
-        background-color: #ddf3f5;
-        color: #145374;
-        border: 2px solid #145374;
 
-      }
-      .button_back:active{
-        background-color: #145374;
-        box-shadow: 0 5px #f6f5f5;
-        border: 2px solid #145374;
-        transform: translateY(4px);
-        color: white;
-      }
       /********************/
 /************About us**************/
       .containerAboutUs {
@@ -1253,29 +691,7 @@
           margin-left: 250px;
        
       }
-      .intro{
-          grid-area: intro;
-      }
-       
-      .Developer1{
-          grid-area: Developer1;
-      }
-       
-      .item{
-        margin: 0px;
-      }
-      .DescripAbout{
-        text-align: justify;
-        font-size: medium;
 
-      }
-      .Developer2{
-          grid-area: Developer2;
-      }
-       
-      figure {
-          margin: 0;
-      }
        
       .event-detail {
           margin: 20px 40px;
@@ -1284,10 +700,12 @@
           position: relative;
           padding: 15px;       
       }
-      .event-description {
-        text-align: left;
+
+       .DescripAbout{
+        text-align: justify;
+        font-size: medium;
+
       }
- 
       .section-dev{
         margin: 0px;
         width: 480px;
@@ -1299,31 +717,12 @@
         margin-top: 40px;
         margin-left: 180px;
       }
- 
-      .div, p {
-          color: #235952;
-          text-align: center;
-      }
       .color-with-marker {
         text-align: justify;
         color: #235952;
         font-size: medium;
       }
-      .color-with-marker ::marker {
-        color: #235952;
-      }
 
-      .Title{
-
-        font: normal normal bold 20px/23px Open Sans;
-        letter-spacing: 0px;
-        color: #1e5f74;
-        margin-top: 5px;
-        opacity: 1;
-        text-align: center;
-        margin:0px;
-
-      }
 /***********conteiner footer***************/
       .containerFooter {
           width: 1700px;
@@ -1338,6 +737,346 @@
 
 }
  
+
+/*******************600 x 1400********************************/
+@media screen and (min-width: 600px) and (max-width: 1400px){
+
+/********Container*******/
+
+      .container{
+
+        width: 1000px;
+        margin: 0 auto;
+        align-items: inherit;
+        height: inherit;
+        flex-wrap: inherit;
+        padding: 1px 15px;
+      
+      }
+      .layeric{
+        margin-top: 160px;
+        margin-left: 5px;
+      }
+/********Container para cada mapa*******/
+      .ContainerMapsGrid{
+        display: grid;
+        grid-template-columns: 75px 1166px 97px;
+        grid-gap: 2px 2px;
+      }
+      .titleangets{
+        font-size: xx-small;
+        color: #222831;
+      }
+      .low{
+        color: #d32626;
+        font-weight: bold;
+      }
+      .medium{
+        color: #06623b;
+        font-weight: bold;
+      }
+      .high{
+        color: #21209c;
+        font-weight: bold;
+      }
+      /**container grid agentes*/
+      .ContainerLayer{
+        display: grid;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        grid-template: 18px 35px 12px 30px 40px 12px 28px 35px 15px 32px 35px 12px/ repeat(3,30px);      
+        grid-template-areas: "agents agents agents"
+                             "vc  vc  vc"
+                             "F2R F2G F2B"
+                             "SL1 SM1 SH1"
+                             "vnc vnc vnc"
+                             "F21R F21G F21B"
+                             "SL2 SM2 SH2"
+                             "rc rc rc"
+                             "F1R F1G F1B"
+                             "SL3 SM3 SH3"
+                             "rnc rnc rnc"
+                             "F11R F11G F11B"
+                             "SL4 SM4 SH4";
+        font-size: xx-small;
+        text-align: left;
+        grid-gap: 2px; 
+
+      }
+      .agents{
+        grid-area: agents;
+        padding: 0px;
+        margin: 0px;
+      }
+      .vc{
+        grid-area: vc;
+      }
+      .F2R{
+        grid-area: F2R;
+      }
+      .F2G{
+        grid-area: F2G;
+      }
+      .F2B{
+        grid-area: F2B;
+      }
+      .SL1{
+        grid-area: SL1;
+        padding: 0px;
+        margin: 0px;
+      }
+      .SM1{
+        grid-area: SM1;
+        padding: 0px;
+        margin: 0px;
+      }
+      .SH1{
+        grid-area: SH1;
+        padding: 0px;
+        margin: 0px;
+      }
+     .vnc{
+        grid-area: vnc;
+      }
+      .F21R{
+        grid-area: F21R;
+      }
+      .F21G{
+        grid-area: F21G;
+      }
+      .F21B{
+        grid-area: F21B;
+      }
+     .SL2{
+        grid-area: SL2;
+      }
+      .SM2{
+        grid-area: SM2;
+      }
+      .SH2{
+        grid-area: SH2;
+      }
+
+      .rc{
+        grid-area: rc;
+      }
+      .F1R{
+        grid-area: F1R;
+
+      }
+
+      .F1G{
+        grid-area: F1G;
+      }
+      .F1B{
+        grid-area: F1B;
+      }
+
+      .SL3{
+        grid-area: SL3;
+      }
+
+      .SM3{
+
+        grid-area: SM3;
+      }
+      .SH3{
+        grid-area: SH3;
+      }
+
+      .rnc{
+        grid-area: rnc;
+      }
+
+      .F11R{
+        grid-area: F11R;
+      }
+      .F11G{
+        grid-area: F11G;
+      }
+
+      .F11B{
+        grid-area: F11B;
+      }
+
+      .SL4{
+        grid-area: SL4;
+      }
+      .SM4{
+        grid-area: SM4;
+      }
+      .SH4{
+        grid-area: SH4;
+      }
+
+      .iconos{
+        width: 90%; height: 169%;
+      }
+      .iconosH{
+        width: 90%; height: 200%;
+      }
+      .iconos2{
+        width: 88%; height: 183%;
+      }
+
+/******** seccion option map Botones para escoger mapa********/
+      .containerOptionMaps{
+
+        background-image: url(../static/Images/mapa1.jpg);
+        background-size: cover;
+        background-position: center top;
+        padding: 10px 15px;
+      }
+      .containerButtonsOpt {
+          width: 360px;
+          margin: 0 auto;
+          padding: 0;
+
+      }
+      .ContButtOptgrid{
+        display: grid;
+        grid-template-columns: repeat(2, 168px);
+        grid-template-rows: repeat(4, 86px);
+        grid-gap: 10px 20px;
+      }
+
+
+
+    .choose {
+      font: normal normal bold 19px/23px Open Sans;
+      letter-spacing: 0px;
+      color: #fafaf4;
+      opacity: 1;
+      padding-top: 23px;
+      padding-bottom: 10px;
+      text-align: left;
+      padding-left: 100px;
+
+      }
+
+/******** seccion option map********/
+
+/************ slide ******************/
+
+
+      .sizeimg{
+        width: 700px;
+        height: 400px;
+      }
+
+      .centrado {
+        font-size: x-large;
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        transform: translate(-40%, -50%);
+        color: white;
+        font-weight: bold;
+
+      }
+
+/************ slide ******************/
+
+/************ cajas descrip Home ******************/
+
+      .description{
+        padding: 111px 10px;
+        display: grid;
+        grid-template-columns: minmax(auto, 1024);
+        margin-bottom: -96px;
+
+      }
+
+      .descrip_container{
+          display: grid;
+          grid-template-columns: 300px 300px 300px;
+          grid-template-areas: "descrip1 descrip2 descrip3";
+          grid-gap: 1px 50px;
+          /*para que este encima de la imagen*/
+          position: absolute;
+          margin-top: -110px;
+          margin-left: 40px;
+
+      }
+
+
+/************ description ******************/
+
+/**************css de los mapas***********************/
+
+      /********back boton de devolverse a cada mapa************/
+      .back{
+        background-color: #f6f5f5;
+        opacity: 1;
+        padding: 2px;
+        display: flex;
+        margin-top: 2px;
+        height: 32px;
+      }
+
+
+      /********************/
+/************About us**************/
+      .containerAboutUs {
+          display: grid;
+       
+          grid-template: 260px 1fr / 440px 1fr;
+       
+       
+          grid-gap: 10px;
+          height: auto;
+          grid-template-areas: "intro intro"
+                               "Developer1 Developer2";
+          margin-left: 70px;
+       
+      }
+
+       
+      .event-detail {
+          margin: 20px 40px;
+          margin-top: 30px;
+          background-color: white;
+          position: relative;
+          padding: 15px;       
+      }
+ 
+      .section-dev{
+        margin: 0px;
+        width: 480px;
+        flex-shrink: 0;
+        border-radius: 15px;
+        overflow: hidden;
+        background: #f9fcfb;
+        height: 310px;
+        margin-top: -38px;
+      }
+      .DescripAbout{
+        text-align: justify;
+        font-size: small;
+
+      }
+      .color-with-marker {
+        text-align: justify;
+        color: #235952;
+        font-size: small;
+      }
+
+
+/***********conteiner footer***************/
+      .containerFooter {
+          width: 1000px;
+          margin: 0 auto;
+          align-items: inherit;
+          height: inherit;
+          flex-wrap: inherit;
+          padding: 2px 180px;
+      }
+
+/**************************/
+
+}
+
 
     </style>
  
