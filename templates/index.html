@@ -177,7 +177,7 @@
 /************ slide ******************/
 
       .slideshow-container{
-        position: relative;;
+        position: relative;
         margin: auto;
         margin-left: 200px;
 
@@ -739,7 +739,7 @@
  
 
 /*******************600 x 1400********************************/
-@media screen and (min-width: 600px) and (max-width: 1400px){
+@media screen and (min-width: 768px) and (max-width: 1400px){
 
 /********Container*******/
 
@@ -760,7 +760,7 @@
 /********Container para cada mapa*******/
       .ContainerMapsGrid{
         display: grid;
-        grid-template-columns: 75px 1166px 97px;
+        grid-template-columns: 68px 1166px 97px;
         grid-gap: 2px 2px;
       }
       .titleangets{
@@ -1076,8 +1076,130 @@
 /**************************/
 
 }
+/***********max 767****************/
+@media screen and (max-width: 767px){
+    nav{
+        display: block;
+        height: auto;
+      }
+    nav ul {
+        display: block;
+        padding: 0px;
+        margin-top: 25px;
+    }
 
+    nav ul li{
+        height: 50px;
+    }
+    .brand_image{
+      /*margin-left: 25%;*/
+      text-align: center;
+    }
+    .nav_options {
+      /*margin-left: 25%;*/
+      margin: 0px;
+      text-align: center;
+      align-items: center;
+      
+    }
 
+      .container{
+
+        max-width: 1000px;
+ /* width: 100%; */
+        flex: 1;
+        margin: 0 auto;
+        display: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+        height: inherit;
+        flex-wrap: inherit;
+        padding: 0 1em;
+      
+      }
+
+    .slideshow-container {
+        height: auto;
+        /* para evitar desbordamiento de la imagen */
+        overflow: hidden;
+        padding: 7.6em;
+        margin-left: 0;
+    }
+
+    .sizeimg{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+      .centrado {
+        font-size: 1em;
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-weight: bold;
+
+      }
+    .containerFooter{
+      display: grid;
+    }
+      .containerImage {
+        display: grid;
+        grid-template-columns: 50px 50px 50px 50px;
+        grid-template-areas: "unal unillanos colciencias goboyaca";
+        grid-gap: 5px 45px;
+        margin-bottom: 5px;
+        margin-left: 1px;
+      }
+      .unal {
+        grid-area: unal;
+      }
+
+      .unal img {
+        max-width: 95%;
+        /* width: 100%; */
+      }
+
+      .unillanos {
+        grid-area: unillanos;
+      }
+
+      .unillanos img {
+        max-width: 120%;
+
+      }
+      .colciencias {
+        grid-area: colciencias;
+      }
+
+      .colciencias img {
+        max-width: 150%;
+        /* width: 100%; */
+      }
+
+      .goboyaca {
+        grid-area: goboyaca;
+      }
+
+      .goboyaca img {
+        max-width: 100%;
+        /* width: 100%; */
+      }
+
+}
+
+/*********************************************/
+@media screen and (max-width: 480px){
+
+  }
+/*********************************************/
     </style>
  
    <!--
@@ -1160,6 +1282,8 @@
    <footer >
       <!-- Footer Elements -->
       <div class="containerFooter">
+        <div class="containerImage">        
+
         <div class="containerImage">        
           <div class="unal">
             <img src="{% static 'Images/unal.png' %}" alt='unal'>
