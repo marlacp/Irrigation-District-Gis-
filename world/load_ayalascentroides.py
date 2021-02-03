@@ -19,12 +19,13 @@ ayalas_centroides_mapping = {
     'agent_c': 'AGENT_C',
     'agent_n': 'AGENT_N',
     'model': 'MODEL',
+    'irr_mm': 'IRR_MM',
     'geom': 'MULTIPOINT',
 }
 
 
 
-ayalas_centroides_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Ayalas_PumpStation/Ayalas_PumpStation_Centroids.shp'))
+ayalas_centroides_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Ayalas_PumpStation/Ayalas_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(ayalas_centroides, ayalas_centroides_shp, ayalas_centroides_mapping, transform=False, encoding='iso-8859-1') #transform=False,

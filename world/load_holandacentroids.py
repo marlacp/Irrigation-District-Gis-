@@ -23,7 +23,7 @@ holanda_centroids_mapping = {
 }
 
 
-holanda_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Holanda_PumpStation/Holanda_PumpStation_Centroids.shp'))
+holanda_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Holanda_PumpStation/Holanda_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(holanda_centroids, holanda_centroids_shp, holanda_centroids_mapping, transform=False, encoding='iso-8859-1') #transform=False,

@@ -82,6 +82,7 @@ class Ayalas_Pump(models.Model):
     prescriptio = gis_models.FloatField()
     crop_n = gis_models.CharField(max_length=50)
     crop_c = gis_models.FloatField()
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -273,6 +274,7 @@ class ayalas_centroides(models.Model):
     agent_c = gis_models.FloatField()
     agent_n = gis_models.CharField(max_length=50)
     model = gis_models.CharField(max_length=50)
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code

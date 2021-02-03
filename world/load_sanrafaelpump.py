@@ -22,7 +22,7 @@ sanrafael_pump_mapping = {
 }
 
 
-sanrafael_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/SanRafael_PumpStation/SanRafael_PumpStation_Polygon.shp'))
+sanrafael_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/SanRafael_PumpStation/SanRafael_PumpStation_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(sanrafael_pump, sanrafael_pump_shp, sanrafael_pump_mapping, transform=False, encoding='iso-8859-1') #transform=False,

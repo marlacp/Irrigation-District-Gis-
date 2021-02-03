@@ -19,12 +19,13 @@ ayalas_pump_mapping = {
     'prescriptio': 'PRESCRIPTIO',
     'crop_n': 'CROP_N',
     'crop_c': 'CROP_C',
+    'irr_mm': 'IRR_MM',
     'geom': 'MULTIPOLYGON',
 }
 
 
 
-Ayalas_Pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Ayalas_PumpStation/Ayalas_PumpStation_Polygon.shp'))
+Ayalas_Pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Ayalas_PumpStation/Ayalas_PumpStation_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(Ayalas_Pump, Ayalas_Pump_shp, ayalas_pump_mapping, transform=False, encoding='iso-8859-1') #transform=False,

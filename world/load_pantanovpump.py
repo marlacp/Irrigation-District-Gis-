@@ -22,7 +22,7 @@ pantanov_pump_mapping = {
 }
 
 
-pantanov_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Pantano_PumpStation/Pantano_PumpStation_Polygon.shp'))
+pantanov_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Pantano_PumpStation/Pantano_PumpStation_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(pantanov_pump, pantanov_pump_shp, pantanov_pump_mapping, transform=False, encoding='iso-8859-1') #transform=False,

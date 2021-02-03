@@ -1,6 +1,6 @@
 from django.contrib import admin
 #from django.contrib.gis.admin import OSMGeoAdmin
-from .models import Incidences, Countries, Ayalas_Pump, DistrictP, tibasosa_centroids, surba_centroids, sanrafael_centroids, pantanov_centroids, moniquira_centroids, ministerio_centroids, lasvueltas_centroids, holanda_centroids, cuche_centroides, duitama_centroides, ayalas_centroides, surba_pump, tibasosa_pump, sanrafael_pump, pantanov_pump, moniquira_Pump, Duitama_Pump, Cuche_Pump, Holanda_Pump, Lasvueltas_Pump, ministerio_Pump, chicamocha_river, reservoirs
+from .models import Incidences, Countries, ayalas_centroides, Ayalas_Pump, DistrictP, tibasosa_centroids, surba_centroids, sanrafael_centroids, pantanov_centroids, moniquira_centroids, ministerio_centroids, lasvueltas_centroids, holanda_centroids, cuche_centroides, duitama_centroides, surba_pump, tibasosa_pump, sanrafael_pump, pantanov_pump, moniquira_Pump, Duitama_Pump, Cuche_Pump, Holanda_Pump, Lasvueltas_Pump, ministerio_Pump, chicamocha_river, reservoirs
 from leaflet.admin import LeafletGeoAdmin
 # Register your models here.
 #    

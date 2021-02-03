@@ -16,7 +16,7 @@ chicamocha_river_mapping = {
 
 
 
-chicamocha_river_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Chicamocha_River/Chicamocha_River_Polygon.shp'))
+chicamocha_river_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Chicamocha_River/Chicamocha_River_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(chicamocha_river, chicamocha_river_shp, chicamocha_river_mapping, transform=False, encoding='iso-8859-1') #transform=False,

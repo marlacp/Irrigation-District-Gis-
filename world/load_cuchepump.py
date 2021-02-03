@@ -23,7 +23,7 @@ cuche_pump_mapping = {
 
 
 
-cuche_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Cuche_PumpStation/Cuche_PumpStation_Polygon.shp'))
+cuche_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Cuche_PumpStation/Cuche_PumpStation_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(Cuche_Pump, cuche_pump_shp, cuche_pump_mapping, transform=False, encoding='iso-8859-1') #transform=False,

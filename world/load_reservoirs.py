@@ -17,7 +17,7 @@ reservoirs_mapping = {
 
 
 
-reservoirs_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Reservoirs_Source/Reservoirs_Source_Polygon.shp'))
+reservoirs_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Reservoirs_Source/Reservoirs_Source_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(reservoirs, reservoirs_shp, reservoirs_mapping, transform=False, encoding='iso-8859-1') #transform=False,

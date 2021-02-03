@@ -25,7 +25,7 @@ ministerio_pump_mapping = {
 
 
 
-ministerio_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Ministerio_PumpStation/Ministerio_PumpStation_Polygon.shp'))
+ministerio_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Ministerio_PumpStation/Ministerio_PumpStation_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(ministerio_Pump, ministerio_pump_shp, ministerio_pump_mapping, transform=False, encoding='iso-8859-1') #transform=False,

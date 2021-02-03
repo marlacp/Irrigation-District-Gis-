@@ -23,7 +23,7 @@ ministerio_centroids_mapping = {
 }
 
 
-ministerio_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Ministerio_PumpStation/Ministerio_PumpStation_Centroids.shp'))
+ministerio_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Ministerio_PumpStation/Ministerio_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(ministerio_centroids, ministerio_centroids_shp, ministerio_centroids_mapping, transform=False, encoding='iso-8859-1') #transform=False,

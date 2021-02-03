@@ -17,7 +17,7 @@ districtp_mapping = {
 
 
 
-districtp_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/District_Polygons/District_Polygons_Polygon.shp'))
+districtp_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/District_Polygons/District_Polygons_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(DistrictP, districtp_shp, districtp_mapping, transform=False, encoding='iso-8859-1') #transform=False,

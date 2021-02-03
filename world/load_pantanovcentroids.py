@@ -22,7 +22,7 @@ pantanov_centroids_mapping = {
     'geom': 'MULTIPOINT',
 }
 
-pantanov_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapefilexHector/shp_PmS/Pantano_PumpStation/Pantano_PumpStation_Centroids.shp'))
+pantanov_centroids_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Pantano_PumpStation/Pantano_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(pantanov_centroids, pantanov_centroids_shp, pantanov_centroids_mapping, transform=False, encoding='iso-8859-1') #transform=False,

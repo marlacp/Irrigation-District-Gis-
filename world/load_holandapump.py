@@ -23,7 +23,7 @@ holanda_pump_mapping = {
 
 
 
-holanda_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Holanda_PumpStation/Holanda_PumpStation_Polygon.shp'))
+holanda_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Holanda_PumpStation/Holanda_PumpStation_Polygon.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(Holanda_Pump, holanda_pump_shp, holanda_pump_mapping, transform=False, encoding='iso-8859-1') #transform=False,

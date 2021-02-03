@@ -23,7 +23,7 @@ duitama_centroides_mapping = {
 }
 
 
-duitama_centroides_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Duitama_PumpStation/Duitama_PumpStation_Centroids.shp'))
+duitama_centroides_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Duitama_PumpStation/Duitama_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(duitama_centroides, duitama_centroides_shp, duitama_centroides_mapping, transform=False, encoding='iso-8859-1') #transform=False,

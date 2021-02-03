@@ -23,7 +23,7 @@ cuche_centroides_mapping = {
 }
 
 
-cuche_centroides_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/ShapeFinales/shp_PmS/Cuche_PumpStation/Cuche_PumpStation_Centroids.shp'))
+cuche_centroides_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Cuche_PumpStation/Cuche_PumpStation_Centroids.shp'))
 
 def run(verbose=True):
     lm= LayerMapping(cuche_centroides, cuche_centroides_shp, cuche_centroides_mapping, transform=False, encoding='iso-8859-1') #transform=False,
