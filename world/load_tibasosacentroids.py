@@ -19,6 +19,7 @@ tibasosa_centroids_mapping = {
     'agent_c': 'AGENT_C',
     'agent_n': 'AGENT_N',
     'model': 'MODEL',
+    'irr_mm': 'IRR_MM',
     'geom': 'MULTIPOINT',
 }
 

@@ -1,11 +1,11 @@
 from django.conf.urls import include, url
-from .views import HomePageView, ayalas_centroidesdatasets, AyalasPump_datasets, ministerio_centroidsdatasets, DistrictPolygons_datasets, tibasosa_centroidsdatasets, surba_centroidsdatasets, sanrafael_centroidsdatasets, pantanov_centroidsdatasets, moniquira_centroidsdatasets, surba_pump_datasets, lasvueltas_centroidsdatasets, holanda_centroidsdatasets, duitama_centroidesdatasets, cuche_centroidesdatasets, tibasosa_pumpdatasets, pantanov_pump_datasets, sanrafael_pump_datasets, moniquira_Pump_datasets, ministerio_Pump_datasets, country_datasets, incidence_points, DuitamaPump_datasets, Cuche_Pump_datasets, Holanda_Pump_datasets, Lasvueltas_Pump_datasets, chicamocha_riverdatasets, reservoirs_datasets
+from .views import HomePageView, ayalas_centroidesdatasets, AyalasPump_datasets,cuche_centroidesdatasets, Cuche_Pump_datasets, duitama_centroidesdatasets, DuitamaPump_datasets, holanda_centroidsdatasets, Holanda_Pump_datasets, lasvueltas_centroidsdatasets, Lasvueltas_Pump_datasets, ministerio_centroidsdatasets, ministerio_Pump_datasets, moniquira_centroidsdatasets, moniquira_Pump_datasets, pantanov_centroidsdatasets, pantanov_pump_datasets,sanrafael_centroidsdatasets, sanrafael_pump_datasets, surba_centroidsdatasets, surba_pump_datasets,  tibasosa_centroidsdatasets, tibasosa_pumpdatasets,  DistrictPolygons_datasets,  country_datasets, incidence_points, chicamocha_riverdatasets, reservoirs_datasets
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
-# 
-###    
+#   
+###      
 
 #a) 
 

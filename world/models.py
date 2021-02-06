@@ -63,6 +63,7 @@ class Duitama_Pump(models.Model):
     prescriptio = gis_models.FloatField()
     crop_n = gis_models.CharField(max_length=50)
     crop_c = gis_models.FloatField()
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -86,7 +87,7 @@ class Ayalas_Pump(models.Model):
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
-
+        
 class Cuche_Pump(models.Model):
     id = gis_models.BigIntegerField(primary_key=True)
     code = gis_models.CharField(max_length=50)
@@ -102,6 +103,7 @@ class Cuche_Pump(models.Model):
     prescriptio = gis_models.FloatField()
     crop_n = gis_models.CharField(max_length=50)
     crop_c = gis_models.FloatField()
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -121,6 +123,7 @@ class Holanda_Pump(models.Model):
     prescriptio = gis_models.FloatField()
     crop_n = gis_models.CharField(max_length=50)
     crop_c = gis_models.FloatField()
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -140,6 +143,7 @@ class Lasvueltas_Pump(models.Model):
     prescriptio = gis_models.FloatField()
     crop_n = gis_models.CharField(max_length=50)
     crop_c = gis_models.FloatField()
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -159,6 +163,7 @@ class ministerio_Pump(models.Model):
     prescriptio = gis_models.FloatField()
     crop_n = gis_models.CharField(max_length=50)
     crop_c = gis_models.FloatField()
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -178,6 +183,7 @@ class moniquira_Pump(models.Model):
     prescriptio = gis_models.FloatField()
     crop_n = gis_models.CharField(max_length=50)
     crop_c = gis_models.FloatField()
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -197,6 +203,7 @@ class pantanov_pump(models.Model):
     prescriptio = gis_models.FloatField()
     crop_n = gis_models.CharField(max_length=50)
     crop_c = gis_models.FloatField()
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -216,6 +223,7 @@ class sanrafael_pump(models.Model):
     prescriptio = gis_models.FloatField()
     crop_n = gis_models.CharField(max_length=50)
     crop_c = gis_models.FloatField()
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -235,6 +243,7 @@ class surba_pump(models.Model):
     prescriptio = gis_models.FloatField()
     crop_n = gis_models.CharField(max_length=50)
     crop_c = gis_models.FloatField()
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -254,6 +263,7 @@ class tibasosa_pump(models.Model):
     prescriptio = gis_models.FloatField()
     crop_n = gis_models.CharField(max_length=50)
     crop_c = gis_models.FloatField()
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPolygonField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -295,6 +305,7 @@ class cuche_centroides(models.Model):
     agent_c = gis_models.FloatField()
     agent_n = gis_models.CharField(max_length=50)
     model = gis_models.CharField(max_length=50)
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -315,6 +326,7 @@ class duitama_centroides(models.Model):
     agent_c = gis_models.FloatField()
     agent_n = gis_models.CharField(max_length=50)
     model = gis_models.CharField(max_length=50)
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -335,6 +347,7 @@ class holanda_centroids(models.Model):
     agent_c = gis_models.FloatField()
     agent_n = gis_models.CharField(max_length=50)
     model = gis_models.CharField(max_length=50)
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -355,6 +368,7 @@ class lasvueltas_centroids(models.Model):
     agent_c = gis_models.FloatField()
     agent_n = gis_models.CharField(max_length=50)
     model = gis_models.CharField(max_length=50)
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -375,6 +389,7 @@ class ministerio_centroids(models.Model):
     agent_c = gis_models.FloatField()
     agent_n = gis_models.CharField(max_length=50)
     model = gis_models.CharField(max_length=50)
+    irr_mm = models.FloatField()
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -395,6 +410,7 @@ class moniquira_centroids(models.Model):
     agent_c = gis_models.FloatField()
     agent_n = gis_models.CharField(max_length=50)
     model = gis_models.CharField(max_length=50)
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -416,6 +432,7 @@ class pantanov_centroids(models.Model):
     agent_c = gis_models.FloatField()
     agent_n = gis_models.CharField(max_length=50)
     model = gis_models.CharField(max_length=50)
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -437,6 +454,7 @@ class sanrafael_centroids(models.Model):
     agent_c = gis_models.FloatField()
     agent_n = gis_models.CharField(max_length=50)
     model = gis_models.CharField(max_length=50)
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -457,6 +475,7 @@ class surba_centroids(models.Model):
     agent_c = gis_models.FloatField()
     agent_n = gis_models.CharField(max_length=50)
     model = gis_models.CharField(max_length=50)
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code
@@ -477,6 +496,7 @@ class tibasosa_centroids(models.Model):
     agent_c = gis_models.FloatField()
     agent_n = gis_models.CharField(max_length=50)
     model = gis_models.CharField(max_length=50)
+    irr_mm = gis_models.FloatField()
     geom = gis_models.MultiPointField(srid=4326)
     def __unicode__(self):
         return self.code

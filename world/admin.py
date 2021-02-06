@@ -1,6 +1,6 @@
 from django.contrib import admin
 #from django.contrib.gis.admin import OSMGeoAdmin
-from .models import Incidences, Countries, ayalas_centroides, Ayalas_Pump, DistrictP, tibasosa_centroids, surba_centroids, sanrafael_centroids, pantanov_centroids, moniquira_centroids, ministerio_centroids, lasvueltas_centroids, holanda_centroids, cuche_centroides, duitama_centroides, surba_pump, tibasosa_pump, sanrafael_pump, pantanov_pump, moniquira_Pump, Duitama_Pump, Cuche_Pump, Holanda_Pump, Lasvueltas_Pump, ministerio_Pump, chicamocha_river, reservoirs
+from .models import Incidences, Countries, ayalas_centroides, Ayalas_Pump, cuche_centroides, Cuche_Pump, duitama_centroides, DistrictP, Duitama_Pump, holanda_centroids, Holanda_Pump, lasvueltas_centroids, Lasvueltas_Pump, ministerio_centroids, ministerio_Pump, moniquira_centroids, moniquira_Pump, pantanov_centroids, pantanov_pump, sanrafael_centroids, sanrafael_pump, surba_centroids, surba_pump, tibasosa_centroids, tibasosa_pump, chicamocha_river, reservoirs
 from leaflet.admin import LeafletGeoAdmin
 # Register your models here.
 #    
@@ -60,10 +60,8 @@ class cuche_centroidesAdmin(LeafletGeoAdmin):
 class duitama_centroidesAdmin(LeafletGeoAdmin):
 	list_display =('code','geom')
 
-
 class holanda_centroidsAdmin(LeafletGeoAdmin):
 	list_display =('code','geom')
-
 
 class lasvueltas_centroidsAdmin(LeafletGeoAdmin):
 	list_display =('code','geom')

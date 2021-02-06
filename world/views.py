@@ -2,12 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.core.serializers import serialize
-from .models import ayalas_centroides, Ayalas_Pump, Countries, ministerio_Pump, DistrictP, tibasosa_centroids, surba_centroids, sanrafael_centroids, pantanov_centroids, moniquira_centroids, ministerio_centroids, lasvueltas_centroids, holanda_centroids, duitama_centroides, cuche_centroides, tibasosa_pump, surba_pump, sanrafael_pump, moniquira_Pump, pantanov_pump, Incidences, Duitama_Pump, Cuche_Pump, Holanda_Pump, Lasvueltas_Pump, chicamocha_river, reservoirs
-#  
+from .models import ayalas_centroides, Ayalas_Pump, Countries, cuche_centroides, Cuche_Pump, duitama_centroides, Duitama_Pump, DistrictP,  holanda_centroids, Holanda_Pump, lasvueltas_centroids, Lasvueltas_Pump, ministerio_centroids, ministerio_Pump, moniquira_centroids, moniquira_Pump, pantanov_centroids, pantanov_pump, sanrafael_centroids, sanrafael_pump, surba_centroids, surba_pump, tibasosa_centroids, tibasosa_pump, Incidences, chicamocha_river,reservoirs
+#     
 ###   
-#a) 
-#def index(request):
-#    return HttpResponse("Hello, world. You're at the geodjango_Leaflet project.")
 
 
 class HomePageView(TemplateView):

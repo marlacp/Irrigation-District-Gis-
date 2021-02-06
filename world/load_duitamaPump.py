@@ -20,6 +20,7 @@ duitama_pump_mapping = {
     'prescriptio': 'PRESCRIPTIO',
     'crop_n': 'CROP_N',
     'crop_c': 'CROP_C',
+    'irr_mm': 'IRR_MM',
     'geom': 'MULTIPOLYGON',
 }
 duitama_pump_shp= os.path.abspath(os.path.join(os.path.dirname(__file__),'/home/marla/Documentos/shapefiles/Shapes+end/Duitama_PumpStation/Duitama_PumpStation_Polygon.shp'))

@@ -18,6 +18,7 @@ ministerio_pump_mapping = {
     'prescriptio': 'PRESCRIPTIO',
     'crop_n': 'CROP_N',
     'crop_c': 'CROP_C',
+    'irr_mm': 'IRR_MM',
     'geom': 'MULTIPOLYGON',
 }
 

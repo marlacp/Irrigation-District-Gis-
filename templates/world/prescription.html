@@ -238,7 +238,8 @@
                 },
 
                 onEachFeature: function(feature,layer){
-                   layer.bindPopup( "<strong> <p> Code: " + feature.properties.code.toString() +"<p/> </strong>" +" <strong> <p> Area: " + feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+"<p/> </strong>" + "<strong> <p> Prescription: "+ feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> </strong>" ); 
+                   layer.bindPopup( "<p>"+" <strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/> " +"<p>"+ " <strong> Area: " + "</strong>" + feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+"<p/>" + "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " +  "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+                    ); 
                 },  
 
             });
