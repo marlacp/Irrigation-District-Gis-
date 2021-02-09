@@ -571,11 +571,11 @@
                 var ayalascentroides = new L.GeoJSON.AJAX("{% url 'ayalascentroides' %}",{
 
 
-                    onEachFeature: function(feature,layer){
-                       layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+             onEachFeature: function(feature,layer){
+                 layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>" + "<p>"+ "<strong> Satisfaction level: " + "</strong>" +  feature.properties.sat_lv_n.toString() + "<p/>" + "<p>"+ "<strong> Satisfaction level value: " + "</strong>"+feature.properties.sat_lv_c.toString() + "<p/> "+ "<p>" +"<strong> Irrigation model: " + "</strong>"+ feature.properties.model.toString()  +"<p/>"
 
-                        ); 
-                    },  
+                  ); 
+              },  
       
 
                     pointToLayer: function (feature, latlng) {
@@ -635,11 +635,11 @@
                 var surbacentroides = new L.GeoJSON.AJAX("{% url 'surbacentroids' %}",{
 
 
-                    onEachFeature: function(feature,layer){
-                       layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+             onEachFeature: function(feature,layer){
+                 layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>" + "<p>"+ "<strong> Satisfaction level: " + "</strong>" +  feature.properties.sat_lv_n.toString() + "<p/>" + "<p>"+ "<strong> Satisfaction level value: " + "</strong>"+feature.properties.sat_lv_c.toString() + "<p/> "+ "<p>" +"<strong> Irrigation model: " + "</strong>"+ feature.properties.model.toString()  +"<p/>"
 
-                        ); 
-                    }, 
+                  ); 
+              },  
      
 
                     pointToLayer: function (feature, latlng) {
@@ -699,11 +699,11 @@
                 var cuchecentroides = new L.GeoJSON.AJAX("{% url 'cuchecentroides' %}",{
 
 
-                    onEachFeature: function(feature,layer){
-                       layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+             onEachFeature: function(feature,layer){
+                 layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>" + "<p>"+ "<strong> Satisfaction level: " + "</strong>" +  feature.properties.sat_lv_n.toString() + "<p/>" + "<p>"+ "<strong> Satisfaction level value: " + "</strong>"+feature.properties.sat_lv_c.toString() + "<p/> "+ "<p>" +"<strong> Irrigation model: " + "</strong>"+ feature.properties.model.toString()  +"<p/>"
 
-                        ); 
-                    }, 
+                  ); 
+              }, 
 
                     pointToLayer: function (feature, latlng) {
                         //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
@@ -761,11 +761,11 @@
                 var duitamacentroides = new L.GeoJSON.AJAX("{% url 'duitamacentroides' %}",{
 
 
-                    onEachFeature: function(feature,layer){
-                       layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+             onEachFeature: function(feature,layer){
+                 layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>" + "<p>"+ "<strong> Satisfaction level: " + "</strong>" +  feature.properties.sat_lv_n.toString() + "<p/>" + "<p>"+ "<strong> Satisfaction level value: " + "</strong>"+feature.properties.sat_lv_c.toString() + "<p/> "+ "<p>" +"<strong> Irrigation model: " + "</strong>"+ feature.properties.model.toString()  +"<p/>"
 
-                        ); 
-                    },
+                  ); 
+              }, 
 
                     pointToLayer: function (feature, latlng) {
                         //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
@@ -822,11 +822,11 @@
                 ////////////////////////////////////////////////////////////////////
                 var holandacentroids = new L.GeoJSON.AJAX("{% url 'holandacentroids' %}",{
 
-                    onEachFeature: function(feature,layer){
-                       layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+                 onEachFeature: function(feature,layer){
+                     layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>" + "<p>"+ "<strong> Satisfaction level: " + "</strong>" +  feature.properties.sat_lv_n.toString() + "<p/>" + "<p>"+ "<strong> Satisfaction level value: " + "</strong>"+feature.properties.sat_lv_c.toString() + "<p/> "+ "<p>" +"<strong> Irrigation model: " + "</strong>"+ feature.properties.model.toString()  +"<p/>"
 
-                        ); 
-                    }, 
+                      ); 
+                  }, 
 
 
                     pointToLayer: function (feature, latlng) {
@@ -885,11 +885,12 @@
                 var lasvueltascentroids = new L.GeoJSON.AJAX("{% url 'lasvueltascentroids' %}",{
 
 
-                    onEachFeature: function(feature,layer){
-                       layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+                 onEachFeature: function(feature,layer){
+                     layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>" + "<p>"+ "<strong> Satisfaction level: " + "</strong>" +  feature.properties.sat_lv_n.toString() + "<p/>" + "<p>"+ "<strong> Satisfaction level value: " + "</strong>"+feature.properties.sat_lv_c.toString() + "<p/> "+ "<p>" +"<strong> Irrigation model: " + "</strong>"+ feature.properties.model.toString()  +"<p/>"
 
-                        ); 
-                    }, 
+                      ); 
+                  }, 
+
      
 
                     pointToLayer: function (feature, latlng) {
@@ -948,11 +949,12 @@
                 var ministeriocentroids = new L.GeoJSON.AJAX("{% url 'ministeriocentroids' %}",{
 
 
-                    onEachFeature: function(feature,layer){
-                       layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+                 onEachFeature: function(feature,layer){
+                     layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>" + "<p>"+ "<strong> Satisfaction level: " + "</strong>" +  feature.properties.sat_lv_n.toString() + "<p/>" + "<p>"+ "<strong> Satisfaction level value: " + "</strong>"+feature.properties.sat_lv_c.toString() + "<p/> "+ "<p>" +"<strong> Irrigation model: " + "</strong>"+ feature.properties.model.toString()  +"<p/>"
 
-                        ); 
-                    },
+                      ); 
+                  }, 
+
 
                     pointToLayer: function (feature, latlng) {
                         //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
@@ -1010,11 +1012,12 @@
                 var moniquiracentroids = new L.GeoJSON.AJAX("{% url 'moniquiracentroids' %}",{
 
 
-                    onEachFeature: function(feature,layer){
-                       layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+                 onEachFeature: function(feature,layer){
+                     layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>" + "<p>"+ "<strong> Satisfaction level: " + "</strong>" +  feature.properties.sat_lv_n.toString() + "<p/>" + "<p>"+ "<strong> Satisfaction level value: " + "</strong>"+feature.properties.sat_lv_c.toString() + "<p/> "+ "<p>" +"<strong> Irrigation model: " + "</strong>"+ feature.properties.model.toString()  +"<p/>"
 
-                        ); 
-                    },
+                      ); 
+                  }, 
+
 
                     pointToLayer: function (feature, latlng) {
                         //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
@@ -1071,11 +1074,12 @@
                 var pantanovcentroids = new L.GeoJSON.AJAX("{% url 'pantanovcentroids' %}",{
 
 
-                    onEachFeature: function(feature,layer){
-                       layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+                 onEachFeature: function(feature,layer){
+                     layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>" + "<p>"+ "<strong> Satisfaction level: " + "</strong>" +  feature.properties.sat_lv_n.toString() + "<p/>" + "<p>"+ "<strong> Satisfaction level value: " + "</strong>"+feature.properties.sat_lv_c.toString() + "<p/> "+ "<p>" +"<strong> Irrigation model: " + "</strong>"+ feature.properties.model.toString()  +"<p/>"
 
-                        ); 
-                    },
+                      ); 
+                  }, 
+
                     
                     pointToLayer: function (feature, latlng) {
                         //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
@@ -1133,11 +1137,12 @@
                 var sanrafaelcentroids = new L.GeoJSON.AJAX("{% url 'sanrafaelcentroids' %}",{
 
 
-                    onEachFeature: function(feature,layer){
-                       layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+                 onEachFeature: function(feature,layer){
+                     layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>" + "<p>"+ "<strong> Satisfaction level: " + "</strong>" +  feature.properties.sat_lv_n.toString() + "<p/>" + "<p>"+ "<strong> Satisfaction level value: " + "</strong>"+feature.properties.sat_lv_c.toString() + "<p/> "+ "<p>" +"<strong> Irrigation model: " + "</strong>"+ feature.properties.model.toString()  +"<p/>"
 
-                        ); 
-                    },
+                      ); 
+                  }, 
+
      
 
                     pointToLayer: function (feature, latlng) {
@@ -1195,11 +1200,12 @@
                 ////////////////////////////////////////////////////////////////////
                 var tibasosacentroids = new L.GeoJSON.AJAX("{% url 'tibasosacentroids' %}",{
 
-                    onEachFeature: function(feature,layer){
-                       layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>"
+                 onEachFeature: function(feature,layer){
+                     layer.bindPopup( "<p>"+"<strong> Code: " + "</strong>" +feature.properties.code.toString() +"<p/>" + "<p>" +"<strong> Area: " + "</strong>" +feature.properties.area.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ "<p/>" +"<p>" +"<strong> Type: " + "</strong>" +feature.properties.col_n.toString() + "<p/>" + "<p>" +"<strong> Agent: " + "</strong>" +feature.properties.agent_n.toString() + "<p/>"+ "<p>"+ " <strong> Prescription/Area: " + "</strong>" + feature.properties.prescriptio.toString() + "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{3}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{3}' title='m^{3}' />" + "</a>"+"<p/> " + "<p>"+ "<strong> Prescription/"+ "<a href='https://www.codecogs.com/eqnedit.php?latex=m^{2}' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?m^{2}' title='m^{2}' />" + "</a>"+ ": " + "</strong>" + feature.properties.irr_mm.toString() +"<a href='https://www.codecogs.com/eqnedit.php?latex=mm' target='_blank'>"+"<img src='https://latex.codecogs.com/gif.latex?mm' title='mm' />" + "</a>" +"<p/>" + "<p>"+ "<strong> Satisfaction level: " + "</strong>" +  feature.properties.sat_lv_n.toString() + "<p/>" + "<p>"+ "<strong> Satisfaction level value: " + "</strong>"+feature.properties.sat_lv_c.toString() + "<p/> "+ "<p>" +"<strong> Irrigation model: " + "</strong>"+ feature.properties.model.toString()  +"<p/>"
 
-                        ); 
-                    },
+                      ); 
+                  }, 
+
 
                     pointToLayer: function (feature, latlng) {
                         //Agentes que colaboran - Virtuales Icono hombre mayor con fondo
